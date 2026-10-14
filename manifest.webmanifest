@@ -1,0 +1,22 @@
+{
+  "name": "DM.AID · Dungeon Master Aid",
+  "short_name": "DM.AID",
+  "description": "DM.AID 1.5.2 · Run the game. Rule the story. Gestor de D&D 5e 2014.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0e111b",
+  "theme_color": "#121824",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
