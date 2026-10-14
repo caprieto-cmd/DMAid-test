@@ -1,4 +1,4 @@
-# DM.AID 1.5.2 · Gestor de campañas
+# DM.AID 1.5.3 · Gestor de campañas
 
 Nueva pantalla de bienvenida con el emblema del d20 y selector de campañas. Permite crear, abrir, renombrar, duplicar, eliminar y respaldar todas las campañas.
 
@@ -14,3 +14,7 @@ Sube todos los archivos a la raíz de GitHub Pages. Antes de actualizar, exporta
 
 ## Inicio y pantalla de carga
 La transición disuelve la imagen inicial mientras aparece suavemente el menú de campañas; respeta Reducir movimiento de iPadOS. La imagen se precarga y la pantalla de bienvenida espera su carga (mínimo 2,3 segundos, máximo 6,5 segundos). Si falla, muestra el ícono local. El cambio entre campañas abre directamente la campaña seleccionada.
+
+
+### TEST v1.5.3
+Armas a elección: desplegables PHB 2014 que enlazan con fuentes cargadas. Paquetes como contenedores con componentes y cantidades independientes. Subir solo al repositorio DMAID-Test.

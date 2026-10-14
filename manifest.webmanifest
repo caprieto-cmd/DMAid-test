@@ -1,7 +1,7 @@
 {
-  "name": "DM.AID · Dungeon Master Aid",
+  "name": "DM.AID TEST · Dungeon Master Aid",
   "short_name": "DM.AID",
-  "description": "DM.AID 1.5.2 · Run the game. Rule the story. Gestor de D&D 5e 2014.",
+  "description": "DM.AID 1.5.3 · Run the game. Rule the story. Gestor de D&D 5e 2014.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

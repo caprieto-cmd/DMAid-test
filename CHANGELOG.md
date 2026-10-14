@@ -1,3 +1,8 @@
+## 1.5.3 TEST
+- Selector de armas a elección con estadísticas básicas y enlace a biblioteca.
+- Paquetes iniciales desplegables con componentes y consumo individual.
+- Mantiene versiones anteriores del inventario.
+
 ## 1.5.2 · Transición animada de inicio
 - Fundido suave entre arte de bienvenida y selector de campañas, con entrada desplazada discreta del menú.
 - Compatible con Safari para iPad y la opción de accesibilidad Reducir movimiento.
