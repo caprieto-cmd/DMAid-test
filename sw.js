@@ -1,4 +1,4 @@
-const CACHE='compendio-combate-dmaid-v1.7.0-test-20261014';
+const CACHE='compendio-combate-dmaid-v1.8.0-test-20261014';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png','./brand-art.jpg','./setup-libraries.js','./races-mmotm.js'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('compendio-combate-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
