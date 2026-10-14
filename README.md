@@ -1,9 +1,7 @@
-# DM.AID TEST 1.6.0
+# DM.AID TEST 1.7.0
 
-Configuración inicial obligatoria de catálogos de objetos, monstruos y razas PHB 2014. Posibilidad de importar especies de MMotM desde JSON `race` o `races` y elegirlas en el creador.
+Integración nativa de 33 razas/especies de MMotM 2022. No requiere importar JSON para verlas en el creador. Las opciones del PHB 2014 se conservan. MMotM usa aumentos flexibles (+2/+1 o +1/+1/+1), sin mezclar bonificaciones raciales fijas.
 
-Las reglas completas de MMotM no se incluyen en el paquete. Debes proporcionar un JSON de contenido que tengas derecho a utilizar. La validación de reglas raciales importadas se limita a los aumentos de atributos de MMotM. Los demás rasgos se conservan para consulta, pero no se automatizan aún.
+**Cobertura actual:** identificadores, fuente, tamaño, velocidades, visión oscura, resistencias, bonificaciones de iniciativa de Harengon, armadura natural Tortle/Lizardfolk como metadatos, competencias fijas y títulos de rasgos. La aplicación no aplica aún todos los poderes raciales activos ni todos los efectos condicionales. Algunas elecciones de más de una habilidad requieren validación manual. No se incluyen descripciones de libro ni el PDF.
 
-**TEST:** no publicar como versión estable. Las bibliotecas usan el almacenamiento aislado de DM.AID Test.
-
-Para desplegar en GitHub Pages, sube todos los archivos descomprimidos a la raíz.
+**Instalación:** subir todos los archivos a DMAID-Test; borrar/actualizar PWA si mantiene caché antigua. La biblioteca de monstruos y objetos sigue requiriendo su carga inicial.
