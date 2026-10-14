@@ -1,20 +1,9 @@
-# DM.AID 1.5.3 · Gestor de campañas
+# DM.AID TEST 1.6.0
 
-Nueva pantalla de bienvenida con el emblema del d20 y selector de campañas. Permite crear, abrir, renombrar, duplicar, eliminar y respaldar todas las campañas.
+Configuración inicial obligatoria de catálogos de objetos, monstruos y razas PHB 2014. Posibilidad de importar especies de MMotM desde JSON `race` o `races` y elegirlas en el creador.
 
-## Datos
+Las reglas completas de MMotM no se incluyen en el paquete. Debes proporcionar un JSON de contenido que tengas derecho a utilizar. La validación de reglas raciales importadas se limita a los aumentos de atributos de MMotM. Los demás rasgos se conservan para consulta, pero no se automatizan aún.
 
-Cada campaña utiliza una clave de estado independiente `dmaid-state-<id>`. Al iniciar, se migra una copia del estado anterior `combat5e2014-v1` a **Mi primera campaña**, sin borrar el original. Las bibliotecas de monstruos y objetos se comparten entre campañas para evitar duplicar libros importados.
+**TEST:** no publicar como versión estable. Las bibliotecas usan el almacenamiento aislado de DM.AID Test.
 
-El respaldo general exporta las campañas y sus estados. Los catálogos compartidos de libros se exportan por separado desde sus respectivas secciones.
-
-## Publicación
-
-Sube todos los archivos a la raíz de GitHub Pages. Antes de actualizar, exporta tu partida desde la versión actual. La primera apertura debe mostrar el selector de campañas.
-
-## Inicio y pantalla de carga
-La transición disuelve la imagen inicial mientras aparece suavemente el menú de campañas; respeta Reducir movimiento de iPadOS. La imagen se precarga y la pantalla de bienvenida espera su carga (mínimo 2,3 segundos, máximo 6,5 segundos). Si falla, muestra el ícono local. El cambio entre campañas abre directamente la campaña seleccionada.
-
-
-### TEST v1.5.3
-Armas a elección: desplegables PHB 2014 que enlazan con fuentes cargadas. Paquetes como contenedores con componentes y cantidades independientes. Subir solo al repositorio DMAID-Test.
+Para desplegar en GitHub Pages, sube todos los archivos descomprimidos a la raíz.
