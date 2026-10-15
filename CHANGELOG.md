@@ -1,15 +1,20 @@
-## v1.17.16 TEST
+## v1.17.17 TEST
+- Sincroniza la competencia del humano variante con el paso Habilidades, competencias y pericias.
+- La habilidad se identifica como racial y no consume cupos de clase.
+- Conserva la competencia al avanzar, retroceder y finalizar la creación.
+
+## v1.17.17 TEST
 - Competencias de salvación adicionales asignables por el DM.
 - Cloistered Scholar (SCAG 2015), con su selección de competencia.
 - Humano variante: dote y habilidad obligatorios al crear.
 - Resilient: elegir característica para competencia en salvación.
 
-## 1.17.16 · Alma de la forja
+## 1.17.17 · Alma de la forja
 - Reconoce cota de malla y otras armaduras pesadas equipadas y añade +1 CA para Clérigo de la Forja nivel 6+.
 - No duplica la bonificación al regenerar fichas ni la conserva en Forma salvaje.
 - Mantiene el ajuste explícito de CA del DM.
 
-DM.AID TEST 1.17.16: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.
+DM.AID TEST 1.17.17: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.
 
 ## 1.17.13 · Las armaduras no son ataques
 - Corrige la clasificación de inventario: armaduras, cotas de malla y escudos no pueden aparecer como ataques, aunque sus registros tengan campos de daño o tipos genéricos.

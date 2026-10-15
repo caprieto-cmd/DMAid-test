@@ -1,6 +1,6 @@
-DM.AID TEST 1.17.16: Alma de la forja (+1 CA con armadura pesada) aplicada por el motor de CA de hoja y combate.
+DM.AID TEST 1.17.17: Alma de la forja (+1 CA con armadura pesada) aplicada por el motor de CA de hoja y combate.
 
-DM.AID TEST 1.17.16: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.
+DM.AID TEST 1.17.17: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.
 
 DM.AID TEST 1.17.13: las tarjetas del controlador de iniciativa ya no muestran «Dotes de combate». Los rasgos se mantienen en el statblock completo y la hoja.
 
