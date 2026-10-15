@@ -1,3 +1,5 @@
+DM.AID TEST 1.17.14: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.
+
 DM.AID TEST 1.17.13: las tarjetas del controlador de iniciativa ya no muestran «Dotes de combate». Los rasgos se mantienen en el statblock completo y la hoja.
 
 DM.AID TEST 1.17.9: statblock compacto. Dotes sin títulos, resúmenes ni descripciones duplicadas; controles de combate conservados.

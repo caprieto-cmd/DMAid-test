@@ -1,3 +1,5 @@
+DM.AID TEST 1.17.14: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.
+
 ## 1.17.13 · Las armaduras no son ataques
 - Corrige la clasificación de inventario: armaduras, cotas de malla y escudos no pueden aparecer como ataques, aunque sus registros tengan campos de daño o tipos genéricos.
 - Conserva los ataques de armas verdaderas y las armas especiales de Arcane Armor.
