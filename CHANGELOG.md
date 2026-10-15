@@ -1,12 +1,17 @@
-## 1.17.12 · Reconocimiento de Arcane Armor equipada
+## 1.17.13 · Las armaduras no son ataques
+- Corrige la clasificación de inventario: armaduras, cotas de malla y escudos no pueden aparecer como ataques, aunque sus registros tengan campos de daño o tipos genéricos.
+- Conserva los ataques de armas verdaderas y las armas especiales de Arcane Armor.
+- Mantiene alineados la lista de ataques y el botón para consultar la ficha del arma.
+
+## 1.17.13 · Reconocimiento de Arcane Armor equipada
 - Corrige la detección de armadura equipada para el Artífice Armorer: consulta el mismo inventario y categoría normalizada que usa el cálculo de CA, en lugar de exigir solo códigos LA/MA/HA.
 - El modo Guardián/Infiltrador sigue siendo una elección independiente; sus efectos se habilitan al llevar armadura real equipada.
 - Ropajes y escudos no activan por sí solos la Armadura Arcana.
 
-## 1.17.12 · Actualización inmediata de campaña
+## 1.17.13 · Actualización inmediata de campaña
 - Refresca tarjetas y statblock al abrir o continuar campaña, sin iniciar encuentro ni modificar turnos, PG o recursos.
 
-## 1.17.12 TEST · Controlador de iniciativa compacto
+## 1.17.13 TEST · Controlador de iniciativa compacto
 - Eliminada en origen la inserción de la sección «Dotes de combate» en las tarjetas pequeñas de iniciativa.
 - Conservadas las dotes en el statblock ampliado y en las hojas de personaje.
 - Sin cambios en los modificadores de iniciativa, PG, controles de daño ni datos guardados.
