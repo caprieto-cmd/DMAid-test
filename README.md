@@ -1,3 +1,13 @@
+# DM.AID TEST 1.18.0 · Character Builder V2 (fase inicial)
+
+Nueva creación de personajes en seis etapas con un único registro `sheet.creationV2`, separado del creador anterior. `character-builder-v2.js` y `character-builder-v2.css` son nuevos archivos obligatorios en GitHub Pages.
+
+**Incluido:** raza/subraza y humano variante (dote/habilidad), clase y subclase inicial, competencias de clase y salvaciones extra del DM, puntuaciones y orígenes de bonos, trasfondo con reemplazo de habilidades duplicadas, elecciones de equipo y revisión. Guarda hoja compatible con el combate existente y el registro de creación original.
+
+**Pendiente de implementación exhaustiva:** catálogo completo de rasgos y opciones especiales de cada raza y subraza, todos los rasgos de clase y subclase con recursos, multiclase, idiomas/herramientas especializados, prerrequisitos complejos de dotes, progresión automática de talentos/ASI por nivel, conjuros, nivel alto y selección exhaustiva de objetos. La primera versión no sustituye el contenido del sistema antiguo; conserva las fichas actuales intactas. La migración de personajes antiguos a V2 no es automática.
+
+**Pruebas:** validación de sintaxis y prueba unitaria de inicialización del nuevo asistente (tests/test-builder-v2.js). No certifica pruebas interactivas completas en Safari.
+
 DM.AID TEST 1.17.17: Alma de la forja (+1 CA con armadura pesada) aplicada por el motor de CA de hoja y combate.
 
 DM.AID TEST 1.17.17: armas virtuales de Armorer mostradas una sola vez como ataques; la ficha se abre en el diálogo de inventario y Defensive Field conserva su contador.

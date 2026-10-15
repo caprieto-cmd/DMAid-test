@@ -1,3 +1,8 @@
+## DM.AID TEST 1.18.0 · Nuevo creador V2 (fase inicial)
+- Nuevo módulo aislado, seis etapas, registro único y exportación compatible.
+- Sin alterar registros de personajes existentes ni lógica de combate.
+- Los rasgos no normalizados del catálogo siguen pendientes de migración.
+
 ## v1.17.17 TEST
 - Sincroniza la competencia del humano variante con el paso Habilidades, competencias y pericias.
 - La habilidad se identifica como racial y no consume cupos de clase.
