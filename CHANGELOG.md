@@ -1,3 +1,7 @@
+## 1.18.2 TEST
+- Selector de dotes del Humano variante: buscador integrado y lista de opciones visible en Opera, Chrome y Safari.
+- Conserva la selección en el registro único creationV2.
+
 ## 1.18.1 TEST
 - Reparación del despliegue: versión visible actualizada, acceso al creador V2 y recursos con identificador de caché.
 - Añadidos `sw.js` y `manifest.webmanifest`, ausentes del ZIP 1.18.0.

@@ -1,1 +1,12 @@
 .cb2-dialog{background:#151f30;color:#eaf0f8;border:1px solid #60738c;border-radius:15px;width:min(900px,94vw);max-height:91vh;padding:20px;overflow:auto}.cb2-dialog::backdrop{background:#030916ce}.cb2-dialog h2{color:#eed4a0}.cb2-head,.cb2-actions{display:flex;justify-content:space-between;gap:12px;align-items:center}.cb2-actions{border-top:1px solid #45556c;padding-top:12px;margin-top:16px}.cb2-progress{color:#e9c587}.cb2-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.cb2-grid label{display:flex;flex-direction:column;gap:6px}.cb2-dialog select,.cb2-dialog input{width:100%;max-width:100%}.cb2-wide{grid-column:1/-1}.cb2-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.cb2-checks label{display:flex;flex-direction:row;align-items:center;gap:8px}.cb2-checks input{width:auto;min-width:18px}.cb2-note{background:#233249;border:1px solid #52617b;border-radius:9px;padding:12px}.cb2-dialog small{color:#b7c9dd}#cb2-error{color:#ffb2a9;font-weight:700}@media(max-width:630px){.cb2-grid,.cb2-checks{grid-template-columns:1fr}.cb2-dialog{padding:12px}}
+
+/* Accessible feat chooser: no native select drop-down (Opera/Safari rendering issue). */
+.cb2-feat-picker{display:flex;flex-direction:column;gap:8px;min-width:0}.cb2-feat-picker>label{font-weight:750;color:#efdbac}
+.cb2-feat-picker input{background:#101825;color:#f8fafc;border:1px solid #627792;border-radius:8px;padding:10px}
+.cb2-feat-current{margin:0;color:#c0d2e8;font-size:13px}
+.cb2-feat-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;max-height:245px;overflow:auto;padding:8px;border:1px solid #506784;border-radius:10px;background:#111d2d;overscroll-behavior:contain}
+.cb2-feat-choice{display:flex;flex-direction:column;gap:4px;align-items:flex-start;text-align:left;padding:10px;border-radius:8px;background:#23344c;border:1px solid #526781;color:#fff;min-height:57px}
+.cb2-feat-choice b{color:#f5d392}.cb2-feat-choice small{color:#d1dff1;font-size:11px;line-height:1.4}.cb2-feat-choice.chosen{background:#3f3525;border-color:#e2bd74;box-shadow:inset 0 0 0 1px #e2bd74}
+.cb2-no-feats{grid-column:1/-1;margin:6px;color:#e1e8f2}@media(max-width:630px){.cb2-feat-results{grid-template-columns:1fr}}
+
+.cb2-warning{color:#f7d18e;background:#4c3622;border-radius:8px;padding:8px}.cb2-note p{line-height:1.45}
