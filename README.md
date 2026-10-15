@@ -1,3 +1,11 @@
+# DM.AID TEST 1.18.1 · Corrección del despliegue del Character Builder V2
+
+**Qué corregimos:** título y versión de la app, acceso visible a «Crear con V2» en Personajes, archivos JavaScript/CSS cache-busted, manifiesto y service worker de GitHub Pages.
+
+**Despliegue:** extrae todos los archivos directamente en la raíz de `DMAid-test` y realiza commit. Confirma que `index.html`, `character-builder-v2.js`, `character-builder-v2.css`, `sw.js` y `manifest.webmanifest` están en la raíz. Después de publicar abre la página y fuerza actualización (`Ctrl+F5` o recarga ignorando caché). Si quedó un SW anterior, cierra pestañas de la aplicación y vuelve a abrir.
+
+**Nota:** se trata de una versión inicial del creador V2; los catálogos de rasgos todavía no son completamente automáticos y los personajes antiguos no se migran.
+
 # DM.AID TEST 1.18.0 · Character Builder V2 (fase inicial)
 
 Nueva creación de personajes en seis etapas con un único registro `sheet.creationV2`, separado del creador anterior. `character-builder-v2.js` y `character-builder-v2.css` son nuevos archivos obligatorios en GitHub Pages.

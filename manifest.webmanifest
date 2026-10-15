@@ -1,11 +1,10 @@
 {
-  "name": "DM.AID TEST · Dungeon Master Aid",
-  "short_name": "DM.AID",
-  "description": "DM.AID 1.8.0 · Run the game. Rule the story. Gestor de D&D 5e 2014.",
-  "start_url": "./",
+  "name": "DM.AID TEST 1.18.1",
+  "short_name": "DM.AID TEST",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0e111b",
+  "background_color": "#121824",
   "theme_color": "#121824",
   "icons": [
     {

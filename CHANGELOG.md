@@ -1,3 +1,8 @@
+## 1.18.1 TEST
+- Reparación del despliegue: versión visible actualizada, acceso al creador V2 y recursos con identificador de caché.
+- Añadidos `sw.js` y `manifest.webmanifest`, ausentes del ZIP 1.18.0.
+- Se conserva el motor original de combate y el asistente antiguo como respaldo.
+
 ## DM.AID TEST 1.18.0 · Nuevo creador V2 (fase inicial)
 - Nuevo módulo aislado, seis etapas, registro único y exportación compatible.
 - Sin alterar registros de personajes existentes ni lógica de combate.

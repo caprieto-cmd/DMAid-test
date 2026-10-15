@@ -1,11 +1,6 @@
-const CACHE='compendio-combate-dmaid-v1.8.0-test-20261014';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png','./brand-art.jpg','./setup-libraries.js','./races-mmotm.js'];
-self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)))});
-self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('compendio-combate-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
-self.addEventListener('message',event=>{if(event.data&&event.data.type==='SKIP_WAITING')self.skipWaiting()});
-self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==self.location.origin||!url.pathname.startsWith(new URL(self.registration.scope).pathname))return;
-// Navegación: preferir siempre la versión publicada; si no hay red, servir copia offline.
-if(event.request.mode==='navigate'){event.respondWith(fetch(event.request).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put('./index.html',copy)).catch(()=>{})}return res}).catch(()=>caches.match('./index.html')));return}
-if(!ASSETS.some(asset=>url.pathname.endsWith(asset.slice(1))))return;
-event.respondWith(fetch(event.request).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(event.request,copy)).catch(()=>{})}return res}).catch(()=>caches.match(event.request)));
-});
+/* DM.AID TEST 1.18.1; navigation network-first to avoid stale builds. */
+const CACHE='dmaid-test-1.18.1';
+const ASSETS=['./','./index.html','./character-builder-v2.js','./character-builder-v2.css','./icon-192.png'];
+self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).catch(()=>{}));});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{const names=await caches.keys();await Promise.all(names.filter(n=>n.startsWith('dmaid-test-')&&n!==CACHE).map(n=>caches.delete(n)));await self.clients.claim();})());});
+self.addEventListener('fetch',event=>{const r=event.request;if(r.method!=='GET'||new URL(r.url).origin!==self.location.origin)return; if(r.mode==='navigate'){event.respondWith(fetch(r).catch(()=>caches.match('./index.html')));return;} const path=new URL(r.url).pathname;if(/(?:character-builder-v2\.(?:js|css)|index\.html)$/.test(path)){event.respondWith(fetch(r).catch(()=>caches.match(r,{ignoreSearch:true})));}});
