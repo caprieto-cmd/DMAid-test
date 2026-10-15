@@ -1,4 +1,4 @@
-DM.AID TEST 1.17.11: las tarjetas del controlador de iniciativa ya no muestran «Dotes de combate». Los rasgos se mantienen en el statblock completo y la hoja.
+DM.AID TEST 1.17.12: las tarjetas del controlador de iniciativa ya no muestran «Dotes de combate». Los rasgos se mantienen en el statblock completo y la hoja.
 
 DM.AID TEST 1.17.9: statblock compacto. Dotes sin títulos, resúmenes ni descripciones duplicadas; controles de combate conservados.
 
@@ -109,5 +109,9 @@ La densidad se aplica exclusivamente a las hojas de personaje desplegadas; se ma
 1.17.3: Motor CA por fórmulas excluyentes, armadura natural racial, override DM y Forma salvaje manual controlada.
 
 
-### 1.17.11
+### 1.17.12
 Al abrir la campaña se refrescan inmediatamente las tarjetas de combate y los statblocks sin iniciar un encuentro.
+
+
+### 1.17.12
+Corrige el reconocimiento de las armaduras equipadas en el modelo Armorer (Guardián/Infiltrador).
