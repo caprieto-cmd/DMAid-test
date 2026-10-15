@@ -1,0 +1,94 @@
+﻿clase,rasgo relevante en combate,estado
+Bárbaro,Furia,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Defensa sin armadura,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Ataque temerario,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Sentido del peligro,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Ataque adicional,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Movimiento rápido,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Instinto salvaje,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Crítico brutal,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Furia implacable,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Furia persistente,Catálogo de combate; ejecución automática no certificada
+Bárbaro,Campeón primordial,Catálogo de combate; ejecución automática no certificada
+Bardo,Inspiración bárdica,Catálogo de combate; ejecución automática no certificada
+Bardo,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Bardo,Fuente de inspiración,Catálogo de combate; ejecución automática no certificada
+Bardo,Contraencanto,Catálogo de combate; ejecución automática no certificada
+Bardo,Inspiración superior,Catálogo de combate; ejecución automática no certificada
+Clérigo,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Clérigo,Dominio divino,Catálogo de combate; ejecución automática no certificada
+Clérigo,Canalizar divinidad,Catálogo de combate; ejecución automática no certificada
+Clérigo,Destruir muertos vivientes,Catálogo de combate; ejecución automática no certificada
+Clérigo,Intervención divina,Catálogo de combate; ejecución automática no certificada
+Druida,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Druida,Forma salvaje,Catálogo de combate; ejecución automática no certificada
+Druida,Círculo druídico,Catálogo de combate; ejecución automática no certificada
+Druida,Cuerpo intemporal,Catálogo de combate; ejecución automática no certificada
+Druida,Conjuros bestiales,Catálogo de combate; ejecución automática no certificada
+Druida,Archidruida,Catálogo de combate; ejecución automática no certificada
+Guerrero,Estilo de combate,Catálogo de combate; ejecución automática no certificada
+Guerrero,Segundo aliento,Catálogo de combate; ejecución automática no certificada
+Guerrero,Acción súbita,Catálogo de combate; ejecución automática no certificada
+Guerrero,Ataque adicional,Catálogo de combate; ejecución automática no certificada
+Guerrero,Ataque adicional (2),Catálogo de combate; ejecución automática no certificada
+Guerrero,Ataque adicional (3),Catálogo de combate; ejecución automática no certificada
+Guerrero,Indomable,Catálogo de combate; ejecución automática no certificada
+Monje,Artes marciales,Catálogo de combate; ejecución automática no certificada
+Monje,Defensa sin armadura,Catálogo de combate; ejecución automática no certificada
+Monje,Ki,Catálogo de combate; ejecución automática no certificada
+Monje,Movimiento sin armadura,Catálogo de combate; ejecución automática no certificada
+Monje,Desviar proyectiles,Catálogo de combate; ejecución automática no certificada
+Monje,Caída lenta,Catálogo de combate; ejecución automática no certificada
+Monje,Ataque adicional,Catálogo de combate; ejecución automática no certificada
+Monje,Golpe aturdidor,Catálogo de combate; ejecución automática no certificada
+Monje,Golpes potenciados con ki,Catálogo de combate; ejecución automática no certificada
+Monje,Evasión,Catálogo de combate; ejecución automática no certificada
+Monje,Quietud mental,Catálogo de combate; ejecución automática no certificada
+Monje,Pureza corporal,Catálogo de combate; ejecución automática no certificada
+Monje,Alma diamante,Catálogo de combate; ejecución automática no certificada
+Monje,Cuerpo vacío,Catálogo de combate; ejecución automática no certificada
+Monje,Ser perfecto,Catálogo de combate; ejecución automática no certificada
+Paladín,Sentido divino,Catálogo de combate; ejecución automática no certificada
+Paladín,Imposición de manos,Catálogo de combate; ejecución automática no certificada
+Paladín,Estilo de combate,Catálogo de combate; ejecución automática no certificada
+Paladín,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Paladín,Castigo divino,Catálogo de combate; ejecución automática no certificada
+Paladín,Ataque adicional,Catálogo de combate; ejecución automática no certificada
+Paladín,Aura de protección,Catálogo de combate; ejecución automática no certificada
+Paladín,Aura de valor,Catálogo de combate; ejecución automática no certificada
+Paladín,Castigo divino mejorado,Catálogo de combate; ejecución automática no certificada
+Paladín,Toque purificador,Catálogo de combate; ejecución automática no certificada
+Paladín,Auras ampliadas,Catálogo de combate; ejecución automática no certificada
+Explorador,Estilo de combate,Catálogo de combate; ejecución automática no certificada
+Explorador,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Explorador,Conciencia primigenia,Catálogo de combate; ejecución automática no certificada
+Explorador,Ataque adicional,Catálogo de combate; ejecución automática no certificada
+Explorador,Zancada de la tierra,Catálogo de combate; ejecución automática no certificada
+Explorador,Desvanecerse,Catálogo de combate; ejecución automática no certificada
+Explorador,Sentidos salvajes,Catálogo de combate; ejecución automática no certificada
+Explorador,Azote de enemigos,Catálogo de combate; ejecución automática no certificada
+Pícaro,Ataque furtivo (Sneak Attack),Catálogo de combate; ejecución automática no certificada
+Pícaro,Acción astuta (Cunning Action),Catálogo de combate; ejecución automática no certificada
+Pícaro,Esquiva asombrosa (Uncanny Dodge),Catálogo de combate; ejecución automática no certificada
+Pícaro,Evasión (Evasion),Catálogo de combate; ejecución automática no certificada
+Pícaro,Sentido ciego (Blindsense),Catálogo de combate; ejecución automática no certificada
+Pícaro,Mente escurridiza (Slippery Mind),Catálogo de combate; ejecución automática no certificada
+Pícaro,Elusivo (Elusive),Catálogo de combate; ejecución automática no certificada
+Pícaro,Golpe de suerte (Stroke of Luck),Catálogo de combate; ejecución automática no certificada
+Pícaro,Asesinar (Assassinate),Catálogo de combate; ejecución automática no certificada
+Pícaro,Golpe mortal (Death Strike),Catálogo de combate; ejecución automática no certificada
+Hechicero,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Hechicero,Fuente de magia,Catálogo de combate; ejecución automática no certificada
+Hechicero,Metamagia,Catálogo de combate; ejecución automática no certificada
+Hechicero,Restauración hechicera,Catálogo de combate; ejecución automática no certificada
+Brujo,Magia de pacto,Catálogo de combate; ejecución automática no certificada
+Brujo,Invocaciones sobrenaturales,Catálogo de combate; ejecución automática no certificada
+Brujo,Arcanum místico (6.º),Catálogo de combate; ejecución automática no certificada
+Brujo,Arcanum místico (7.º),Catálogo de combate; ejecución automática no certificada
+Brujo,Arcanum místico (8.º),Catálogo de combate; ejecución automática no certificada
+Brujo,Arcanum místico (9.º),Catálogo de combate; ejecución automática no certificada
+Brujo,Maestro sobrenatural,Catálogo de combate; ejecución automática no certificada
+Mago,Lanzamiento de conjuros,Catálogo de combate; ejecución automática no certificada
+Mago,Recuperación arcana,Catálogo de combate; ejecución automática no certificada
+Mago,Maestría de conjuros,Catálogo de combate; ejecución automática no certificada
+Mago,Conjuros característicos,Catálogo de combate; ejecución automática no certificada
