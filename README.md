@@ -1,42 +1,30 @@
-# DM.AID · Motor de reglas raciales · Fase 9
+# DMAid, versión depurada para pruebas (base 1.18.4)
 
-**Ámbito:** D&D 5e 2014–2023; biblioteca de referencia PHB 2014 + MPMM 2022. **No contiene reglas 2024**.
+Esta copia conserva los 11 recursos de ejecución de la aplicación original SIN alterar el código funcional. Se eliminan del paquete de despliegue documentos históricos, ensayos y dos módulos sin referencias directas (`races-mmotm.js`, `setup-libraries.js`). El ZIP original debe conservarse como respaldo.
 
-## Contenido
-- `races.pre2024.normalized.v7.json`: biblioteca intacta de fase 8.
-- `racial-engine.js`: motor puro UMD (navegador `window.DMAidRacialEngine`; Node `require`). No modifica campañas, ni `localStorage`, ni fichas existentes.
-- `test-engine.js`: 12 pruebas automáticas.
+## Cómo probar
 
-## Ejemplo de integración
-```js
-const data = await fetch('./races.pre2024.normalized.v7.json').then(r=>r.json());
-const result = DMAidRacialEngine.resolve(data, {
-  raceId:'race.phb2014.human.variant',
-  level:1,
-  choices: {
-    abilityIncreases:{DES:1,CON:1},
-    'race.phb2014.human.variant/skill-proficiency-(choice)':['Percepción'],
-    'race.phb2014.human.variant/feat-(choice)':['Alert']
-  }
-});
-// result.abilityIncreases, result.proficiencies, result.pendingChoices, result.traits ...
-```
+1. Crear una rama `audit/clean-1.18.4` en el repositorio existente (o un repositorio temporal privado para un aislamiento completo).
+2. Subir **todos los archivos de esta carpeta juntos a la raíz**, no solo `index.html`.
+3. Activar GitHub Pages para esa rama, desde la raíz, si GitHub permite publicar desde ella. Si Pages publica únicamente desde `main` o `/docs` en tu configuración, usar un repositorio temporal para la prueba sin tocar producción.
+4. Abrir la URL HTTPS proporcionada por Pages, idealmente en una ventana privada, para no reutilizar almacenamiento ni cachés anteriores.
+5. Abrir las herramientas de desarrollo del navegador y observar la pestaña Network y Console. Confirmar que no hay 404 ni errores JavaScript.
 
-## Contrato
-El motor **deriva**, no guarda. Debe ejecutarse siempre sobre las elecciones originales al recalcular una ficha. La selección de raza se identifica mediante ID estable, no mediante un nombre traducido. Las subrazas heredan rasgos del padre, pero `fixed_total` sustituye el incremento del padre. Los efectos que no deben aplicarse permanentemente aparecen en `conditionalEffects` u `otherEffects` con su procedencia.
+La carga de bestiarios, conjuros y objetos utiliza GitHub raw externo y puede fallar con conexión ausente, bloqueo de red o cambios aguas arriba. El service worker almacena solo parte de los recursos; no equivale a disponibilidad offline de todos los compendios.
 
-`pendingChoices` exige decisiones del creador y `errors` exige corregir entradas inválidas. La aplicación NO debe permitir confirmar una ficha con estos elementos pendientes.
+## Lista de pruebas manuales
 
-### Límites actuales
-- Efectos pasivos modelados: incremento racial, competencias declaradas, sentidos, resistencias, inmunidades, velocidad, armas naturales, bono de PG por nivel.
-- Conjuros raciales: lectura declarativa de progresión y niveles. No actualiza todavía el gasto de espacios ni el inventario de recursos de combate.
-- Recursos: genera **definiciones estables y claves de seguimiento**; un gestor de combate deberá controlar sus usos y descansos, sin reinicializarlos al recalcular la ficha.
-- Modificadores condicionales (CA de Tortle, transformaciones, ventajas, requisitos de armadura), acciones, reacciones y habilidades especiales: **conservados como datos**, no ejecutados automáticamente. Requieren reglas adicionales.
-- Opciones variables como rasgos de subraza y dotes: detecta selecciones y almacena su efecto declarativo, pero no sustituye el futuro motor de dotes ni valida todos sus prerrequisitos.
-- Cobertura limitada a los 53 registros que están en la fuente V7. No implica totalidad de material anterior a 2024.
-- La fuente V7 contiene algunos campos parciales que requieren validación cláusula por cláusula. No debe asumirse que todas las mecánicas están certificadas.
+- [ ] Carga inicial en navegador, branding, navegación y consola libre de errores.
+- [ ] Crear campaña y personaje, guardar, recargar y revisar persistencia.
+- [ ] Elegir raza/subraza; verificar características y elecciones pendientes.
+- [ ] Crear personajes de distintas clases; validar elecciones de equipo inicial contra los objetos cargados.
+- [ ] Crear personaje multiclase y confirmar reglas de competencias y equipo de primera clase.
+- [ ] Importar catálogos de monstruos, conjuros y objetos y confirmar búsquedas y filtros.
+- [ ] Crear y editar inventario, equipar ítems y recalcular CA cuando corresponda.
+- [ ] Combate: iniciativa, PG, condiciones, conjuros y recargas.
+- [ ] Recargar tras instalación PWA; revisar actualizaciones y apertura sin conexión de la interfaz básica.
+- [ ] Exportar/importar datos en una campaña descartable y comparar resultados.
 
-## Pruebas
-`node test-engine.js`
+## Límites de validación
 
-**No subir a GitHub aún:** este es un módulo de desarrollo desacoplado, no una versión desplegable de DM.AID.
+Verificación estática: referencias de ficheros, sintaxis de 95 bloques script HTML y los archivos JS individuales mediante Node; no prueba la ejecución real ni la completitud de reglas D&D. Se detectaron nombres de funciones repetidos en el archivo HTML; no se eliminaron porque podrían pertenecer a distintos ámbitos o sobrescribir una implementación anterior deliberadamente.
