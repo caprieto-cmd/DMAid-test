@@ -1,0 +1,5 @@
+DM.AID TEST · idiomas acumulativos
+Selecciona raza, clase, subclase y trasfondo. En el paso Trasfondo aparecen todas las casillas de idiomas con el total pendiente. Común y otros idiomas fijos se asignan automáticamente.
+Prueba: Humano variante + Clérigo Dominio del Conocimiento + Erudito del claustro = Común y 5 elecciones, sin duplicados.
+Idiomas adicionales y especiales aparecen aparte y pueden necesitar aprobación del DM.
+Esta entrega corrige el sistema de idiomas del Creador V2 original, conservando el resto de archivos del proyecto.
