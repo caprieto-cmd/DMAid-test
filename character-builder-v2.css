@@ -10,11 +10,3 @@
 .cb2-no-feats{grid-column:1/-1;margin:6px;color:#e1e8f2}@media(max-width:630px){.cb2-feat-results{grid-template-columns:1fr}}
 
 .cb2-warning{color:#f7d18e;background:#4c3622;border-radius:8px;padding:8px}.cb2-note p{line-height:1.45}
-/* Selector acumulativo de idiomas, edición 2014–2023 */
-.cb2-language-panel{margin-top:1rem;padding:1rem;border:1px solid #41546c;border-radius:12px;background:#142235}
-.cb2-language-panel h3{margin:.2rem 0 .7rem;color:#f6c675}
-.cb2-language-group{margin:.7rem 0}
-.cb2-language-group>.cb2-checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.3rem .7rem;margin-top:.5rem}
-.cb2-language-group label{display:flex;gap:.45rem;align-items:center;padding:.4rem;border:1px solid #354b64;border-radius:6px;cursor:pointer}
-.cb2-language-group label:has(input:disabled){opacity:.7;cursor:default}
-.cb2-language-panel details{margin-top:1rem}.cb2-language-panel summary{cursor:pointer;color:#d8e7fc}

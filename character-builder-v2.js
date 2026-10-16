@@ -214,11 +214,20 @@ function gearWeaponKind(text){const n=canonGearName(text);if(!n.includes('elegir
  if(n.includes('arma marcial'))return 'martial';
  return null;
 }
-function gearChoicesForKind(kind){const names=kind==='simple-melee'?SIMPLE_MELEE_2014:kind==='simple'?[...SIMPLE_MELEE_2014,...SIMPLE_RANGED_2014]:kind==='martial-melee'?MARTIAL_MELEE_2014:[...MARTIAL_MELEE_2014,...MARTIAL_RANGED_2014];
- const catalog=creatorCatalogItems();const byName=new Map();
- for(const o of catalog){if(!o?.name||!['PHB','SRD','PHB2014','PHB 2014'].includes(String(o.source||'').toUpperCase().replace('2014','2014')))continue;
-  const normalized=canonGearName(o.name);for(const name of names){const aliases=GEAR_NAMES_2014[name]||[name];if(aliases.some(alias=>canonGearName(alias)===normalized)&&!byName.has(name))byName.set(name,{display:o.name,canonical:name,source:o.source,catalogName:o.name});}}
- return names.filter(n=>byName.has(n)).map(n=>byName.get(n));
+function gearChoicesForKind(kind){
+ // El índice de armas PHB 2014 forma parte de DM.AID incluso sin importar Objetos.
+ // El compendio añade metadatos cuando está disponible; nunca restringe las opciones.
+ const keys=kind==='simple-melee'?['simpleMelee']:kind==='simple'?['simpleMelee','simpleRanged']:kind==='martial-melee'?['martialMelee']:['martialMelee','martialRanged'];
+ const indexed=(typeof WEAPONS_V153!=='undefined'&&WEAPONS_V153)?keys.flatMap(k=>WEAPONS_V153[k]||[]):[];
+ const allowed=kind==='simple-melee'?SIMPLE_MELEE_2014:kind==='simple'?[...SIMPLE_MELEE_2014,...SIMPLE_RANGED_2014]:kind==='martial-melee'?MARTIAL_MELEE_2014:[...MARTIAL_MELEE_2014,...MARTIAL_RANGED_2014];
+ const catalog=creatorCatalogItems();
+ return allowed.map(canonical=>{
+  const labels=GEAR_NAMES_2014[canonical]||[canonical];
+  const fromIndex=indexed.find(w=>labels.some(a=>canonGearName(a)===canonGearName(w[0])||canonGearName(a)===canonGearName(w[1])));
+  const imported=catalog.find(o=>o?.name&&labels.some(a=>canonGearName(a)===canonGearName(o.name))&& !/2024/.test(String(o.source||'')));
+  const display=fromIndex?.[0]||imported?.name||labels.find(l=>l!==canonical)||canonical;
+  return {canonical,display,source:imported?.source||'PHB 2014',catalogName:imported?.name||display,damage:fromIndex?.[2]||'',properties:fromIndex?.[3]||'',linked:!!imported};
+ });
 }
 function gearItemSelectionRows(){const g=creatorStartingGear(model.classes[0].name);if(!g)return [];const picked=[];
  function collect(row,slot){if(!Array.isArray(row)||typeof row[0]!=='string')return;
@@ -230,9 +239,9 @@ function gearItemSelectionRows(){const g=creatorStartingGear(model.classes[0].na
  return picked;
 }
 function gearCatalogPanel(){const rows=gearItemSelectionRows();if(!rows.length)return '';
- return '<div class="cb2-wide"><h3>Elegir objetos concretos del compendio</h3><p>Selecciona cada arma. Se utilizan únicamente objetos del catálogo PHB 2014 cargado en la pestaña Objetos.</p>'+rows.map(r=>{
+ return '<div class="cb2-wide"><h3>Elegir objetos concretos del compendio</h3><p>Selecciona cada arma del índice PHB 2014. Si existe en Objetos, se enlaza automáticamente con su ficha.</p>'+rows.map(r=>{
   const options=gearChoicesForKind(r.kind),saved=model.equipment.itemPicks?.[r.slot]||'';
-  return `<label>${escapeText(r.label)}<select data-gear-slot="${escapeText(r.slot)}"><option value="">Selecciona un arma…</option>${options.map(o=>`<option value="${escapeText(o.canonical)}" ${saved===o.canonical?'selected':''}>${escapeText(o.display)} · ${escapeText(o.source)}</option>`).join('')}</select></label>${!options.length?'<p class="cb2-warning">No hay armas compatibles cargadas en el Compendio de objetos. Carga los objetos PHB 2014 antes de continuar.</p>':''}`;
+  return `<label>${escapeText(r.label)}<select data-gear-slot="${escapeText(r.slot)}"><option value="">Selecciona un arma…</option>${options.map(o=>`<option value="${escapeText(o.canonical)}" ${saved===o.canonical?'selected':''}>${escapeText(o.display)} · ${escapeText(o.damage||'')} ${o.linked?'· Compendio':'· PHB 2014'}</option>`).join('')}</select></label>${!options.length?'<p class="cb2-warning">No hay armas compatibles cargadas en el Compendio de objetos. Carga los objetos PHB 2014 antes de continuar.</p>':''}`;
  }).join('')+'</div>';
 }
 function resolveGearRow(row,slot,picks){if(!Array.isArray(row)||typeof row[0]!=='string')return [row];const [name,quantity=1]=row,kind=gearWeaponKind(name);if(!kind)return [row];
