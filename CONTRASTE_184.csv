@@ -1,0 +1,176 @@
+﻿book,race,trait,pdf_page,name_found_near_source,numbers_in_description,description
+PHB-2014,Humano,Extra Language,33,True,,"Puedes hablar, leer y escribir un idioma adicional a tu elección, además del común."
+PHB-2014,Elfo,Darkvision,25,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+PHB-2014,Elfo,Keen Senses,25,True,,Obtienes competencia en Percepción.
+PHB-2014,Elfo,Fey Ancestry,25,True,,Tienes ventaja en salvaciones contra la condición hechizado y la magia no puede dormirte.
+PHB-2014,Elfo,Trance,25,True,"4,8,4,2014","No necesitas dormir. Meditas profundamente durante 4 horas diarias, permaneciendo semiconsciente; esta meditación ofrece el beneficio de 8 horas de sueño para un humano. No equivale automáticamente a completar un descanso largo en solo 4 horas según el texto de PHB 2014."
+PHB-2014,Alto elfo,Elf Weapon Training,26,True,,"Competencia con espada larga, espada corta, arco corto y arco largo."
+PHB-2014,Alto elfo,Cantrip,26,True,,Escoge un truco de la lista de conjuros de mago. Inteligencia es tu característica para lanzarlo.
+PHB-2014,Alto elfo,Extra Language,26,True,,"Escoge un idioma adicional que puedas hablar, leer y escribir."
+PHB-2014,Elfo de los bosques,Elf Weapon Training,26,True,,"Competencia con espada larga, espada corta, arco corto y arco largo."
+PHB-2014,Elfo de los bosques,Fleet of Foot,26,True,"35,30",Tu velocidad al caminar es de 35 pies en lugar de 30.
+PHB-2014,Elfo de los bosques,Mask of the Wild,26,False,,"Puedes intentar esconderte cuando estés ligeramente oscurecido por fenómenos naturales, como follaje, lluvia intensa, nieve o niebla."
+PHB-2014,Drow,Superior Darkvision,26,True,"120,60",Tu visión en la oscuridad alcanza 120 pies en vez de 60.
+PHB-2014,Drow,Sunlight Sensitivity,26,True,,"Tienes desventaja en tiradas de ataque y en pruebas de Sabiduría (Percepción) que dependan de la vista si tú, el objetivo del ataque o aquello que intentas percibir está bajo luz solar directa."
+PHB-2014,Drow,Drow Magic,26,True,"3,5",Conoces el truco luces danzantes. Desde nivel 3 lanzas fuego feérico una vez por descanso largo y desde nivel 5 oscuridad una vez por descanso largo. Carisma es tu característica de lanzamiento de estos conjuros.
+PHB-2014,Drow,Drow Weapon Training,26,True,,"Competencia con estoque, espada corta y ballesta de mano."
+PHB-2014,Enano,Darkvision,22,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+PHB-2014,Enano,Dwarven Resilience,22,True,,Tienes ventaja en salvaciones contra veneno y resistencia al daño de veneno.
+PHB-2014,Enano,Dwarven Combat Training,22,True,,"Competencia con hacha de batalla, hacha de mano, martillo ligero y martillo de guerra."
+PHB-2014,Enano,Tool Proficiency,22,True,,"Escoge competencia con una de estas herramientas: herramientas de herrero, suministros de cervecero o herramientas de albañil."
+PHB-2014,Enano,Stonecunning,22,True,,"Cuando realices una prueba de Inteligencia (Historia) relacionada con el origen de una obra en piedra, se te considera competente en Historia y sumas el doble de tu bonificador de competencia en lugar del habitual."
+PHB-2014,Enano de las colinas,Dwarven Toughness,22,True,"1,1",Tu máximo de puntos de golpe aumenta en 1 al adquirir este rasgo y en 1 adicional cada vez que ganas un nivel.
+PHB-2014,Enano de las montañas,Dwarven Armor Training,22,True,,Obtienes competencia con armaduras ligeras y medias.
+PHB-2014,Mediano,Lucky,30,True,1,"Cuando obtienes un 1 natural en el d20 de una tirada de ataque, prueba de característica o tirada de salvación, puedes repetir ese dado y debes utilizar la nueva tirada."
+PHB-2014,Mediano,Brave,30,True,,Tienes ventaja en tiradas de salvación para evitar quedar asustado.
+PHB-2014,Mediano,Halfling Nimbleness,30,True,,Puedes moverte a través del espacio de cualquier criatura cuyo tamaño sea superior al tuyo.
+PHB-2014,Piesligeros,Naturally Stealthy,30,True,,Puedes intentar esconderte incluso cuando solo estás oculto por una criatura de al menos una categoría de tamaño superior a la tuya.
+PHB-2014,Fornido,Stout Resilience,30,True,,Tienes ventaja en las salvaciones contra veneno y resistencia al daño por veneno.
+PHB-2014,Dracónido,Draconic Ancestry,36,True,"5,30,5,30,5,30,5,30,5,30,15,15,15,15,15","Selecciona un tipo de dragón: negro (ácido; línea 5×30 pies, DES), azul (rayo; línea 5×30, DES), latón (fuego; línea 5×30, DES), bronce (rayo; línea 5×30, DES), cobre (ácido; línea 5×30, DES), oro (fuego; cono 15 pies, DES), verde (veneno; cono 15, CON), rojo (fuego; cono 15, DES), plata (frío; cono 15, CON) o blanco (frío; cono 15, CON). Tu elección define el aliento y la resistencia."
+PHB-2014,Dracónido,Breath Weapon,36,True,"8,2d6,1,5,3d6,6,10,4d6,11,15,5d6,16","Como acción, exhalas energía en el área indicada por tu ascendencia. Los afectados hacen la salvación correspondiente, CD 8 + competencia + modificador de Constitución. Si tienen éxito, reciben la mitad del daño. Inflige 2d6 a niveles 1–5; 3d6 a 6–10; 4d6 a 11–15; 5d6 a partir de 16. Un uso por descanso corto o largo."
+PHB-2014,Dracónido,Damage Resistance,36,True,,Tienes resistencia al tipo de daño asociado con tu ascendencia dracónica.
+PHB-2014,Gnomo,Darkvision,39,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+PHB-2014,Gnomo,Gnome Cunning,39,True,,"Tienes ventaja en las salvaciones de Inteligencia, Sabiduría y Carisma contra magia."
+PHB-2014,Gnomo de los bosques,Natural Illusionist,39,True,,Conoces el truco ilusión menor; Inteligencia es tu característica de lanzamiento.
+PHB-2014,Gnomo de los bosques,Speak with Small Beasts,39,True,,Puedes comunicar ideas sencillas mediante sonidos y gestos con bestias Pequeñas o menores. No les concedes inteligencia adicional ni obligas a obedecer.
+PHB-2014,Gnomo de las rocas,Artificer’s Lore,39,True,,"Cuando realizas una prueba de Inteligencia (Historia) relacionada con objetos mágicos, objetos alquímicos o dispositivos tecnológicos, añades dos veces tu bonificador de competencia en lugar del habitual."
+PHB-2014,Gnomo de las rocas,Tinker,39,True,"1,10,5,1,24","Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 PG) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales."
+PHB-2014,Semielfo,Darkvision,41,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+PHB-2014,Semielfo,Fey Ancestry,41,True,,Tienes ventaja en salvaciones contra la condición hechizado y la magia no puede dormirte.
+PHB-2014,Semielfo,Skill Versatility,41,True,,Obtienes competencia en dos habilidades cualesquiera de tu elección.
+PHB-2014,Semiorco,Darkvision,43,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+PHB-2014,Semiorco,Menacing,43,True,,Obtienes competencia en Intimidación.
+PHB-2014,Semiorco,Relentless Endurance,43,True,"0,1","Cuando te reducen a 0 PG sin matarte directamente, puedes quedarte con 1 PG en su lugar. Recuperas el uso tras terminar un descanso largo."
+PHB-2014,Semiorco,Savage Attacks,43,True,,"Cuando consigues un impacto crítico con un ataque de arma cuerpo a cuerpo, tira un dado de daño del arma una vez más y añádelo al daño adicional del crítico."
+PHB-2014,Tiefling,Darkvision,45,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+PHB-2014,Tiefling,Hellish Resistance,45,False,,Tienes resistencia al daño de fuego.
+PHB-2014,Tiefling,Infernal Legacy,45,True,"3,2,5",Conoces el truco taumaturgia. Desde nivel 3 lanzas reprensión infernal como conjuro de nivel 2 una vez por descanso largo. Desde nivel 5 lanzas oscuridad una vez por descanso largo. Carisma es tu característica de lanzamiento.
+MPMM-2022,Aarakocra,Flight,7,True,,Tienes velocidad de vuelo igual a tu velocidad al caminar gracias a tus alas. No funciona llevando armadura media o pesada.
+MPMM-2022,Aasimar,Celestial Resistance,8,True,,Tienes resistencia al daño necrótico y radiante.
+MPMM-2022,Aasimar,Darkvision,8,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Aasimar,Light Bearer,8,True,,Conoces el truco luz; Carisma es tu característica de lanzamiento para este truco.
+MPMM-2022,Aasimar,Celestial Revelation,8,True,"3,1,10,8,10,10,10","Al nivel 3 elige una revelación: Manto necrótico, Consumo radiante o Alma radiante. Con una acción adicional la activas 1 minuto; puedes terminarla como acción adicional. Un uso por descanso largo. Manto: criaturas que no sean tus aliados a 10 pies y que puedan verte hacen salvación de Carisma (CD 8 + competencia + CAR) o quedan asustadas hasta el fin de tu siguiente turno; una vez por turno añades daño necrótico igual a tu competencia a un objetivo dañado por un ataque o conjuro. Consumo: luz brillante 10 pies y tenue otros 10; al final de cada turno todas las criaturas a 10 pies reciben daño radiante igual a competencia; una vez por turno añades el mismo daño a un objetivo dañado por ataque o conjuro. Alma: velocidad de vuelo igual a caminar; una vez por turno añades daño radiante igual a competencia a un objetivo dañado por ataque o conjuro."
+MPMM-2022,Bugbear,Darkvision,9,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Bugbear,Fey Ancestry,9,True,,Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.
+MPMM-2022,Bugbear,Long-Limbed,9,True,5,"Cuando realizas un ataque cuerpo a cuerpo en tu turno, tu alcance para ese ataque aumenta en 5 pies."
+MPMM-2022,Bugbear,Powerful Build,9,True,,"Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar."
+MPMM-2022,Bugbear,Sneaky,9,True,,"Tienes competencia en Sigilo. Además, puedes atravesar y detenerte en un espacio lo suficientemente grande para una criatura Pequeña sin tener que apretarte."
+MPMM-2022,Centaur,Charge,10,True,30,"Si te mueves al menos 30 pies en línea recta hacia una criatura y después la impactas con un ataque de arma cuerpo a cuerpo en el mismo turno, puedes realizar inmediatamente un ataque con tus cascos contra ese objetivo como acción adicional."
+MPMM-2022,Centaur,Equine Build,10,True,"4,1","Cuentas como una categoría de tamaño mayor para carga y para empujar o arrastrar peso. Al trepar usando manos y pies, cada pie avanzado consume 4 pies adicionales en lugar de 1 adicional."
+MPMM-2022,Centaur,Hooves,10,True,1d6,Tus cascos son ataques desarmados. Al impactar causan 1d6 + modificador de Fuerza de daño contundente.
+MPMM-2022,Centaur,Natural Affinity,10,True,,"Escoge competencia con una habilidad: Trato con Animales, Medicina, Naturaleza o Supervivencia."
+MPMM-2022,Changeling,Changeling Instincts,11,True,,"Elige dos competencias entre Engaño, Perspicacia, Intimidación, Interpretación y Persuasión."
+MPMM-2022,Changeling,Shapechanger,11,True,,"Como acción cambias tu aspecto y tu voz; puedes alterar tamaño entre Pequeño y Mediano, pero no tus estadísticas. La forma debe conservar la disposición básica de tus extremidades y no puedes copiar a quien nunca hayas visto. Equipo y ropa no cambian. Permaneces así hasta revertir con una acción o morir."
+MPMM-2022,Deep Gnome,Darkvision,12,True,120,Visión en la oscuridad hasta 120 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Deep Gnome,Gnomish Magic Resistance,12,True,,"Tienes ventaja en las salvaciones de Inteligencia, Sabiduría y Carisma contra conjuros."
+MPMM-2022,Deep Gnome,Gift Of The Svirfneblin,12,False,"3,5","Desde nivel 3 puedes lanzar disfrazarse; desde nivel 5, indetectabilidad (sin componente material). Cada conjuro tiene un uso gratuito por descanso largo, y también puedes utilizar espacios de conjuro apropiados. Escoge INT, SAB o CAR como característica de lanzamiento."
+MPMM-2022,Deep Gnome,Svirfneblin Camouflage,12,True,,"Cuando haces una prueba de Destreza (Sigilo), puedes obtener ventaja en esa tirada. Usos iguales a tu bonificador de competencia por descanso largo."
+MPMM-2022,Duergar,Darkvision,13,True,120,Visión en la oscuridad hasta 120 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Duergar,Duergar Magic,13,True,"3,5","Desde nivel 3 puedes lanzar agrandar/reducir solo sobre ti; desde nivel 5 puedes lanzar invisibilidad solo sobre ti. No requieren componentes materiales al lanzarlos con este rasgo. Cada conjuro tiene un uso gratuito por descanso largo y también puedes gastar espacios adecuados. Escoge INT, SAB o CAR."
+MPMM-2022,Duergar,Dwarven Resilience,13,True,,"Tienes ventaja en salvaciones para evitar o finalizar la condición envenenado, y resistencia al daño de veneno."
+MPMM-2022,Duergar,Psionic Fortitude,13,True,,Tienes ventaja en salvaciones para evitar o terminar las condiciones hechizado y aturdido sobre ti.
+MPMM-2022,Eladrin,Darkvision,14,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Eladrin,Fey Ancestry,14,True,,Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.
+MPMM-2022,Eladrin,Fey Step,14,True,"30,3,2,10,1,5,5,5,8","Como acción adicional te teletransportas hasta 30 pies a un espacio desocupado que veas. Usos iguales a competencia por descanso largo. Desde nivel 3, según estación: Otoño: tras el salto hasta 2 criaturas visibles a 10 pies hacen salvación de SAB o quedan hechizadas 1 minuto, hasta que tú o tus aliados las dañen. Invierno: una criatura visible a 5 pies antes de saltar salva SAB o queda asustada hasta el final de tu siguiente turno. Primavera: puedes tocar a una criatura voluntaria a 5 pies, que se teletransporta en tu lugar. Verano: después del salto, criaturas elegidas visibles a 5 pies reciben fuego igual a competencia. CD 8 + competencia + INT, SAB o CAR, escogida al crear el personaje."
+MPMM-2022,Eladrin,Keen Senses,14,True,,Obtienes competencia en Percepción.
+MPMM-2022,Eladrin,Trance,14,True,4,"No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación)."
+MPMM-2022,Fairy,Fairy Magic,15,True,"3,5","Conoces arte druídico. Desde nivel 3 puedes lanzar fuego feérico y desde nivel 5 agrandar/reducir. Cada uno de esos conjuros tiene un uso gratuito por descanso largo; también puedes usar espacios de conjuro adecuados. Escoge INT, SAB o CAR para lanzarlos."
+MPMM-2022,Fairy,Flight,15,True,,Tienes velocidad de vuelo igual a tu velocidad al caminar gracias a tus alas. No funciona llevando armadura media o pesada.
+MPMM-2022,Firbolg,Firbolg Magic,16,True,3,"Puedes lanzar detectar magia y disfrazarse una vez cada uno por descanso largo, o gastar espacios de conjuro. Con disfrazarse puedes parecer hasta 3 pies más alto o bajo. Escoge INT, SAB o CAR como característica de lanzamiento."
+MPMM-2022,Firbolg,Hidden Step,16,True,,"Como acción adicional te vuelves invisible hasta el comienzo de tu siguiente turno, o hasta que ataques, tires daño u obligues a alguien a salvar. Usos iguales a competencia por descanso largo."
+MPMM-2022,Firbolg,Powerful Build,16,True,,"Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar."
+MPMM-2022,Firbolg,Speech Of Beast And Leaf,16,True,,"Puedes comunicar ideas básicas a bestias, plantas y vegetación, que entienden tus palabras pero no necesariamente pueden responderte. Tienes ventaja en pruebas de Carisma para influir sobre ellas."
+MPMM-2022,Air Genasi,Darkvision,17,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Air Genasi,Unending Breath,17,True,,Puedes contener la respiración indefinidamente mientras no estés incapacitado.
+MPMM-2022,Air Genasi,Lightning Resistance,17,True,,Resistencia al daño de relámpago.
+MPMM-2022,Air Genasi,Mingle With The Wind,17,True,"3,5","Conoces agarre electrizante. Desde nivel 3 lanzas caída de pluma y desde nivel 5 levitar, sin materiales. Cada uno de esos conjuros tiene un uso gratuito por descanso largo y puedes además usar espacios adecuados. Escoge INT, SAB o CAR."
+MPMM-2022,Earth Genasi,Darkvision,18,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Earth Genasi,Earth Walk,18,True,,Puedes ignorar el movimiento adicional del terreno difícil cuando caminas sobre el suelo o un piso.
+MPMM-2022,Earth Genasi,Merge With Stone,18,True,"5,2","Conoces protección contra armas; puedes lanzarla normalmente y como acción adicional tantas veces como tu competencia por descanso largo. Desde nivel 5 lanzas pasar sin dejar rastro sin componente material una vez por descanso largo o con un espacio de conjuro de nivel 2 o superior. Escoge INT, SAB o CAR."
+MPMM-2022,Fire Genasi,Darkvision,18,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Fire Genasi,Fire Resistance,18,True,,Resistencia al daño de fuego.
+MPMM-2022,Fire Genasi,Reach To The Blaze,18,True,"3,5","Conoces producir llama. Desde nivel 3 lanzas manos ardientes y desde nivel 5 hoja de fuego, esta última sin material. Cada conjuro tiene un uso gratuito por descanso largo y admite espacios de conjuro apropiados. Escoge INT, SAB o CAR."
+MPMM-2022,Water Genasi,Darkvision,18,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Water Genasi,Acid Resistance,18,True,,Resistencia al daño de ácido.
+MPMM-2022,Water Genasi,Amphibious,18,True,,Puedes respirar aire y agua.
+MPMM-2022,Water Genasi,Swim,18,True,,Tu velocidad de nado es igual a tu velocidad al caminar.
+MPMM-2022,Water Genasi,Call To The Wave,18,False,"3,5","Conoces salpicadura ácida. Desde nivel 3 lanzas crear o destruir agua, desde nivel 5 caminar sobre el agua (sin material). Cada conjuro tiene un uso gratuito por descanso largo o puede lanzarse con espacios adecuados. Escoge INT, SAB o CAR."
+MPMM-2022,Githyanki,Astral Knowledge,19,True,,"Al terminar un descanso largo, escoge competencia con una habilidad y además un arma o una herramienta del PHB; ambas duran hasta terminar tu próximo descanso largo."
+MPMM-2022,Githyanki,Githyanki Psionics,19,True,"3,5","Conoces mano de mago, invisible cuando la lanzas con este rasgo. Desde nivel 3 lanzas salto; desde nivel 5 paso brumoso. Cada conjuro tiene un uso gratuito por descanso largo y puedes usar espacios adecuados. No se necesitan componentes al lanzarlos con el rasgo. Escoge INT, SAB o CAR."
+MPMM-2022,Githyanki,Psychic Resilience,19,True,,Resistencia al daño psíquico.
+MPMM-2022,Githzerai,Githzerai Psionics,20,True,"3,5","Conoces mano de mago, invisible cuando la lanzas con este rasgo. Desde nivel 3 lanzas escudo; desde nivel 5 detectar pensamientos. Cada conjuro tiene un uso gratuito por descanso largo y puedes usar espacios adecuados. No necesitas componentes al lanzarlos mediante el rasgo. Escoge INT, SAB o CAR."
+MPMM-2022,Githzerai,Mental Discipline,20,True,,Ventaja en salvaciones para evitar o terminar las condiciones hechizado y asustado.
+MPMM-2022,Githzerai,Psychic Resilience,20,True,,Resistencia al daño psíquico.
+MPMM-2022,Goblin,Darkvision,21,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Goblin,Fey Ancestry,21,True,,Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.
+MPMM-2022,Goblin,Fury Of The Small,21,False,,"Cuando dañes con un ataque o conjuro a una criatura de tamaño mayor que tú, puedes añadir daño igual a competencia; no más de una vez por turno. Usos iguales a competencia por descanso largo."
+MPMM-2022,Goblin,Nimble Escape,21,True,,En cada uno de tus turnos puedes realizar Esconderse o Destrabarse como acción adicional.
+MPMM-2022,Goliath,Little Giant,22,True,,"Obtienes competencia en Atletismo. Cuentas como una talla mayor al calcular carga y peso que puedes empujar, arrastrar o levantar."
+MPMM-2022,Goliath,Mountain Born,22,True,"20,000","Tienes resistencia al daño de frío y estás aclimatado naturalmente a altitudes elevadas, incluso por encima de 20.000 pies."
+MPMM-2022,Harengon,Hare-Trigger,23,True,,Añades tu bonificador de competencia a las tiradas de iniciativa.
+MPMM-2022,Harengon,Leporine Senses,23,True,,Obtienes competencia en Percepción.
+MPMM-2022,Harengon,Lucky Footwork,23,True,"1d4,0","Cuando fallas una salvación de Destreza, puedes usar tu reacción para tirar 1d4 y sumar el resultado, pudiendo transformar el fallo en éxito. No funciona estando tumbado ni con velocidad 0."
+MPMM-2022,Harengon,Rabbit Hop,23,True,"5,0",Como acción adicional puedes saltar hasta 5 × tu bonificador de competencia pies sin provocar ataques de oportunidad. Requiere velocidad mayor que 0. Usos iguales a competencia por descanso largo.
+MPMM-2022,Hobgoblin,Darkvision,24,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Hobgoblin,Fey Ancestry,24,True,,Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.
+MPMM-2022,Hobgoblin,Fey Gift,24,True,"3,1d6,10","Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia PG temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto)."
+MPMM-2022,Hobgoblin,Fortune From The Many,24,True,"30,3","Cuando fallas una tirada de ataque, una prueba de característica o una salvación, puedes añadir un bono igual al número de aliados que veas dentro de 30 pies (máximo +3), pudiendo cambiar el resultado. Usos iguales a competencia por descanso largo."
+MPMM-2022,Kenku,Expert Duplication,25,True,,Tienes ventaja en pruebas de característica para producir una copia exacta de un escrito o trabajo artesanal.
+MPMM-2022,Kenku,Kenku Recall,25,True,,"Obtienes competencia con dos habilidades de tu elección. Cuando realizas una prueba de característica que use una habilidad en la cual tengas competencia, puedes tirar con ventaja antes de conocer el resultado. Usos iguales a competencia por descanso largo."
+MPMM-2022,Kenku,Mimicry,25,True,8,Puedes imitar sonidos o voces que hayas escuchado. Quien sospeche de la imitación puede descubrirla superando una prueba de Sabiduría (Perspicacia) contra CD 8 + competencia + tu modificador de Carisma.
+MPMM-2022,Kobold,Darkvision,26,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Kobold,Draconic Cry,26,True,10,"Como acción adicional lanzas un grito dirigido a enemigos a 10 pies que puedan oírte. Hasta el comienzo de tu próximo turno, tú y tus aliados tienen ventaja en ataques contra ellos. Usos iguales a competencia por descanso largo."
+MPMM-2022,Kobold,Kobold Legacy,26,True,,"Escoge una opción: Astucia (competencia en Arcanos, Investigación, Medicina, Juego de Manos o Supervivencia); Desafío (ventaja en salvaciones para evitar o terminar asustado); Hechicería dracónica (un truco de la lista de hechicero, eligiendo INT, SAB o CAR)."
+MPMM-2022,Lizardfolk,Swim,27,True,,Tu velocidad de nado es igual a tu velocidad al caminar.
+MPMM-2022,Lizardfolk,Bite,27,True,1d6,Tu mordida se usa como golpe desarmado; causa 1d6 + modificador de Fuerza de daño cortante al impactar.
+MPMM-2022,Lizardfolk,Hold Breath,27,True,15,Puedes contener la respiración durante un máximo de 15 minutos.
+MPMM-2022,Lizardfolk,Hungry Jaws,27,True,,"Como acción adicional, haces un ataque con mordida. Si impactas, obtienes PG temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo."
+MPMM-2022,Lizardfolk,Natural Armor,27,True,13,Tu piel escamosa te da CA base 13 + modificador de Destreza cuando no llevas armadura; puedes usar esta fórmula si la armadura que lleves daría una CA inferior. Un escudo aplica normalmente.
+MPMM-2022,Lizardfolk,Nature'S Intuition,27,True,,"Escoge competencia en DOS habilidades: Trato con Animales, Medicina, Naturaleza, Percepción, Sigilo o Supervivencia."
+MPMM-2022,Minotaur,Horns,28,True,1d6,Tus cuernos son ataques desarmados: 1d6 + modificador de Fuerza de daño perforante al impactar.
+MPMM-2022,Minotaur,Goring Rush,28,True,20,"Después de realizar Correr y avanzar al menos 20 pies en el turno, puedes realizar un ataque con cuernos como acción adicional."
+MPMM-2022,Minotaur,Hammering Horns,28,True,"10,8","Inmediatamente después de impactar con un ataque cuerpo a cuerpo como parte de tu acción Atacar, puedes usar una acción adicional para intentar empujar 10 pies a una criatura de tamaño no mayor que una categoría superior al tuyo. Salvación de Fuerza CD 8 + competencia + modificador de Fuerza; no funciona con criaturas Enormes o mayores si eres Mediano."
+MPMM-2022,Minotaur,Labyrinthine Recall,28,True,,Siempre sabes en qué dirección está el norte y tienes ventaja en pruebas de Sabiduría (Supervivencia) para orientarte o seguir rastros.
+MPMM-2022,Orc,Adrenaline Rush,29,True,,Puedes Correr como acción adicional y al hacerlo ganas PG temporales iguales a competencia. Usos iguales a competencia por descanso largo.
+MPMM-2022,Orc,Darkvision,29,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Orc,Powerful Build,29,True,,"Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar."
+MPMM-2022,Satyr,Ram,30,True,1d6,Tus cuernos sirven para golpes desarmados; infligen 1d6 + Fuerza de daño contundente.
+MPMM-2022,Satyr,Magic Resistance,30,True,,Tienes ventaja en tiradas de salvación contra conjuros.
+MPMM-2022,Satyr,Mirthful Leaps,30,True,1d8,"Siempre que haces salto de longitud o altura, puedes tirar 1d8 y añadir su resultado en pies a la distancia recorrida, incluso con salto desde parado. Este movimiento adicional cuesta movimiento normal."
+MPMM-2022,Satyr,Reveler,30,True,,Tienes competencia en Interpretación y Persuasión y con un instrumento musical de tu elección.
+MPMM-2022,Sea Elf,Swim,31,True,,Tu velocidad de nado es igual a tu velocidad al caminar.
+MPMM-2022,Sea Elf,Child Of The Sea,31,False,,Puedes respirar aire y agua y tienes resistencia al daño de frío.
+MPMM-2022,Sea Elf,Darkvision,31,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Sea Elf,Fey Ancestry,31,True,,Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.
+MPMM-2022,Sea Elf,Friend Of The Sea,31,False,,Puedes comunicar ideas simples a bestias que tengan velocidad de nado. No significa que comprendan conceptos complejos ni que obedezcan.
+MPMM-2022,Sea Elf,Keen Senses,31,True,,Obtienes competencia en Percepción.
+MPMM-2022,Sea Elf,Trance,31,True,4,"No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación)."
+MPMM-2022,Shadar-kai,Blessing Of The Raven Queen,32,False,"30,3","Como acción adicional te teletransportas mágicamente hasta 30 pies a un espacio desocupado que puedas ver. Desde nivel 3, tras teletransportarte, obtienes resistencia a todo daño hasta el inicio de tu siguiente turno; durante ese tiempo apareces fantasmal y translúcido. Usos iguales a competencia por descanso largo."
+MPMM-2022,Shadar-kai,Darkvision,32,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Shadar-kai,Fey Ancestry,32,True,,Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.
+MPMM-2022,Shadar-kai,Keen Senses,32,True,,Obtienes competencia en Percepción.
+MPMM-2022,Shadar-kai,Necrotic Resistance,32,True,,Resistencia al daño necrótico.
+MPMM-2022,Shadar-kai,Trance,32,True,4,"No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación)."
+MPMM-2022,Shifter,Bestial Instincts,33,True,,"Escoge competencia en Acrobacias, Atletismo, Intimidación o Supervivencia."
+MPMM-2022,Shifter,Darkvision,33,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Shifter,Shifting,33,True,"1,1d6,1,1d6,10,10,5,30","Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas PG temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 PG temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo."
+MPMM-2022,Tabaxi,Climb,34,True,,Tu velocidad de trepar es igual a tu velocidad al caminar.
+MPMM-2022,Tabaxi,Cat'S Claws,34,True,1d6,Tus garras sirven como golpe desarmado e infligen 1d6 + Fuerza de daño cortante.
+MPMM-2022,Tabaxi,Cat'S Talent,34,True,,Tienes competencia en Percepción y Sigilo.
+MPMM-2022,Tabaxi,Darkvision,34,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Tabaxi,Feline Agility,34,True,,Al moverte en tu turno puedes duplicar tu velocidad hasta el final de ese turno. No puedes usarlo de nuevo hasta pasar uno de tus turnos sin desplazarte.
+MPMM-2022,Tortle,Claws,35,True,1d6,Tus garras se usan para golpes desarmados: 1d6 + Fuerza de daño cortante.
+MPMM-2022,Tortle,Hold Breath,35,True,1,Puedes contener la respiración durante un máximo de 1 hora.
+MPMM-2022,Tortle,Natural Armor,35,True,17,"Tu caparazón te da CA base 17 (no sumas Destreza). No puedes llevar armadura ligera, media ni pesada; puedes usar escudo y sumar su bonificador normalmente."
+MPMM-2022,Tortle,Nature'S Intuition,35,True,,"Escoge competencia en UNA habilidad: Trato con Animales, Medicina, Naturaleza, Percepción, Sigilo o Supervivencia."
+MPMM-2022,Tortle,Shell Defense,35,False,"4,0","Como acción te ocultas en tu caparazón. Ganas +4 CA y ventaja en salvaciones de Fuerza y Constitución; quedas tumbado, tu velocidad es 0 y no puede aumentar, tienes desventaja en salvaciones de Destreza, no puedes tomar reacciones y tu única acción posible es salir del caparazón usando una acción adicional."
+MPMM-2022,Triton,Swim,36,True,,Tu velocidad de nado es igual a tu velocidad al caminar.
+MPMM-2022,Triton,Amphibious,36,True,,Puedes respirar aire y agua.
+MPMM-2022,Triton,Control Air And Water,36,True,"1,3,5","Puedes lanzar nube de niebla desde nivel 1, ráfaga de viento desde nivel 3 y caminar sobre el agua desde nivel 5. Cada conjuro tiene un uso gratuito por descanso largo y puedes utilizar espacios de conjuro apropiados. Escoge INT, SAB o CAR para lanzarlos."
+MPMM-2022,Triton,Darkvision,36,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Triton,Emissary Of The Sea,36,False,,"Puedes comunicar ideas sencillas con bestias, elementales y monstruosidades que tengan velocidad de nado; no les concede comprensión compleja ni obliga a obedecer."
+MPMM-2022,Triton,Guardian Of The Depths,36,False,,Tienes resistencia al daño de frío.
+MPMM-2022,Yuan-ti,Darkvision,37,True,60,Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.
+MPMM-2022,Yuan-ti,Magic Resistance,37,True,,Tienes ventaja en tiradas de salvación contra conjuros.
+MPMM-2022,Yuan-ti,Poison Resilience,37,True,,Tienes ventaja en salvaciones para evitar o terminar la condición envenenado y resistencia al daño por veneno.
+MPMM-2022,Yuan-ti,Serpentine Spellcasting,37,True,3,"Conoces el truco salpicadura venenosa. Puedes lanzar amistad con los animales únicamente sobre serpientes (usos sin límite) y, desde nivel 3, sugerencia una vez por descanso largo; también con espacios adecuados. Escoge INT, SAB o CAR para estos conjuros."

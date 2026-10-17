@@ -1,3 +1,1 @@
-# DMAid revisión funcional
-
-Usar todos los archivos de la carpeta en un servidor HTTPS; no abrir solo index.html. Esta es una compilación experimental. Ver AUDITORIA.md.
+DMAid racial catalog revision. Files include character builder, index and documented racial JSON. Technical checks are not a substitute for functional browser tests. See INFORME.md.
