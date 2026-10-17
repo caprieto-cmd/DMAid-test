@@ -1,4 +1,4 @@
-/* DM.AID TEST 1.18.8; navigation network-first to avoid stale builds. */
+/* DM.AID TEST 1.18.9; navigation network-first to avoid stale builds. */
 const CACHE='dmaid-combat-spells-1188-v1';
 const ASSETS=['./','./index.html','./character-builder-v2.js','./character-builder-v2.css','./dma-magic-rest-1185.js','./dma-combat-spells-1188.js','./racial-engine.js','./races.pre2024.normalized.v7.json','./icon-192.png'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).catch(()=>{}));});

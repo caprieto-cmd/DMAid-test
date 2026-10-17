@@ -6,7 +6,17 @@ const knownByLevel={Bardo:[4,5,6,7,8,9,10,11,12,14],Hechicero:[2,3,4,5,6,7,8,9,1
 const domain={Knowledge:[[1,'Command'],[1,'Identify'],[3,'Augury'],[3,'Suggestion'],[5,'Nondetection'],[5,'Speak with Dead'],[7,'Arcane Eye'],[7,'Confusion'],[9,'Legend Lore'],[9,'Scrying']]};
 function rows(i){return (profile(i).classes||[]).filter(c=>Number(c.level)>0)}
 const TEST_SPELLS_1185=[['Thorn Whip',0,'Druida','PHB'],['Spike Growth',2,'Druida','PHB'],['Pass without Trace',2,'Druida','PHB'],['Augury',2,'Clérigo','PHB'],['Suggestion',2,'Bardo,Hechicero,Brujo,Mago','PHB'],['Toll the Dead',0,'Clérigo,Brujo,Mago','XGE'],['Light',0,'Clérigo,Mago,Bardo,Hechicero','PHB'],['Spiritual Weapon',2,'Clérigo','PHB'],['Sanctuary',1,'Clérigo','PHB'],['Goodberry',1,'Druida,Explorador','PHB']].map(([n,l,classes,source])=>({n,l,classes:classes.split(','),source,summary:'Consulta la descripción indexada en el compendio para detalles de reglas.',concentration:false}));
-function names(){try{const imported=window.DMA_SPELL_CATALOG_BRIDGE?.()||[];let a=[...SPELL_LIBRARY,...imported,...TEST_SPELLS_1185];const seen=new Set();return a.filter(x=>{if(!x||!x.n||!Number.isInteger(Number(x.l)))return false;const key=String(x.n).toLowerCase()+'|'+x.l;if(seen.has(key))return false;seen.add(key);return !/2024|XPHB|PHB24/i.test(String(x.source||''))}).sort((a,b)=>a.l-b.l||a.n.localeCompare(b.n));}catch(e){return SPELL_LIBRARY||[]}}
+const spellKey1189=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+function names(){try{
+ const imported=window.DMA_SPELL_CATALOG_BRIDGE?.()||[];
+ const trusted=window.DMA_DRUID_SPELLS_1189||[];
+ const records=[...trusted,...(typeof SPELL_LIBRARY!=='undefined'?SPELL_LIBRARY:[]),...imported,...TEST_SPELLS_1185];
+ const found=new Map();
+ for(const x of records){if(!x||!x.n||!Number.isInteger(Number(x.l)))continue;
+ if(/2024|XPHB|PHB24/i.test(String(x.source||'')))continue;
+ const k=spellKey1189(x.n);if(!found.has(k))found.set(k,x);
+ }return [...found.values()].sort((a,b)=>a.l-b.l||a.n.localeCompare(b.n));
+ }catch(e){console.warn('[DMAid] Error cargando catálogo mágico',e);return window.DMA_DRUID_SPELLS_1189||[]}}
 function label(x){return String(x.n||'')}
 // Attribute-safe JS string literal: JSON uses double quotes which must be HTML-escaped inside onclick="...".
 function safeArg(value){return JSON.stringify(String(value)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
@@ -17,7 +27,7 @@ const maxPrepared=cs.reduce((n,c)=>{const l=Number(c.level),s=specs[c.name];if(!
 return {maxCan,maxPrepared}}
 function domains(i){const result=[];rows(i).forEach(c=>{if(c.name==='Clérigo'&&/knowledge|conocimiento/i.test(c.sub||''))for(const [lvl,name] of domain.Knowledge)if(Number(c.level)>=lvl)result.push(name)});return result}
 function data(i){const sh=profile(i);if(!sh.dmaMagic1185)sh.dmaMagic1185={cantrips:[],prepared:[],known:[],concentrating:null};return sh.dmaMagic1185}
-function findSpell(n){return names().find(x=>x.n===n)}
+function findSpell(n){return names().find(x=>spellKey1189(x.n)===spellKey1189(n))}
 function sortList(a){return a.slice().sort((x,y)=>(findSpell(x)?.l??99)-(findSpell(y)?.l??99)||x.localeCompare(y))}
 function toggle(i,kind,n){
   try {
