@@ -1,5 +1,5 @@
 /* DM.AID TEST 1.18.4; navigation network-first to avoid stale builds. */
-const CACHE='dmaid-bootdiag-20261016-v1';
+const CACHE='dmaid-builder-skillfix-20261017-v1';
 const ASSETS=['./','./index.html','./character-builder-v2.js','./character-builder-v2.css','./racial-engine.js','./races.pre2024.normalized.v7.json','./icon-192.png'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).catch(()=>{}));});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{const names=await caches.keys();await Promise.all(names.filter(n=>(n.startsWith('dmaid-test-')||n.startsWith('dmaid-recovery-')||n.startsWith('dmaid-bootdiag-'))&&n!==CACHE).map(n=>caches.delete(n)));await self.clients.claim();})());});
