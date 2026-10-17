@@ -55,11 +55,39 @@ sh.abilities=a;if(extraCon){const newTotal=w.old+1;p.max+=extraCon*newTotal;p.hp
 const d=document.getElementById('dma-level-dialog-1191');d?.close();wizard=null;save();render();renderSheets();alert('Nivel registrado. Verifica y completa las nuevas elecciones de clase, equipo y magia en la hoja.')}
 function decorateSheets(){const root=document.getElementById('sheetsplayers');if(!root)return;root.querySelectorAll('article.sheet').forEach((card,i)=>{if(!state.players[i]||card.querySelector('.dma-1191-buttons'))return;const area=card.querySelector('.dma-sheet-full')||card;const bar=document.createElement('div');bar.className='dma-1191-buttons';bar.innerHTML=`<button type="button" class="gold" data-level="${i}">⬆ Subir de nivel</button>${level(i,'Druida')>=2?`<button type="button" data-wild="${i}" data-delta="1">🌿 Forma Salvaje: ${wsCount(i)===Infinity?'∞':Math.max(0,wsCount(i)-ws(i).spent)}/${wsCount(i)===Infinity?'∞':wsCount(i)} · Usar</button><button type="button" data-wild="${i}" data-delta="-1">↶ Devolver uso</button>`:''}`;area.appendChild(bar)});
 root.querySelectorAll('.dma-long-rest').forEach(el=>el.remove());}
-function decorateCombat(){const toolbar=document.querySelector('.eld-initiative-toolbar');if(toolbar&&!document.getElementById('dma-rest-all-1191')){const b=document.createElement('button');b.id='dma-rest-all-1191';b.type='button';b.textContent='🌙 Descanso largo · Todo el grupo';b.onclick=restAll;toolbar.append(b)}
-const container=document.getElementById('combatview');if(!container)return;let panel=document.getElementById('dma-wild-combat-1191');if(!panel){panel=document.createElement('section');panel.id='dma-wild-combat-1191';panel.className='panel';container.append(panel)}const available=state.players.map((p,i)=>({p,i})).filter(x=>level(x.i,'Druida')>=2);
-panel.innerHTML=available.length?`<h3>🌿 Forma Salvaje · Usos de Druida</h3><div class="dma-ws-roster">${available.map(({p,i})=>`<div><b>${escape(p.name)}</b> <span>${wsCount(i)===Infinity?'Usos ilimitados':Math.max(0,wsCount(i)-ws(i).spent)+' / '+wsCount(i)+' disponibles'}</span><button type="button" data-wild="${i}" data-delta="1" ${wsCount(i)!==Infinity&&ws(i).spent>=wsCount(i)?'disabled':''}>Usar 1</button><button type="button" data-wild="${i}" data-delta="-1" ${!ws(i).spent?'disabled':''}>Devolver 1</button></div>`).join('')}</div><small>Recuperación en descanso corto o largo. Las transformaciones usan este mismo contador desde ficha y combate.</small>`:'';panel.hidden=!available.length}
+function decorateCombat(){
+ const toolbar=document.querySelector('.eld-initiative-toolbar');
+ if(toolbar&&!document.getElementById('dma-rest-all-1191')){
+  const b=document.createElement('button');b.id='dma-rest-all-1191';b.type='button';
+  b.textContent='🌙 Descanso largo · Todo el grupo';b.onclick=restAll;toolbar.append(b);
+ }
+ // The former campaign-wide Wild Shape roster is deliberately removed.
+ // Each character now owns the control within their own class features.
+ document.getElementById('dma-wild-combat-1191')?.remove();
+}
+function installWildShapeInClassPanel(){
+ if(typeof dmaGroupCombatStat11615!=='function')return;
+ const previous=dmaGroupCombatStat11615;
+ dmaGroupCombatStat11615=function(panel,key){
+  previous(panel,key);
+  if(!String(key||'').startsWith('p'))return;
+  const i=Number(key.slice(1));
+  if(!Number.isInteger(i)||!state.players[i]||level(i,'Druida')<2)return;
+  const root=panel?.querySelector('.eld-player-statblock');
+  const classPanel=root?.querySelector('.dma-four-class-11615');
+  if(!classPanel)return;
+  const target=classPanel.querySelector('.dma-unified-body-1177')||classPanel;
+  target.querySelector('.dma-wild-class-1192')?.remove();
+  const uses=wsCount(i),spent=Number(ws(i).spent||0),available=uses===Infinity?'∞':Math.max(0,uses-spent);
+  const maxLabel=uses===Infinity?'∞':String(uses);
+  const section=document.createElement('section');section.className='dma-wild-class-1192';
+  section.innerHTML=`<h4>🌿 Forma Salvaje · Usos</h4><p><b>${available} / ${maxLabel} disponibles</b> · ${escape(state.players[i].name)}</p><div class="dma-wild-class-controls-1192"><button type="button" data-wild="${i}" data-delta="1" ${uses!==Infinity&&spent>=uses?'disabled':''}>Usar 1</button><button type="button" data-wild="${i}" data-delta="-1" ${spent<=0?'disabled':''}>Devolver 1</button></div><small>Recurso individual. Se recupera con descanso corto o largo.</small>`;
+  target.append(section);
+ };
+}
+
 function refresh(){decorateSheets();decorateCombat()}
-function install(){const root=document.body;root.addEventListener('click',e=>{const b=e.target.closest('[data-wild]');if(b){wild(Number(b.dataset.wild),Number(b.dataset.delta));return}const l=e.target.closest('[data-level]');if(l)open(Number(l.dataset.level))});
+function install(){installWildShapeInClassPanel();const root=document.body;root.addEventListener('click',e=>{const b=e.target.closest('[data-wild]');if(b){wild(Number(b.dataset.wild),Number(b.dataset.delta));return}const l=e.target.closest('[data-level]');if(l)open(Number(l.dataset.level))});
 const oldSheets=renderSheets;renderSheets=function(){oldSheets();refresh()};const oldRender=render;render=function(){oldRender();decorateCombat()};refresh();}
 window.DMAprogression1191={wild,restAll,open,qualified};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
