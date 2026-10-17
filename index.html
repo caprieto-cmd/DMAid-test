@@ -1516,6 +1516,7 @@ function convert(raw,source){if(!raw||typeof raw.name!=='string'||raw.level==nul
 function signature(s){return clean(s.n)+'|'+String(s.l)+'|'+clean(s.school)}
 function score(s){return (s.source==='PHB'?100:0)+(s.imported?0:10)}
 function list(){let all=[...SPELL_LIBRARY,...imports],seen=new Map(),hidden=0;for(let s of all){let key=signature(s);if(!seen.has(key))seen.set(key,s);else {hidden++;if(score(s)>score(seen.get(key)))seen.set(key,s)}}return {all:showCopies?all:[...seen.values()],total:all.length,hidden}}
+window.DMA_SPELL_CATALOG_BRIDGE=()=>list().all;
 function save(){try{DMA_TEST_STORAGE_V153.setItem(STORAGE,JSON.stringify(imports));status('✓ Biblioteca ampliada guardada en este navegador.')}catch(e){status('⚠ Biblioteca cargada, pero sin espacio para guardarla. Puedes usar la sesión actual o exportar tus archivos originales.')}}
 function status(msg){if(el('spellLoadStatus'))el('spellLoadStatus').textContent=msg}
 function updateSourceList(){let select=el('spellsource');if(!select)return;let original=select.value,sources=[...new Set([...SPELL_LIBRARY,...imports].map(x=>x.source))];select.innerHTML='<option value="">Todos los libros</option>'+sources.map(s=>`<option value="${esc(s)}">${esc(BOOKS[s]||s)}</option>`).join('');select.value=sources.includes(original)?original:'';}
@@ -7226,4 +7227,5 @@ dmaClassFeatures1120=function(c){let rows=dmaPreviousClassFeaturesConnected(c);c
   };
 })();
 </script>
+<style id="dma-magic-editor-style-1185">.dma-magic-editor,.dma-long-rest{border:1px solid #495d76;border-radius:12px;margin-top:14px;padding:14px;background:#17273c;color:#eaf1fc}.dma-magic-editor summary{cursor:pointer;font-weight:750;color:#ffd996}.dma-magic-inside{display:grid;gap:15px;margin-top:13px}.dma-magic-choice{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;border-bottom:1px solid #3a4a62;padding:7px 0;font-size:13px}.dma-magic-choice small,.dma-long-rest small{color:#b7c8df}.dma-magic-options{max-height:280px;overflow:auto;border:1px solid #3b4b61;border-radius:7px;padding:6px;margin-top:7px}.dma-magic-metrics{display:flex;flex-wrap:wrap;gap:10px}.dma-magic-metrics>span{padding:7px;background:#24364e;border-radius:7px}.dma-long-rest{display:grid;gap:8px}.dma-long-rest button{width:fit-content}</style><script src="./dma-magic-rest-1185.js?v=1.18.5"></script>
 </body></html>
