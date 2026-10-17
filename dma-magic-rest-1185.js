@@ -1,4 +1,4 @@
-/* DMAid 1.18.5: editable spell preparation + 2014 long rest. No dice are rolled. */
+/* DMAid 1.18.6: editable spell preparation + 2014 long rest. No dice are rolled. */
 (function(){'use strict';
 const clsName={'cleric':'Clérigo','druid':'Druida'};
 const specs={Clérigo:{can:[3,3,3,4,4,4,4,4,4,5],prepared:true},Druida:{can:[2,2,2,3,3,3,3,3,3,4],prepared:true},Mago:{can:[3,3,3,4,4,4,4,4,4,5],prepared:true},Bardo:{can:[2,2,2,3,3,3,3,3,3,4]},Hechicero:{can:[4,4,4,5,5,5,5,5,5,6]},Brujo:{can:[2,2,2,2,3,3,3,3,3,4]},Artífice:{can:[2,2,2,2,2,2,2,2,2,3],prepared:true}};
@@ -17,8 +17,31 @@ function domains(i){const result=[];rows(i).forEach(c=>{if(c.name==='Clérigo'&&
 function data(i){const sh=profile(i);if(!sh.dmaMagic1185)sh.dmaMagic1185={cantrips:[],prepared:[],known:[],concentrating:null};return sh.dmaMagic1185}
 function findSpell(n){return names().find(x=>x.n===n)}
 function sortList(a){return a.slice().sort((x,y)=>(findSpell(x)?.l??99)-(findSpell(y)?.l??99)||x.localeCompare(y))}
-function toggle(i,kind,n){if(!state.players[i])return;const x=findSpell(n);if(!x||!allowed(i,x))return;const d=data(i),a=d[kind],limit=limits(i);if(!Array.isArray(a))return;const exists=a.includes(n);if(!exists&&kind==='cantrips'&&a.length>=limit.maxCan)return alert('Máximo de trucos alcanzado.');if(!exists&&kind==='prepared'&&a.length>=limit.maxPrepared)return alert('Máximo de conjuros preparados alcanzado.');d[kind]=exists?a.filter(z=>z!==n):[...a,n];profile(i).spells=[...new Set([...d.cantrips,...d.prepared,...d.known,...domains(i)])];save();render();renderSheets();}
-function spend(i,level,undo){const sh=profile(i),calc=slotCalc(i),total=(sh.slots||calc.slots)[level-1]||0;sh.used=Array.isArray(sh.used)?sh.used:Array(9).fill(0);const current=Number(sh.used[level-1])||0;sh.used[level-1]=Math.max(0,Math.min(total,current+(undo?-1:1)));save();render();renderSheets();}
+function toggle(i,kind,n){
+  try {
+    if(!state.players[i])throw Error('Personaje no encontrado.');
+    const x=findSpell(n);
+    if(!x)throw Error('El conjuro no está indexado: '+n);
+    if(!allowed(i,x))throw Error('El conjuro no está permitido para la clase y nivel actuales: '+n);
+    const d=data(i),a=d[kind],limit=limits(i);
+    if(!Array.isArray(a))throw Error('Tipo de selección desconocido: '+kind);
+    const exists=a.includes(n);
+    if(!exists&&kind==='cantrips'&&a.length>=limit.maxCan)return alert('Máximo de trucos alcanzado.');
+    if(!exists&&kind==='prepared'&&a.length>=limit.maxPrepared)return alert('Máximo de conjuros preparados alcanzado.');
+    d[kind]=exists?a.filter(z=>z!==n):[...a,n];
+    profile(i).spells=[...new Set([...d.cantrips,...d.prepared,...d.known,...domains(i)])];
+    save();
+    // Actualizar la ficha sin reconstruir todas las pantallas de combate.
+    // La reconstrucción global anterior podía interrumpir esta acción.
+    renderSheets();
+    const editor=document.getElementById('dma-magic-'+i);
+    if(editor){editor.open=true;editor.dataset.lastChange='ok';}
+  }catch(error){
+    console.error('[DMAid 1.18.6] No se pudo modificar el conjuro',error);
+    alert('No se pudo guardar el conjuro: '+(error?.message||String(error)));
+  }
+}
+function spend(i,level,undo){const sh=profile(i),calc=slotCalc(i),total=(sh.slots||calc.slots)[level-1]||0;sh.used=Array.isArray(sh.used)?sh.used:Array(9).fill(0);const current=Number(sh.used[level-1])||0;sh.used[level-1]=Math.max(0,Math.min(total,current+(undo?-1:1)));save();renderSheets();}
 function startConcentration(i,n){const d=data(i);d.concentrating=d.concentrating===n?null:n;save();renderSheets();}
 function spellRow(i,n,k){const s=findSpell(n);if(!s)return `<div>${esc(n)} <small>(No indexado todavía)</small></div>`;return `<div class="dma-magic-choice"><span><b>${esc(n)}</b> <small>· ${s.l===0?'Truco':'Nivel '+s.l} · ${esc(s.source||'')} ${s.concentration?'· Concentración':''}</small></span>${k==='domain'?'<small>Siempre preparado</small>':`<button class="small" onclick="DMAmagic1185.toggle(${i},'${k}',${JSON.stringify(n)})">Quitar</button>`}${s.concentration?`<button class="small" onclick="DMAmagic1185.concentrate(${i},${JSON.stringify(n)})">${data(i).concentrating===n?'Detener concentración':'Concentrar'}</button>`:''}</div>`}
 function panel(i){const sh=profile(i),d=data(i),li=limits(i),ds=domains(i),current=window.dmaMagicSearch1185?.[i]||'',available=names().filter(x=>allowed(i,x)&&(!current||x.n.toLowerCase().includes(current.toLowerCase()))).slice(0,80);const spellSlots=slotCalc(i).slots,slots=sh.slots||spellSlots;return `<details class="dma-magic-editor" id="dma-magic-${i}" open><summary>✨ Conjuros y trucos · editar personaje</summary><div class="dma-magic-inside"><p class="muted">Se guardan con la ficha y se pueden modificar después de crearla. En clérigos y druidas, prepara conjuros tras un descanso largo según PHB 2014. Los conjuros de dominio no consumen cupo.</p><div class="dma-magic-metrics"><span>Trucos <b>${d.cantrips.length}/${li.maxCan}</b></span><span>Preparados <b>${d.prepared.length}/${li.maxPrepared||'—'}</b></span><span>Siempre preparados <b>${ds.length}</b></span></div><div><b>Trucos conocidos</b>${sortList(d.cantrips).map(n=>spellRow(i,n,'cantrips')).join('')||'<p class="muted">Sin seleccionar</p>'}</div><div><b>Conjuros preparados</b>${sortList(d.prepared).map(n=>spellRow(i,n,'prepared')).join('')||'<p class="muted">Sin seleccionar</p>'}</div>${ds.length?`<div><b>Dominio / subclase</b>${ds.map(n=>spellRow(i,n,'domain')).join('')}</div>`:''}<div><label>Buscar en el catálogo indexado <input type="search" placeholder="Nombre del conjuro" value="${esc(current)}" oninput="DMAmagic1185.search(${i},this.value)"></label><div class="dma-magic-options">${available.map(x=>{const has=d.cantrips.includes(x.n)||d.prepared.includes(x.n)||d.known.includes(x.n)||ds.includes(x.n);const kind=x.l===0?'cantrips':li.maxPrepared>0?'prepared':'known';return `<div class="dma-magic-choice"><span>${esc(x.n)} <small>· ${x.l===0?'Truco':'Nivel '+x.l} · ${esc(x.source||'')}</small></span><button class="small" ${has?'disabled':''} onclick="DMAmagic1185.toggle(${i},'${kind}',${JSON.stringify(x.n)})">${has?'Asignado':'Añadir'}</button></div>`}).join('')||'<p>No hay resultados. Revisa si cargaste el libro correspondiente en el Compendio de conjuros.</p>'}</div></div><div><b>Espacios de conjuro</b><div class="dma-magic-metrics">${slots.map((total,j)=>total?`<span>Nivel ${j+1}: <b>${Math.max(0,total-(Number(sh.used?.[j])||0))}/${total}</b> <button class="small" onclick="DMAmagic1185.spend(${i},${j+1},false)">Usar</button> <button class="small" onclick="DMAmagic1185.spend(${i},${j+1},true)">Devolver</button></span>`:'').join('')}</div></div><p class="muted">Concentración activa: ${esc(d.concentrating||'Ninguna')}. El DM registra lanzamientos y efectos; DMAid no realiza tiradas.</p></div></details>`}
@@ -28,7 +51,7 @@ const level=rows(i).reduce((n,c)=>n+Number(c.level),0);const recover=Math.max(1,
 sh.dmaRacialUsed1171={};sh.dmaResourceSpent1172={};sh.dmaReactionUsed1178=false;sh.dmaReactionSpent1178={};sh.dmaStoneSpent11617=0;
 if(sh.dmaFighterResources1185)sh.dmaFighterResources1185={};if(sh.dmaClassResources1185)sh.dmaClassResources1185={};
 // Class-specific counters present in this build may be separate; do not overwrite unknown tracking structures.
-sh.dmaLongRestAt1185=Date.now();save();render();renderSheets();}
+sh.dmaLongRestAt1185=Date.now();save();renderSheets();}
 function decorate(){const target=document.getElementById('sheetsplayers');if(!target)return;target.querySelectorAll('article.sheet').forEach((card,i)=>{if(!state.players[i]||card.querySelector('.dma-magic-editor'))return;const area=card.querySelector('.dma-sheet-full')||card;const wrap=document.createElement('div');wrap.className='dma-magic-rest-container';wrap.innerHTML=panel(i)+`<div class="dma-long-rest"><button type="button" class="gold" onclick="DMAmagic1185.rest(${i})">🌙 Descanso largo · ${esc(state.players[i].name)}</button><small>Restaura PG máximos, espacios normales y de pacto, recursos raciales y reacción. Recupera hasta la mitad de dados de golpe gastados (mínimo 1). No modifica conjuros preparados.</small></div>`;area.appendChild(wrap)})}
 const prior=renderSheets;renderSheets=function(){prior();decorate()};
 window.dmaMagicSearch1185={};
