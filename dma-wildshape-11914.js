@@ -1,5 +1,5 @@
 /* DMAid 1.19.14 - Visor persistente de Forma Salvaje en el statblock de combate.
- * No hay tiradas automaticas. Los PG del druida solo cambian si sobra daño tras caer la forma.
+ * No hay tiradas automaticas. Los HP del druida solo cambian si sobra daño tras caer la forma.
  * El DM verifica que el druida haya visto la criatura. Reglas PHB 2014.
  */
 (function(){'use strict';
@@ -62,7 +62,7 @@ function statblock(parent,original){const m=full(original),st=m.stat||{};
  const card=append(parent,'div','dma-ws-stat11913');
  append(card,'h5','',m.name||'Forma sin nombre');append(card,'div','dma-ws-meta11913',`${m.kind||'Bestia'} · CR ${showCR(crNumber(m.cr)??'?')} · ${m.source||'Fuente no indicada'}`);
  const grid=append(card,'div','dma-ws-facts11913');
- for(const [k,v] of [['CA',m.ac??st.ac??'—'],['PG máximos',formMax(m)||'—'],['Velocidad',printableSpeed(m)]]){const el=append(grid,'div');append(el,'small','',k);append(el,'strong','',lines(v))}
+ for(const [k,v] of [['CA',m.ac??st.ac??'—'],['HP máximos',formMax(m)||'—'],['Velocidad',printableSpeed(m)]]){const el=append(grid,'div');append(el,'small','',k);append(el,'strong','',lines(v))}
  if(['str','dex','con','int','wis','cha'].every(k=>Number.isFinite(Number(st[k])))){
   const abil=append(card,'div','dma-ws-abilities11913');for(const [label,key] of [['FUE','str'],['DES','dex'],['CON','con'],['INT','int'],['SAB','wis'],['CAR','cha']]){const score=Number(st[key]),mod=Math.floor((score-10)/2);const cell=append(abil,'div');append(cell,'b','',label);append(cell,'span','',`${score} (${mod>=0?'+':''}${mod})`)}}
  for(const [title,key] of [['Salvaciones','save'],['Habilidades','skill'],['Resistencias','resist'],['Inmunidades al daño','immune'],['Inmunidades a condiciones','conditionImmune'],['Sentidos','senses'],['Idiomas','languages']])if(st[key]!=null){const p=append(card,'p','dma-ws-attribute11913');append(p,'b','',title+': ');p.append(document.createTextNode(lines(st[key])))}
@@ -73,7 +73,7 @@ function statblock(parent,original){const m=full(original),st=m.stat||{};
   else {append(card,'p','dma-ws-action11913',lines(fallback));actions++}
  }
  if(!actions)append(card,'p','dma-ws-warning11913','Esta ficha del bestiario solo contiene datos resumidos. Importa el statblock completo antes de utilizar sus acciones.');
- const note=append(card,'p','dma-ws-hint11913','En Forma Salvaje (PHB 2014), se conservan INT, SAB y CAR del druida, junto con las competencias y rasgos permitidos. Los valores físicos y PG de la forma proceden de la bestia. El DM aplica las reglas de sustitución de características, competencia y salvaciones cuando correspondan.');
+ const note=append(card,'p','dma-ws-hint11913','En Forma Salvaje (PHB 2014), se conservan INT, SAB y CAR del druida, junto con las competencias y rasgos permitidos. Los valores físicos y HP de la forma proceden de la bestia. El DM aplica las reglas de sustitución de características, competencia y salvaciones cuando correspondan.');
  return card;
 }
 function select(parent,label,options,initial){const wrap=append(parent,'label','dma-ws-field11913');append(wrap,'span','',label);const el=append(wrap,'select');for(const [value,text] of options){const o=append(el,'option','',text);o.value=String(value)}el.value=String(initial);return el}
@@ -86,16 +86,16 @@ function picker(section,i){const data=record(i),lim=limits(i),isActive=!!data.ac
  if(isActive&&data.beast){
   const m=data.beast;const active=append(root,'div','dma-ws-active11913');
   append(active,'p','',`Forma activa: ${m.name} · CR ${showCR(crNumber(m.cr))} · ronda de activación: ${data.activatedRound??'—'}`);
-  const line=append(active,'div','dma-ws-track11913');const label=append(line,'label','',`PG de la forma (máx. ${Number(m.hp)||'—'})`);
-  const hp=append(label,'input');hp.type='number';hp.min='0';hp.max=String(formMax(m)||99999);hp.value=String(data.hp??formMax(m));hp.setAttribute('aria-label','PG restantes de la Forma Salvaje');
-  hp.addEventListener('change',()=>{data.hp=Math.max(0,Math.min(formMax(m)||99999,Math.floor(Number(hp.value)||0)));hp.value=String(data.hp);if(typeof save==='function')save();if(typeof renderQuickEnemies==='function')renderQuickEnemies();warning.textContent=Number(data.hp)===0?'La forma tiene 0 PG. Comprueba el daño sobrante que debe recibir el druida al revertir según el PHB 2014.':'';warning.style.display=Number(data.hp)===0?'block':'none';});
+  const line=append(active,'div','dma-ws-track11913');const label=append(line,'label','',`HP de la forma (máx. ${Number(m.hp)||'—'})`);
+  const hp=append(label,'input');hp.type='number';hp.min='0';hp.max=String(formMax(m)||99999);hp.value=String(data.hp??formMax(m));hp.setAttribute('aria-label','HP restantes de la Forma Salvaje');
+  hp.addEventListener('change',()=>{data.hp=Math.max(0,Math.min(formMax(m)||99999,Math.floor(Number(hp.value)||0)));hp.value=String(data.hp);if(typeof save==='function')save();if(typeof renderQuickEnemies==='function')renderQuickEnemies();warning.textContent=Number(data.hp)===0?'La forma tiene 0 HP. Comprueba el daño sobrante que debe recibir el druida al revertir según el PHB 2014.':'';warning.style.display=Number(data.hp)===0?'block':'none';});
   control(line,'Terminar transformación',()=>{data.active=false;data.hp=null;repaint()});
-  const warning=append(active,'p','dma-ws-warning11913',Number(data.hp)===0?'La forma tiene 0 PG. Comprueba el daño sobrante que debe recibir el druida al revertir según el PHB 2014.':'');if(Number(data.hp)!==0)warning.style.display='none';
+  const warning=append(active,'p','dma-ws-warning11913',Number(data.hp)===0?'La forma tiene 0 HP. Comprueba el daño sobrante que debe recibir el druida al revertir según el PHB 2014.':'');if(Number(data.hp)!==0)warning.style.display='none';
   statblock(root,m);
-  append(root,'p','dma-ws-hint11913','Terminar la transformación no devuelve usos de Forma Salvaje. Los PG de bestia se llevan por separado de los PG normales del druida.');
+  append(root,'p','dma-ws-hint11913','Terminar la transformación no devuelve usos de Forma Salvaje. Los HP de bestia se llevan por separado de los HP normales del druida.');
   return;
  }
- if(data.endedByDamage){append(root,'p','dma-ws-warning11913',`Última forma finalizada al llegar a 0 PG. Daño sobrante registrado sobre el druida: ${Math.max(0,Number(data.excessDamage)||0)} PG.`)}
+ if(data.endedByDamage){append(root,'p','dma-ws-warning11913',`Última forma finalizada al llegar a 0 HP. Daño sobrante registrado sobre el druida: ${Math.max(0,Number(data.excessDamage)||0)} HP.`)}
  const costHint=append(root,'p','dma-ws-hint11913','Selecciona una criatura que el druida haya visto antes. Escoger y consultar una ficha no gasta usos; «Activar» registra la transformación y descuenta el coste.');
  const controls=append(root,'div','dma-ws-controls11913');
  const categories=[['beast','Bestias (1 uso)']];if(moon(i)&&levelOf(i)>=10)categories.push(['elemental','Elementales de la Luna (2 usos)']);
@@ -142,11 +142,11 @@ function decorate(panel,key){if(!/^p\d+$/.test(String(key)))return;const i=Numbe
 function install(){if(typeof renderActivePlayerBlock!=='function')return;const prior=renderActivePlayerBlock;
  renderActivePlayerBlock=function(panel,key){prior(panel,key);try{decorate(panel,key)}catch(err){console.error('[DMAid Wild Shape 1.19.13]',err)}};
  // Desactivar la forma tras descanso largo, conservando la última selección.
- // No interfiere con la recuperación de PG, espacios ni demás recursos.
+ // No interfiere con la recuperación de HP, espacios ni demás recursos.
  if(window.DMAprogression1191?.restAll){const priorRest=window.DMAprogression1191.restAll;/* El botón instalado conserva su callback previo. */}
 }
 
-// 1.19.14: Los PG de Forma Salvaje y los del druida son recursos distintos.
+// 1.19.14: Los HP de Forma Salvaje y los del druida son recursos distintos.
 // El DM declara los impactos y el daño, DMAid solo registra los resultados.
 function activeForm(i){const d=profile(i)?.dmaWildShapeForm11913;return d?.active&&d.beast?d:null}
 function quickAmount(i){const n=Number(document.getElementById('quick-val-p'+i)?.value);return Number.isFinite(n)?Math.max(1,Math.floor(n)):5}
@@ -159,13 +159,13 @@ function decorateQuick11914(){const group=document.querySelector('#quickenemygri
   const currentAC=card.querySelector('.qsub');
   if(currentAC){currentAC.textContent=`CA de la forma: ${ac??'por verificar'} · ${m.name}`;currentAC.classList.add('dma-ws-ac11914')}
   const original=card.querySelector('.qhp');
-  if(original){original.replaceChildren();append(original,'strong','',`${p.hp} / ${p.max}`);append(original,'span','qsub','PG druida (reserva)')}
+  if(original){original.replaceChildren();append(original,'strong','',`${p.hp} / ${p.max}`);append(original,'span','qsub','HP druida (reserva)')}
   const form=append(card,'div','dma-ws-quick11914');
   append(form,'div','dma-ws-quick-name11914',`🌿 Forma Salvaje activa · ${m.name}`);
-  const row=append(form,'div','dma-ws-quick-values11914');append(row,'strong','',`${cur} / ${max||'—'} PG forma`);append(row,'strong','',`CA ${ac??'—'}`);
-  formBar(form,cur,max,'PG de la forma');formBar(form,p.hp,p.max,'PG originales');
-  if(p.temp>0)append(form,'small','',`${p.temp} PG temporales: absorben daño antes que la forma.`);
-  append(form,'small','','«− Daño» y «＋ Cura» actúan sobre la forma. Si llega a 0 PG, el exceso afecta al druida.');
+  const row=append(form,'div','dma-ws-quick-values11914');append(row,'strong','',`${cur} / ${max||'—'} HP forma`);append(row,'strong','',`CA ${ac??'—'}`);
+  formBar(form,cur,max,'HP de la forma');formBar(form,p.hp,p.max,'HP originales');
+  if(p.temp>0)append(form,'small','',`${p.temp} HP temporales: absorben daño antes que la forma.`);
+  append(form,'small','','Daño a la forma; el exceso pasa al druida al llegar a 0 HP.');
   const actions=card.querySelector('.hpbuttons');if(actions)actions.insertAdjacentElement('beforebegin',form);
  });
 }
@@ -191,10 +191,10 @@ function decorateActiveHeader11914(panel,key){if(!/^p\d+$/.test(String(key)))ret
  const header=panel.querySelector('.eld-player-statblock .eld-player-stats');if(!header)return;
  const m=data.beast,ac=formAC(m),max=formMax(m),hp=Number(data.hp)||0;
  const acSpan=[...header.querySelectorAll('span')].find(x=>x.querySelector('b')?.textContent==='CA');
- const hpSpan=[...header.querySelectorAll('span')].find(x=>x.querySelector('b')?.textContent==='PG');
+ const hpSpan=[...header.querySelectorAll('span')].find(x=>x.querySelector('b')?.textContent==='HP');
  if(acSpan){acSpan.replaceChildren();append(acSpan,'b','','CA forma');acSpan.append(document.createTextNode(' '+(ac??'—')))}
- if(hpSpan){hpSpan.replaceChildren();append(hpSpan,'b','','PG forma');hpSpan.append(document.createTextNode(' '+hp+'/'+(max||'—')))}
- const original=append(header,'span','dma-ws-original11914');append(original,'b','','PG druida');original.append(document.createTextNode(` ${p.hp}/${p.max}`));
+ if(hpSpan){hpSpan.replaceChildren();append(hpSpan,'b','','HP forma');hpSpan.append(document.createTextNode(' '+hp+'/'+(max||'—')))}
+ const original=append(header,'span','dma-ws-original11914');append(original,'b','','HP druida');original.append(document.createTextNode(` ${p.hp}/${p.max}`));
 }
 function installDamage11914(){
  if(typeof renderQuickEnemies==='function'){
@@ -207,7 +207,7 @@ function installDamage11914(){
  }
  if(typeof renderActivePlayerBlock==='function'){
   const oldActive=renderActivePlayerBlock;
-  renderActivePlayerBlock=function(panel,key){const result=oldActive.apply(this,arguments);try{decorateActiveHeader11914(panel,key)}catch(e){console.error('[DMAid Forma Salvaje CA/PG]',e)}return result};
+  renderActivePlayerBlock=function(panel,key){const result=oldActive.apply(this,arguments);try{decorateActiveHeader11914(panel,key)}catch(e){console.error('[DMAid Forma Salvaje CA/HP]',e)}return result};
  }
 }
 

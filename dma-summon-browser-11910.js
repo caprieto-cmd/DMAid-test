@@ -46,7 +46,7 @@ function speedEntry(speed){
 }
 function bestiarySheet(target,m){target.replaceChildren();if(!m)return;const x=rich(m)||m,stat=x.stat||{};const cr=asCR(x.cr);
  part(target,'h5','dma-summon-name',x.name||'Criatura');part(target,'div','dma-summon-sub',(x.kind||'Criatura')+' · CR '+(cr==null?'sin verificar':showCR(cr))+' · '+(x.source||'Sin fuente'));
- statGrid(target,[['CA',x.ac??'—'],['PG',x.hp??'—'],['Iniciativa DES',Number(x.dex)>=0?'+'+(Number(x.dex)||0):x.dex],['Velocidad',speedEntry(stat.speed)||'Consultar ficha']]);
+ statGrid(target,[['CA',x.ac??'—'],['HP',x.hp??'—'],['Iniciativa DES',Number(x.dex)>=0?'+'+(Number(x.dex)||0):x.dex],['Velocidad',speedEntry(stat.speed)||'Consultar ficha']]);
  if(['str','dex','con','int','wis','cha'].every(k=>Number.isFinite(Number(stat[k]))))abilityGrid(target,['str','dex','con','int','wis','cha'].map(k=>Number(stat[k])));
  for(const [label,k] of [['Salvaciones','save'],['Habilidades','skill'],['Resistencias','resist'],['Inmunidades al daño','immune'],['Inmunidades a estados','conditionImmune'],['Sentidos','senses'],['Idiomas','languages']])if(stat[k])field(target,label,summaryEntry(stat[k]));
  for(const [label,k,fallback] of [['Rasgos','trait',x.traits],['Acciones','action',x.actions],['Bonus Actions','bonus',null],['Reacciones','reaction',null]]){
@@ -68,7 +68,7 @@ function spiritStats(name,form,slot,bonus,dc){const attacks=Math.floor(slot/2);c
 }
 function spiritSheet(target,spell,form,slot,casting){const s=spiritStats(spell,form,slot,casting.bonus,casting.dc);target.replaceChildren();if(!s){part(target,'p','dma-summon-warning','Bloque del espíritu no disponible en el catálogo.');return}
  part(target,'h5','dma-summon-name',s.name+' · '+nice(form));part(target,'div','dma-summon-sub',s.size+' · '+s.kind+' · Conjuro nivel '+slot+' · TCE 2020 · Sin CR');
- statGrid(target,[['CA',s.ac],['PG',s.hp],['Ataque','+'+s.bonus],['Ataques/acción',s.attacks]]);field(target,'Movimiento',s.speed);abilityGrid(target,s.abilities);field(target,'Sentidos',s.senses);field(target,'Idiomas',s.languages);if(s.resist)field(target,'Defensas',s.resist);if(s.conditions)field(target,'Inmunidades a condiciones',s.conditions);
+ statGrid(target,[['CA',s.ac],['HP',s.hp],['Ataque','+'+s.bonus],['Ataques/acción',s.attacks]]);field(target,'Movimiento',s.speed);abilityGrid(target,s.abilities);field(target,'Sentidos',s.senses);field(target,'Idiomas',s.languages);if(s.resist)field(target,'Defensas',s.resist);if(s.conditions)field(target,'Inmunidades a condiciones',s.conditions);
  formatList(target,'Rasgos',s.traits);formatList(target,'Acciones',['Multiattack: '+s.attacks+' ataque(s) con la acción Atacar.',s.attack]);if(s.bonusAction)formatList(target,'Bonus Actions',[s.bonusAction]);
  part(target,'p','dma-summon-small','Usa el modificador de ataque mágico y la CD del lanzador. El jugador realiza las tiradas y el DM registra los usos. Bloque derivado de las fórmulas de Tasha (2020), no de una bestia ordinaria.');
 }

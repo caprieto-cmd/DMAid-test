@@ -6766,7 +6766,7 @@
   "range": "90 feet",
   "concentration": true,
   "damage": "Depende del bloque del espíritu invocado",
-  "description": "Invocas un solo espíritu bestial Small en un espacio libre visible. Seleccionas forma aérea, terrestre o acuática; cada una usa el bloque Bestial Spirit correspondiente, no la ficha de una bestia ordinaria. Actúa después de tu turno, obedece comandos verbales gratuitos y sin órdenes usa Dodge. Sus estadísticas escalan con el nivel del espacio empleado. Es necesario consultar el bloque Bestial Spirit para calcular CA, PG y ataques.",
+  "description": "Invocas un solo espíritu bestial Small en un espacio libre visible. Seleccionas forma aérea, terrestre o acuática; cada una usa el bloque Bestial Spirit correspondiente, no la ficha de una bestia ordinaria. Actúa después de tu turno, obedece comandos verbales gratuitos y sin órdenes usa Dodge. Sus estadísticas escalan con el nivel del espacio empleado. Es necesario consultar el bloque Bestial Spirit para calcular CA, HP y ataques.",
   "casting_time": "1 action",
   "components": "V, S, M (pluma, pelo y cola de pez en bellota dorada de valor mínimo 200 po)",
   "duration": "Concentration, up to 1 hour",
@@ -6865,7 +6865,7 @@
    "onOwnTurn": true,
    "requiresSlot": true,
    "requiresBestiaryLookup": true,
-   "description": "Invocas un solo espíritu bestial Small en un espacio libre visible. Seleccionas forma aérea, terrestre o acuática; cada una usa el bloque Bestial Spirit correspondiente, no la ficha de una bestia ordinaria. Actúa después de tu turno, obedece comandos verbales gratuitos y sin órdenes usa Dodge. Sus estadísticas escalan con el nivel del espacio empleado. Es necesario consultar el bloque Bestial Spirit para calcular CA, PG y ataques.",
+   "description": "Invocas un solo espíritu bestial Small en un espacio libre visible. Seleccionas forma aérea, terrestre o acuática; cada una usa el bloque Bestial Spirit correspondiente, no la ficha de una bestia ordinaria. Actúa después de tu turno, obedece comandos verbales gratuitos y sin órdenes usa Dodge. Sus estadísticas escalan con el nivel del espacio empleado. Es necesario consultar el bloque Bestial Spirit para calcular CA, HP y ataques.",
    "school": "Conjuración",
    "mechanicalCompleteness": "rules_cross_checked"
   }
@@ -6884,7 +6884,7 @@
   "range": "90 feet",
   "concentration": true,
   "damage": "Depende del bloque del espíritu invocado",
-  "description": "Invocas un solo espíritu feérico Small en espacio libre visible. Elige Fuming, Mirthful o Tricksy. El espíritu actúa inmediatamente después de tu turno, obedece órdenes verbales sin acción y, sin órdenes, usa Dodge. El nivel del espacio modifica sus estadísticas. Usa el bloque Fey Spirit para CA, PG, ataques y Fey Step; no se selecciona libremente un bloque de criatura feérica del bestiario.",
+  "description": "Invocas un solo espíritu feérico Small en espacio libre visible. Elige Fuming, Mirthful o Tricksy. El espíritu actúa inmediatamente después de tu turno, obedece órdenes verbales sin acción y, sin órdenes, usa Dodge. El nivel del espacio modifica sus estadísticas. Usa el bloque Fey Spirit para CA, HP, ataques y Fey Step; no se selecciona libremente un bloque de criatura feérica del bestiario.",
   "casting_time": "1 action",
   "components": "V, S, M (flor dorada de valor mínimo 300 po)",
   "duration": "Concentration, up to 1 hour",
@@ -6975,7 +6975,7 @@
    "onOwnTurn": true,
    "requiresSlot": true,
    "requiresBestiaryLookup": true,
-   "description": "Invocas un solo espíritu feérico Small en espacio libre visible. Elige Fuming, Mirthful o Tricksy. El espíritu actúa inmediatamente después de tu turno, obedece órdenes verbales sin acción y, sin órdenes, usa Dodge. El nivel del espacio modifica sus estadísticas. Usa el bloque Fey Spirit para CA, PG, ataques y Fey Step; no se selecciona libremente un bloque de criatura feérica del bestiario.",
+   "description": "Invocas un solo espíritu feérico Small en espacio libre visible. Elige Fuming, Mirthful o Tricksy. El espíritu actúa inmediatamente después de tu turno, obedece órdenes verbales sin acción y, sin órdenes, usa Dodge. El nivel del espacio modifica sus estadísticas. Usa el bloque Fey Spirit para CA, HP, ataques y Fey Step; no se selecciona libremente un bloque de criatura feérica del bestiario.",
    "school": "Conjuración",
    "mechanicalCompleteness": "rules_cross_checked"
   }
@@ -7109,11 +7109,11 @@
   "range": "60 feet",
   "concentration": true,
   "damage": "No inflige daño; cura 1d6 por uso (según versión)",
-  "description": "Creas un espíritu intangible de 5 pies cúbicos dentro del alcance. Cuando una criatura visible entra por primera vez en su espacio durante un turno o comienza su turno allí, puedes hacer que recupere 1d6 PG, sin acción adicional. No sana constructos ni muertos vivientes. Puedes desplazarlo hasta 30 pies usando una acción bonus. Tras curar 1 + tu modificador de característica mágica veces (mínimo 2), desaparece. Un espacio de nivel superior aumenta la curación 1d6 por nivel.",
+  "description": "Creas un espíritu intangible de 5 pies cúbicos dentro del alcance. Cuando una criatura visible entra por primera vez en su espacio durante un turno o comienza su turno allí, puedes hacer que recupere 1d6 HP, sin acción adicional. No sana constructos ni muertos vivientes. Puedes desplazarlo hasta 30 pies usando una acción bonus. Tras curar 1 + tu modificador de característica mágica veces (mínimo 2), desaparece. Un espacio de nivel superior aumenta la curación 1d6 por nivel.",
   "casting_time": "1 bonus action",
   "components": "V, S",
   "duration": "Concentration, up to 1 minute",
-  "healing": "1d6 PG; 1 + modificador de lanzamiento usos, mínimo 2",
+  "healing": "1d6 HP; 1 + modificador de lanzamiento usos, mínimo 2",
   "upcast": "Curación +1d6 por nivel de espacio superior a 2",
   "targets": [
    "creature"
@@ -7153,12 +7153,12 @@
    "damageDiceText": "No inflige daño; cura 1d6 por uso (según versión)",
    "damageTypes": [],
    "upcastText": "Curación +1d6 por nivel de espacio superior a 2",
-   "healing": "1d6 PG; 1 + modificador de lanzamiento usos, mínimo 2",
+   "healing": "1d6 HP; 1 + modificador de lanzamiento usos, mínimo 2",
    "sourceEdition": "D&D 5e 2014",
    "targetSelection": "DM/player chooses targets according to spell description",
    "onOwnTurn": true,
    "requiresSlot": true,
-   "description": "Creas un espíritu intangible de 5 pies cúbicos dentro del alcance. Cuando una criatura visible entra por primera vez en su espacio durante un turno o comienza su turno allí, puedes hacer que recupere 1d6 PG, sin acción adicional. No sana constructos ni muertos vivientes. Puedes desplazarlo hasta 30 pies usando una acción bonus. Tras curar 1 + tu modificador de característica mágica veces (mínimo 2), desaparece. Un espacio de nivel superior aumenta la curación 1d6 por nivel.",
+   "description": "Creas un espíritu intangible de 5 pies cúbicos dentro del alcance. Cuando una criatura visible entra por primera vez en su espacio durante un turno o comienza su turno allí, puedes hacer que recupere 1d6 HP, sin acción adicional. No sana constructos ni muertos vivientes. Puedes desplazarlo hasta 30 pies usando una acción bonus. Tras curar 1 + tu modificador de característica mágica veces (mínimo 2), desaparece. Un espacio de nivel superior aumenta la curación 1d6 por nivel.",
    "school": "Conjuración",
    "mechanicalCompleteness": "rules_cross_checked"
   }

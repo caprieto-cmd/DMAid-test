@@ -1879,9 +1879,9 @@
           "status": "mechanics_specified_source_checked",
           "runtime_note": "Los 3 dispositivos simultáneos no son 3 usos por descanso; no se generan inventarios ni gastan oro automáticamente en esta fase.",
           "verified_from": "PHB-2014",
-          "description": "Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 PG) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales.",
+          "description": "Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 HP) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales.",
           "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
-          "supplementary_rules": "Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 PG) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales.",
+          "supplementary_rules": "Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 HP) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales.",
           "requires_source_verification": true,
           "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
           "source_reference": {
@@ -2141,9 +2141,9 @@
             }
           ],
           "status": "structured_requires_integration",
-          "description": "Cuando te reducen a 0 PG sin matarte directamente, puedes quedarte con 1 PG en su lugar. Recuperas el uso tras terminar un descanso largo.",
+          "description": "Cuando te reducen a 0 HP sin matarte directamente, puedes quedarte con 1 HP en su lugar. Recuperas el uso tras terminar un descanso largo.",
           "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
-          "supplementary_rules": "Cuando te reducen a 0 PG sin matarte directamente, puedes quedarte con 1 PG en su lugar. Recuperas el uso tras terminar un descanso largo.",
+          "supplementary_rules": "Cuando te reducen a 0 HP sin matarte directamente, puedes quedarte con 1 HP en su lugar. Recuperas el uso tras terminar un descanso largo.",
           "requires_source_verification": true,
           "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
           "source_reference": {
@@ -2652,7 +2652,7 @@
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
           },
-          "description": "Como acción, toca a una criatura y tira tantos d4 como tu bonificador de competencia: recupera esa cantidad de PG. Se recupera tras un descanso largo.",
+          "description": "Como acción, toca a una criatura y tira tantos d4 como tu bonificador de competencia: recupera esa cantidad de HP. Se recupera tras un descanso largo.",
           "description_status": "contrastado_manualmente_fuente_aportada",
           "supplementary_rules": "",
           "requires_source_verification": false,
@@ -6701,9 +6701,9 @@
             "method": "source_text_checked",
             "page_printed": null
           },
-          "description": "Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia PG temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto).",
+          "description": "Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia HP temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto).",
           "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
-          "supplementary_rules": "Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia PG temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto).",
+          "supplementary_rules": "Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia HP temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto).",
           "requires_source_verification": true,
           "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
           "source_reference": {
@@ -7291,9 +7291,9 @@
             "method": "source_text_checked",
             "page_printed": null
           },
-          "description": "Como acción adicional, haces un ataque con mordida. Si impactas, obtienes PG temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo.",
+          "description": "Como acción adicional, haces un ataque con mordida. Si impactas, obtienes HP temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo.",
           "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
-          "supplementary_rules": "Como acción adicional, haces un ataque con mordida. Si impactas, obtienes PG temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo.",
+          "supplementary_rules": "Como acción adicional, haces un ataque con mordida. Si impactas, obtienes HP temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo.",
           "requires_source_verification": true,
           "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
           "source_reference": {
@@ -7694,9 +7694,9 @@
             "method": "source_text_checked",
             "page_printed": null
           },
-          "description": "Puedes Correr como acción adicional y al hacerlo ganas PG temporales iguales a competencia. Usos iguales a competencia por descanso largo.",
+          "description": "Puedes Correr como acción adicional y al hacerlo ganas HP temporales iguales a competencia. Usos iguales a competencia por descanso largo.",
           "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
-          "supplementary_rules": "Puedes Correr como acción adicional y al hacerlo ganas PG temporales iguales a competencia. Usos iguales a competencia por descanso largo.",
+          "supplementary_rules": "Puedes Correr como acción adicional y al hacerlo ganas HP temporales iguales a competencia. Usos iguales a competencia por descanso largo.",
           "requires_source_verification": true,
           "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
           "source_reference": {
@@ -7812,7 +7812,7 @@
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
           },
-          "description": "Cuando un daño te reduce a 0 PG sin matarte inmediatamente, puedes quedar con 1 PG en su lugar. Recuperas este uso tras un descanso largo.",
+          "description": "Cuando un daño te reduce a 0 HP sin matarte inmediatamente, puedes quedar con 1 HP en su lugar. Recuperas este uso tras un descanso largo.",
           "description_status": "redaccion_editorial_desde_modelo",
           "supplementary_rules": "Uso limitado. Activación: none; usos: 1; recuperación: descanso largo.",
           "requires_source_verification": true,
@@ -8834,9 +8834,9 @@
             "method": "source_text_checked",
             "page_printed": null
           },
-          "description": "Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas PG temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 PG temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo.",
+          "description": "Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas HP temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 HP temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo.",
           "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
-          "supplementary_rules": "Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas PG temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 PG temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo.",
+          "supplementary_rules": "Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas HP temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 HP temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo.",
           "requires_source_verification": true,
           "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
           "source_reference": {
