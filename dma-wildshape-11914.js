@@ -150,22 +150,30 @@ function install(){if(typeof renderActivePlayerBlock!=='function')return;const p
 // El DM declara los impactos y el daño, DMAid solo registra los resultados.
 function activeForm(i){const d=profile(i)?.dmaWildShapeForm11913;return d?.active&&d.beast?d:null}
 function quickAmount(i){const n=Number(document.getElementById('quick-val-p'+i)?.value);return Number.isFinite(n)?Math.max(1,Math.floor(n)):5}
-function formBar(parent,current,max,label){const wrap=append(parent,'div','dma-ws-quick-bar11914');append(wrap,'span','',label);const track=append(wrap,'div','dma-ws-quick-rail11914');const v=append(track,'span');v.style.width=`${Math.max(0,Math.min(100,max?current/max*100:0))}%`;return wrap}
+function formBar(parent,current,max,label,isOriginal=false){
+ const wrap=append(parent,'div','dma-ws-quick-bar11914'+(isOriginal?' is-original':''));
+ const heading=append(wrap,'div','dma-ws-quick-bar-label11916');
+ append(heading,'span','',label);
+ append(heading,'strong','',`${current} / ${max||'—'}`);
+ const rail=append(wrap,'div','dma-ws-quick-rail11914');
+ rail.setAttribute('role','progressbar');rail.setAttribute('aria-label',label);
+ rail.setAttribute('aria-valuemin','0');rail.setAttribute('aria-valuemax',String(max||0));rail.setAttribute('aria-valuenow',String(current));
+ const v=append(rail,'span');v.style.width=`${Math.max(0,Math.min(100,max?current/max*100:0))}%`;
+ return wrap;
+}
 function decorateQuick11914(){const group=document.querySelector('#quickenemygrid .quick-group');if(!group)return;
  const cards=group.querySelectorAll('.quick-enemy');
  state.players.forEach((p,i)=>{
   const data=activeForm(i),card=cards[i];if(!data||!card)return;
   const m=data.beast,ac=formAC(m),max=formMax(m),cur=Math.max(0,Number(data.hp)||0);
   const currentAC=card.querySelector('.qsub');
-  if(currentAC){currentAC.textContent=`CA de la forma: ${ac??'por verificar'} · ${m.name}`;currentAC.classList.add('dma-ws-ac11914')}
-  const original=card.querySelector('.qhp');
-  if(original){original.replaceChildren();append(original,'strong','',`${p.hp} / ${p.max}`);append(original,'span','qsub','HP druida (reserva)')}
+  if(currentAC){currentAC.textContent=`CA ${ac??'—'} · ${m.name}`;currentAC.classList.add('dma-ws-ac11914')}
+  // Mientras esté transformado, sustituimos el HP estándar por solo dos barras.
+  // Los botones −/+ continúan usando damageToForm11914 y no cambian su lógica.
+  card.querySelector('.qhp')?.remove();
   const form=append(card,'div','dma-ws-quick11914');
-  append(form,'div','dma-ws-quick-name11914',`🌿 Forma Salvaje activa · ${m.name}`);
-  const row=append(form,'div','dma-ws-quick-values11914');append(row,'strong','',`${cur} / ${max||'—'} HP forma`);append(row,'strong','',`CA ${ac??'—'}`);
-  formBar(form,cur,max,'HP de la forma');formBar(form,p.hp,p.max,'HP originales');
-  if(p.temp>0)append(form,'small','',`${p.temp} HP temporales: absorben daño antes que la forma.`);
-  append(form,'small','','Daño a la forma; el exceso pasa al druida al llegar a 0 HP.');
+  formBar(form,cur,max,'Forma Salvaje');
+  formBar(form,p.hp,p.max,'Druida',true);
   const actions=card.querySelector('.hpbuttons');if(actions)actions.insertAdjacentElement('beforebegin',form);
  });
 }
