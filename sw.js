@@ -1,5 +1,5 @@
-/* DM.AID TEST 1.19.10; navigation network-first to avoid stale builds. */
-const CACHE='dmaid-stable-1.19.10';
+/* DM.AID TEST 1.19.11; navigation network-first to avoid stale builds. */
+const CACHE='dmaid-stable-1.19.11';
 const ASSETS=['./','./index.html','./character-builder-v2.js','./character-builder-v2.css','./dma-magic-rest-1185.js','./dma-combat-spells-1188.js','./dma-summon-browser-11910.js','./dma-druid-spells-1189.js','./dma-druid-mechanics-1199.js','./dma-druid-spells-1189.json','./dma-druid-features-1190.js','./dma-progression-1191.js','./racial-engine.js','./races.pre2024.normalized.v7.json','./icon-192.png'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).catch(()=>{}));});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{const names=await caches.keys();await Promise.all(names.filter(n=>(n.startsWith('dmaid-test-')||n.startsWith('dmaid-recovery-')||n.startsWith('dmaid-bootdiag-')||n.startsWith('dmaid-builder-')||n.startsWith('dmaid-magic-')||n.startsWith('dmaid-druid-')||n.startsWith('dmaid-progression-')||n.startsWith('dmaid-stable-'))&&n!==CACHE).map(n=>caches.delete(n)));await self.clients.claim();})());});

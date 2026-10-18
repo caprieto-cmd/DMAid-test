@@ -9,7 +9,7 @@ const TEST_SPELLS_1185=[['Thorn Whip',0,'Druida','PHB'],['Spike Growth',2,'Druid
 // D&D 5e 2014 rules / Tasha's: Circle of Spores granted spells. Supplemental
 // metadata is only used when the loaded catalog has no indexed record.
 const BONUS_SPORES_1194=[
- ['Chill Touch',0,'120 pies','1 acción','1d8 necrótico; impide recuperar PG hasta el comienzo de tu siguiente turno.','TCE'],
+ ['Chill Touch',0,'120 pies','1 acción','1d8 necrótico; impide recuperar PG hasta el comienzo de tu siguiente turno.','PHB 2014'],
  ['Blindness/Deafness',2,'30 pies','1 acción','Salvación de CON; ceguera o sordera hasta 1 minuto (nueva salvación al final de cada turno).','PHB'],
  ['Gentle Repose',2,'Toque','1 acción','Protege un cadáver durante 10 días de la descomposición y de convertirse en no muerto; ritual.','PHB'],
  ['Animate Dead',3,'10 pies','1 minuto','Crea o recupera el control de un no muerto a partir de restos apropiados.','PHB'],

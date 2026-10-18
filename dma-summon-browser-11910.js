@@ -108,6 +108,14 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
    crSelect=addControl(row,'Filtrar por CR',[{value:'all',label:'Todos los CR permitidos'}]);
    const cWrap=part(row,'label','dma-summon-control');part(cWrap,'span','','Criaturas compatibles (catálogo cargado)');monsterSelect=part(cWrap,'select');
    refresh=part(row,'button','dma-summon-refresh','Actualizar bestiario');refresh.type='button';
+   const load=part(row,'button','dma-summon-refresh','Cargar Monster Manual (2014)');load.type='button';
+   load.addEventListener('click',async()=>{
+    if(typeof loadRemoteBestiary!=='function'){feedback.textContent='El cargador de libros no está disponible aquí. Abre Bestiario y carga Monster Manual (2014).';return}
+    load.disabled=true;load.textContent='Cargando criaturas…';
+    try{await loadRemoteBestiary('MM');calculate();if(!fromBestiary().length)feedback.textContent='La carga no agregó criaturas. Comprueba conexión o importa el JSON del bestiario en la pestaña Bestiario.'}
+    catch(e){console.error('[DMAid] Carga de bestiario desde conjuro',e);feedback.textContent='No se pudo cargar Monster Manual: '+e.message}
+    finally{load.disabled=false;load.textContent='Cargar Monster Manual (2014)'}
+   });
  }
  const calculate=()=>{
    const level=Number(slotSelect?.value)||minLevel;const form=formSelect?.value||summon?.forms?.[0]||'all';const casting=caster(i);
@@ -140,7 +148,7 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
    feedback.textContent=noteText+(summon?'Opciones: '+count+' criatura(s), CR hasta '+showCR(cap):'CR hasta '+showCR(cap))+' · '+matching.length+' criaturas compatibles en bestiario · '+filtered.length+' visibles.';
    if(mode==='conjureanimals'||mode==='conjurewoodlandbeings'||mode==='conjureminorelementals')feedback.textContent+=' El DM determina qué criaturas concretas aparecen; la opción indica solo cantidad y CR.';
    if(mode==='giantinsect')feedback.textContent+=' Giant Insect transforma insectos existentes; no convoca criaturas nuevas.';
-   if(!filtered.length){sheet.replaceChildren();part(sheet,'p','dma-summon-warning',matching.length?'No hay coincidencias con la búsqueda.':'No se encontraron fichas compatibles en el bestiario cargado. Carga el libro correspondiente desde Bestiario o importa sus fichas y pulsa «Actualizar bestiario».');return;}
+   if(!filtered.length){sheet.replaceChildren();part(sheet,'p','dma-summon-warning',matching.length?'No hay coincidencias con la búsqueda.':'No hay criaturas compatibles cargadas. Abre Bestiario, carga Monster Manual (2014) u otro libro permitido y vuelve aquí; después pulsa «Actualizar bestiario». No se fabricarán estadísticas.');return;}
    const selected=filtered.find(m=>String(m.id)===monsterSelect.value)||filtered[0];bestiarySheet(sheet,selected);
  };
  for(const control of [slotSelect,formSelect,optionSelect,targetSelect,crSelect,monsterSelect])if(control)control.addEventListener('change',calculate);
