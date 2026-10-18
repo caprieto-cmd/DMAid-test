@@ -55,7 +55,20 @@
               "pool": "dm_approved"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Puedes hablar, leer y escribir un idioma adicional a tu elección, además del común.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes hablar, leer y escribir un idioma adicional a tu elección, además del común.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              32
+            ],
+            "printed_page": 31,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -153,7 +166,17 @@
               "distinct": true
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Aumenta en 1 dos puntuaciones de característica diferentes. Esta variante reemplaza el aumento general de +1 a las seis características del humano estándar.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [],
+            "check_level": "contraste_manual_con_regla_fuente"
+          }
         },
         {
           "id": "skill-proficiency-(choice)",
@@ -166,7 +189,17 @@
               "pool": "all_skills"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Obtienes competencia en una habilidad cualquiera a tu elección.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [],
+            "check_level": "contraste_manual_con_regla_fuente"
+          }
         },
         {
           "id": "feat-(choice)",
@@ -180,7 +213,17 @@
               "source": "PHB_2014"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Obtienes una dote a tu elección desde el nivel 1, si tu DM permite la regla opcional de dotes. Debes cumplir los requisitos de la dote.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [],
+            "check_level": "contraste_manual_con_regla_fuente"
+          }
         }
       ],
       "choices": [
@@ -250,7 +293,20 @@
               "range_ft": 60
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "keen-senses",
@@ -264,7 +320,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Obtienes competencia en Percepción.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Percepción.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "fey-ancestry",
@@ -280,7 +349,20 @@
               "effect": "magical_sleep"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes ventaja en salvaciones contra la condición hechizado y la magia no puede dormirte.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones contra la condición hechizado y la magia no puede dormirte.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "trance",
@@ -292,7 +374,20 @@
               "note": "Trance not identical to completing long rest automatically; adjudicate rest requirements"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "No necesitas dormir. Meditas profundamente durante 4 horas diarias, permaneciendo semiconsciente; esta meditación ofrece el beneficio de 8 horas de sueño para un humano. No equivale automáticamente a completar un descanso largo en solo 4 horas según el texto de PHB 2014.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "No necesitas dormir. Meditas profundamente durante 4 horas diarias, permaneciendo semiconsciente; esta meditación ofrece el beneficio de 8 horas de sueño para un humano. No equivale automáticamente a completar un descanso largo en solo 4 horas según el texto de PHB 2014.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -354,7 +449,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Competencia con espada larga, espada corta, arco corto y arco largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Competencia con espada larga, espada corta, arco corto y arco largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "cantrip",
@@ -368,7 +476,20 @@
               "casting_ability": "INT"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Escoge un truco de la lista de conjuros de mago. Inteligencia es tu característica para lanzarlo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge un truco de la lista de conjuros de mago. Inteligencia es tu característica para lanzarlo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "extra-language",
@@ -381,7 +502,20 @@
               "pool": "dm_approved"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Escoge un idioma adicional que puedas hablar, leer y escribir.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge un idioma adicional que puedas hablar, leer y escribir.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -443,7 +577,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Competencia con espada larga, espada corta, arco corto y arco largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Competencia con espada larga, espada corta, arco corto y arco largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "fleet-of-foot",
@@ -455,7 +602,20 @@
               "operation": "replace"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tu velocidad al caminar es de 35 pies en lugar de 30.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu velocidad al caminar es de 35 pies en lugar de 30.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "mask-of-the-wild",
@@ -466,7 +626,16 @@
               "obscurement": "lightly_obscured_natural_phenomena"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Puedes intentar esconderte aunque solo estés ligeramente oscurecido por fenómenos naturales, incluidos follaje, lluvia intensa, nieve que cae y niebla. No te oculta automáticamente: haces la prueba habitual de Destreza (Sigilo) cuando intentas esconderte. No proporciona usos extra de la acción Esconderse, invisibilidad ni un bonificador numérico; no tiene límite de usos. Puede funcionar en cualquier lugar si el oscurecimiento ligero procede de fenómenos naturales, también en una ciudad.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Puedes intentar esconderte cuando estés ligeramente oscurecido por fenómenos naturales, como follaje, lluvia intensa, nieve o niebla.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "PHB 2014, p. 24",
+            "pdf_page": "PHB PDF p. 26"
+          }
         }
       ],
       "choices": [],
@@ -523,7 +692,20 @@
               "range_ft": 120
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tu visión en la oscuridad alcanza 120 pies en vez de 60.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu visión en la oscuridad alcanza 120 pies en vez de 60.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "sunlight-sensitivity",
@@ -538,7 +720,20 @@
               "condition": "you_or_target_in_direct_sunlight"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes desventaja en tiradas de ataque y en pruebas de Sabiduría (Percepción) que dependan de la vista si tú, el objetivo del ataque o aquello que intentas percibir está bajo luz solar directa.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes desventaja en tiradas de ataque y en pruebas de Sabiduría (Percepción) que dependan de la vista si tú, el objetivo del ataque o aquello que intentas percibir está bajo luz solar directa.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "drow-magic",
@@ -568,7 +763,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Conoces el truco luces danzantes. Desde nivel 3 lanzas fuego feérico una vez por descanso largo y desde nivel 5 oscuridad una vez por descanso largo. Carisma es tu característica de lanzamiento de estos conjuros.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces el truco luces danzantes. Desde nivel 3 lanzas fuego feérico una vez por descanso largo y desde nivel 5 oscuridad una vez por descanso largo. Carisma es tu característica de lanzamiento de estos conjuros.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "drow-weapon-training",
@@ -584,7 +792,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Competencia con estoque, espada corta y ballesta de mano.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Competencia con estoque, espada corta y ballesta de mano.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -641,7 +862,20 @@
               "range_ft": 60
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "dwarven-resilience",
@@ -657,7 +891,20 @@
               "against": "poison"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes ventaja en salvaciones contra veneno y resistencia al daño de veneno.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones contra veneno y resistencia al daño de veneno.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "dwarven-combat-training",
@@ -674,7 +921,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Competencia con hacha de batalla, hacha de mano, martillo ligero y martillo de guerra.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Competencia con hacha de batalla, hacha de mano, martillo ligero y martillo de guerra.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "tool-proficiency",
@@ -691,7 +951,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Escoge competencia con una de estas herramientas: herramientas de herrero, suministros de cervecero o herramientas de albañil.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge competencia con una de estas herramientas: herramientas de herrero, suministros de cervecero o herramientas de albañil.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "stonecunning",
@@ -701,11 +974,25 @@
               "type": "conditional_bonus",
               "skill": "Historia",
               "condition": "origin_of_stonework",
-              "double_proficiency_if_proficient": false,
-              "bonus": "2 * proficiency_bonus"
+              "double_proficiency_if_proficient": true,
+              "bonus": "2 * proficiency_bonus",
+              "calculation": "proficient_for_this_check; apply_double_PB_instead_of_normal_PB"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Cuando realices una prueba de Inteligencia (Historia) relacionada con el origen de una obra en piedra, se te considera competente en Historia y sumas el doble de tu bonificador de competencia en lugar del habitual.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando realices una prueba de Inteligencia (Historia) relacionada con el origen de una obra en piedra, se te considera competente en Historia y sumas el doble de tu bonificador de competencia en lugar del habitual.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -761,7 +1048,20 @@
               "per_character_level": 1
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tu máximo de puntos de golpe aumenta en 1 al adquirir este rasgo y en 1 adicional cada vez que ganas un nivel.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu máximo de puntos de golpe aumenta en 1 al adquirir este rasgo y en 1 adicional cada vez que ganas un nivel.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -821,7 +1121,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Obtienes competencia con armaduras ligeras y medias.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia con armaduras ligeras y medias.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -878,7 +1191,20 @@
               "must_use_new_roll": true
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Cuando obtienes un 1 natural en el d20 de una tirada de ataque, prueba de característica o tirada de salvación, puedes repetir ese dado y debes utilizar la nueva tirada.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando obtienes un 1 natural en el d20 de una tirada de ataque, prueba de característica o tirada de salvación, puedes repetir ese dado y debes utilizar la nueva tirada.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "brave",
@@ -890,7 +1216,20 @@
               "against": "frightened"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes ventaja en tiradas de salvación para evitar quedar asustado.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en tiradas de salvación para evitar quedar asustado.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "halfling-nimbleness",
@@ -901,7 +1240,20 @@
               "through_space_of_creature_size": "larger_than_self"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Puedes moverte a través del espacio de cualquier criatura cuyo tamaño sea superior al tuyo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes moverte a través del espacio de cualquier criatura cuyo tamaño sea superior al tuyo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -957,7 +1309,20 @@
               "obscured_by": "creature_at_least_one_size_larger"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Puedes intentar esconderte incluso cuando solo estás oculto por una criatura de al menos una categoría de tamaño superior a la tuya.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes intentar esconderte incluso cuando solo estás oculto por una criatura de al menos una categoría de tamaño superior a la tuya.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1018,7 +1383,20 @@
               "against": "poison"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes ventaja en las salvaciones contra veneno y resistencia al daño por veneno.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en las salvaciones contra veneno y resistencia al daño por veneno.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1088,7 +1466,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Selecciona un tipo de dragón: negro (ácido; línea 5×30 pies, DES), azul (rayo; línea 5×30, DES), latón (fuego; línea 5×30, DES), bronce (rayo; línea 5×30, DES), cobre (ácido; línea 5×30, DES), oro (fuego; cono 15 pies, DES), verde (veneno; cono 15, CON), rojo (fuego; cono 15, DES), plata (frío; cono 15, CON) o blanco (frío; cono 15, CON). Tu elección define el aliento y la resistencia.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Selecciona un tipo de dragón: negro (ácido; línea 5×30 pies, DES), azul (rayo; línea 5×30, DES), latón (fuego; línea 5×30, DES), bronce (rayo; línea 5×30, DES), cobre (ácido; línea 5×30, DES), oro (fuego; cono 15 pies, DES), verde (veneno; cono 15, CON), rojo (fuego; cono 15, DES), plata (frío; cono 15, CON) o blanco (frío; cono 15, CON). Tu elección define el aliento y la resistencia.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "breath-weapon",
@@ -1121,7 +1512,20 @@
               "depends_on": "draconic_ancestry"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Como acción, exhalas energía en el área indicada por tu ascendencia. Los afectados hacen la salvación correspondiente, CD 8 + competencia + modificador de Constitución. Si tienen éxito, reciben la mitad del daño. Inflige 2d6 a niveles 1–5; 3d6 a 6–10; 4d6 a 11–15; 5d6 a partir de 16. Un uso por descanso corto o largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción, exhalas energía en el área indicada por tu ascendencia. Los afectados hacen la salvación correspondiente, CD 8 + competencia + modificador de Constitución. Si tienen éxito, reciben la mitad del daño. Inflige 2d6 a niveles 1–5; 3d6 a 6–10; 4d6 a 11–15; 5d6 a partir de 16. Un uso por descanso corto o largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "damage-resistance",
@@ -1132,7 +1536,20 @@
               "damage_type": "chosen_draconic_ancestry"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes resistencia al tipo de daño asociado con tu ascendencia dracónica.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes resistencia al tipo de daño asociado con tu ascendencia dracónica.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1189,7 +1606,20 @@
               "range_ft": 60
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              38
+            ],
+            "printed_page": 37,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "gnome-cunning",
@@ -1206,7 +1636,20 @@
               "condition": "against_magic"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes ventaja en las salvaciones de Inteligencia, Sabiduría y Carisma contra magia.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en las salvaciones de Inteligencia, Sabiduría y Carisma contra magia.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              38
+            ],
+            "printed_page": 37,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1264,7 +1707,20 @@
               "kind": "cantrip"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Conoces el truco ilusión menor; Inteligencia es tu característica de lanzamiento.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces el truco ilusión menor; Inteligencia es tu característica de lanzamiento.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              38
+            ],
+            "printed_page": 37,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "speak-with-small-beasts",
@@ -1276,7 +1732,20 @@
               "simple_ideas": true
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Puedes comunicar ideas sencillas mediante sonidos y gestos con bestias Pequeñas o menores. No les concedes inteligencia adicional ni obligas a obedecer.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes comunicar ideas sencillas mediante sonidos y gestos con bestias Pequeñas o menores. No les concedes inteligencia adicional ni obligas a obedecer.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              38
+            ],
+            "printed_page": 37,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1334,7 +1803,20 @@
               "bonus": "2 * proficiency_bonus"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Cuando realizas una prueba de Inteligencia (Historia) relacionada con objetos mágicos, objetos alquímicos o dispositivos tecnológicos, añades dos veces tu bonificador de competencia en lugar del habitual.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando realizas una prueba de Inteligencia (Historia) relacionada con objetos mágicos, objetos alquímicos o dispositivos tecnológicos, añades dos veces tu bonificador de competencia en lugar del habitual.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              38
+            ],
+            "printed_page": 37,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "tinker",
@@ -1396,7 +1878,20 @@
           ],
           "status": "mechanics_specified_source_checked",
           "runtime_note": "Los 3 dispositivos simultáneos no son 3 usos por descanso; no se generan inventarios ni gastan oro automáticamente en esta fase.",
-          "verified_from": "PHB-2014"
+          "verified_from": "PHB-2014",
+          "description": "Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 HP) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Eres competente con herramientas de artesano (hojalatero). Con 1 hora y materiales por 10 po creas un mecanismo Diminuto (CA 5, 1 HP) como juguete mecánico, encendedor o caja de música. Funciona 24 h salvo reparaciones; puedes mantener hasta tres a la vez y desmantelarlo para recuperar materiales.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              38
+            ],
+            "printed_page": 37,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1453,7 +1948,20 @@
               "range_ft": 60
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              40
+            ],
+            "printed_page": 39,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "fey-ancestry",
@@ -1469,7 +1977,20 @@
               "effect": "magical_sleep"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes ventaja en salvaciones contra la condición hechizado y la magia no puede dormirte.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones contra la condición hechizado y la magia no puede dormirte.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              40
+            ],
+            "printed_page": 39,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "skill-versatility",
@@ -1483,7 +2004,20 @@
               "distinct": true
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Obtienes competencia en dos habilidades cualesquiera de tu elección.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en dos habilidades cualesquiera de tu elección.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              40
+            ],
+            "printed_page": 39,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [
@@ -1551,7 +2085,20 @@
               "range_ft": 60
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              42
+            ],
+            "printed_page": 41,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "menacing",
@@ -1565,7 +2112,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Obtienes competencia en Intimidación.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Intimidación.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              42
+            ],
+            "printed_page": 41,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "relentless-endurance",
@@ -1580,7 +2140,20 @@
               "action_economy": "none"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Cuando te reducen a 0 HP sin matarte directamente, puedes quedarte con 1 HP en su lugar. Recuperas el uso tras terminar un descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando te reducen a 0 HP sin matarte directamente, puedes quedarte con 1 HP en su lugar. Recuperas el uso tras terminar un descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              42
+            ],
+            "printed_page": 41,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "savage-attacks",
@@ -1593,7 +2166,20 @@
               "die": "weapon_damage_die"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Cuando consigues un impacto crítico con un ataque de arma cuerpo a cuerpo, tira un dado de daño del arma una vez más y añádelo al daño adicional del crítico.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando consigues un impacto crítico con un ataque de arma cuerpo a cuerpo, tira un dado de daño del arma una vez más y añádelo al daño adicional del crítico.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              42
+            ],
+            "printed_page": 41,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1650,7 +2236,20 @@
               "range_ft": 60
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              44
+            ],
+            "printed_page": 43,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "hellish-resistance",
@@ -1661,7 +2260,16 @@
               "damage_type": "fire"
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Tienes resistencia al daño de fuego: cuando recibes daño de fuego, reduces a la mitad el daño correspondiente según las reglas de resistencias. Es un efecto pasivo, sin acción ni límite de usos; no equivale a inmunidad.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Tienes resistencia al daño de fuego.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "PHB 2014, p. 43",
+            "pdf_page": "PHB PDF p. 45"
+          }
         },
         {
           "id": "infernal-legacy",
@@ -1692,7 +2300,20 @@
               ]
             }
           ],
-          "status": "structured_requires_integration"
+          "status": "structured_requires_integration",
+          "description": "Conoces el truco taumaturgia. Desde nivel 3 lanzas reprensión infernal como conjuro de nivel 2 una vez por descanso largo. Desde nivel 5 lanzas oscuridad una vez por descanso largo. Carisma es tu característica de lanzamiento.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces el truco taumaturgia. Desde nivel 3 lanzas reprensión infernal como conjuro de nivel 2 una vez por descanso largo. Desde nivel 5 lanzas oscuridad una vez por descanso largo. Carisma es tu característica de lanzamiento.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "PHB-2014",
+            "pdf_pages": [
+              44
+            ],
+            "printed_page": 43,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -1770,6 +2391,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes velocidad de vuelo igual a tu velocidad al caminar gracias a tus alas. No funciona llevando armadura media o pesada.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes velocidad de vuelo igual a tu velocidad al caminar gracias a tus alas. No funciona llevando armadura media o pesada.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              7
+            ],
+            "printed_page": 6,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -1796,6 +2430,18 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tus garras sirven para golpes desarmados. Si aciertas con ellas, infliges 1d6 + tu modificador de Fuerza de daño cortante en lugar del daño contundente normal.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              7
+            ],
+            "check_level": "contraste_manual_con_regla_fuente"
           }
         },
         {
@@ -1835,6 +2481,18 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Desde nivel 3 puedes lanzar ráfaga de viento sin componente material. Dispones de un uso gratuito por descanso largo; también puedes lanzarlo con espacios de conjuro de nivel 2 o superior. Elige INT, SAB o CAR como característica de lanzamiento al escoger la raza.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              7
+            ],
+            "check_level": "contraste_manual_con_regla_fuente"
           }
         }
       ],
@@ -1911,6 +2569,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes resistencia al daño necrótico y radiante.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes resistencia al daño necrótico y radiante.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              8
+            ],
+            "printed_page": 7,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -1935,6 +2606,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              8
+            ],
+            "printed_page": 7,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -1967,6 +2651,18 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Como acción, toca a una criatura y tira tantos d4 como tu bonificador de competencia: recupera esa cantidad de HP. Se recupera tras un descanso largo.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              8
+            ],
+            "check_level": "contraste_manual_con_regla_fuente"
           }
         },
         {
@@ -1996,6 +2692,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Conoces el truco luz; Carisma es tu característica de lanzamiento para este truco.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces el truco luz; Carisma es tu característica de lanzamiento para este truco.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              8
+            ],
+            "printed_page": 7,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2070,7 +2779,20 @@
             "printed_race_page": 7,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Al nivel 3 elige una revelación: Manto necrótico, Consumo radiante o Alma radiante. Con una acción adicional la activas 1 minuto; puedes terminarla como acción adicional. Un uso por descanso largo. Manto: criaturas que no sean tus aliados a 10 pies y que puedan verte hacen salvación de Carisma (CD 8 + competencia + CAR) o quedan asustadas hasta el fin de tu siguiente turno; una vez por turno añades daño necrótico igual a tu competencia a un objetivo dañado por un ataque o conjuro. Consumo: luz brillante 10 pies y tenue otros 10; al final de cada turno todas las criaturas a 10 pies reciben daño radiante igual a competencia; una vez por turno añades el mismo daño a un objetivo dañado por ataque o conjuro. Alma: velocidad de vuelo igual a caminar; una vez por turno añades daño radiante igual a competencia a un objetivo dañado por ataque o conjuro.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Al nivel 3 elige una revelación: Manto necrótico, Consumo radiante o Alma radiante. Con una acción adicional la activas 1 minuto; puedes terminarla como acción adicional. Un uso por descanso largo. Manto: criaturas que no sean tus aliados a 10 pies y que puedan verte hacen salvación de Carisma (CD 8 + competencia + CAR) o quedan asustadas hasta el fin de tu siguiente turno; una vez por turno añades daño necrótico igual a tu competencia a un objetivo dañado por un ataque o conjuro. Consumo: luz brillante 10 pies y tenue otros 10; al final de cada turno todas las criaturas a 10 pies reciben daño radiante igual a competencia; una vez por turno añades el mismo daño a un objetivo dañado por ataque o conjuro. Alma: velocidad de vuelo igual a caminar; una vez por turno añades daño radiante igual a competencia a un objetivo dañado por ataque o conjuro.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              8
+            ],
+            "printed_page": 7,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [
@@ -2158,6 +2880,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              9
+            ],
+            "printed_page": 8,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2185,6 +2920,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              9
+            ],
+            "printed_page": 8,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2204,7 +2952,20 @@
             "printed_race_page": 8,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Cuando realizas un ataque cuerpo a cuerpo en tu turno, tu alcance para ese ataque aumenta en 5 pies.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando realizas un ataque cuerpo a cuerpo en tu turno, tu alcance para ese ataque aumenta en 5 pies.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              9
+            ],
+            "printed_page": 8,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "powerful-build",
@@ -2222,7 +2983,20 @@
             "printed_race_page": 8,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              9
+            ],
+            "printed_page": 8,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "sneaky",
@@ -2248,6 +3022,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes competencia en Sigilo. Además, puedes atravesar y detenerte en un espacio lo suficientemente grande para una criatura Pequeña sin tener que apretarte.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes competencia en Sigilo. Además, puedes atravesar y detenerte en un espacio lo suficientemente grande para una criatura Pequeña sin tener que apretarte.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              9
+            ],
+            "printed_page": 8,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2268,7 +3055,19 @@
             "printed_race_page": 8,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Cuando impactas a una criatura con una tirada de ataque, le causas 2d6 de daño adicional si todavía no ha tenido su turno en el combate actual.",
+          "description_status": "contrastado_manualmente_fuente_aportada",
+          "supplementary_rules": "",
+          "requires_source_verification": false,
+          "source_review_status": "pendiente_contraste_texto_oficial_mmotm",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              9
+            ],
+            "check_level": "contraste_manual_con_regla_fuente"
+          }
         }
       ],
       "choices": [],
@@ -2341,7 +3140,20 @@
             "printed_race_page": 9,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Si te mueves al menos 30 pies en línea recta hacia una criatura y después la impactas con un ataque de arma cuerpo a cuerpo en el mismo turno, puedes realizar inmediatamente un ataque con tus cascos contra ese objetivo como acción adicional.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Si te mueves al menos 30 pies en línea recta hacia una criatura y después la impactas con un ataque de arma cuerpo a cuerpo en el mismo turno, puedes realizar inmediatamente un ataque con tus cascos contra ese objetivo como acción adicional.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              10
+            ],
+            "printed_page": 9,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "equine-build",
@@ -2364,7 +3176,20 @@
             "printed_race_page": 9,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Cuentas como una categoría de tamaño mayor para carga y para empujar o arrastrar peso. Al trepar usando manos y pies, cada pie avanzado consume 4 pies adicionales en lugar de 1 adicional.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuentas como una categoría de tamaño mayor para carga y para empujar o arrastrar peso. Al trepar usando manos y pies, cada pie avanzado consume 4 pies adicionales en lugar de 1 adicional.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              10
+            ],
+            "printed_page": 9,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "hooves",
@@ -2390,6 +3215,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tus cascos son ataques desarmados. Al impactar causan 1d6 + modificador de Fuerza de daño contundente.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tus cascos son ataques desarmados. Al impactar causan 1d6 + modificador de Fuerza de daño contundente.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              10
+            ],
+            "printed_page": 9,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2420,6 +3258,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Escoge competencia con una habilidad: Trato con Animales, Medicina, Naturaleza o Supervivencia.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge competencia con una habilidad: Trato con Animales, Medicina, Naturaleza o Supervivencia.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              10
+            ],
+            "printed_page": 9,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -2512,6 +3363,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Elige dos competencias entre Engaño, Perspicacia, Intimidación, Interpretación y Persuasión.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Elige dos competencias entre Engaño, Perspicacia, Intimidación, Interpretación y Persuasión.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              11
+            ],
+            "printed_page": 10,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2545,7 +3409,20 @@
             "printed_race_page": 10,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Como acción cambias tu aspecto y tu voz; puedes alterar tamaño entre Pequeño y Mediano, pero no tus estadísticas. La forma debe conservar la disposición básica de tus extremidades y no puedes copiar a quien nunca hayas visto. Equipo y ropa no cambian. Permaneces así hasta revertir con una acción o morir.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción cambias tu aspecto y tu voz; puedes alterar tamaño entre Pequeño y Mediano, pero no tus estadísticas. La forma debe conservar la disposición básica de tus extremidades y no puedes copiar a quien nunca hayas visto. Equipo y ropa no cambian. Permaneces así hasta revertir con una acción o morir.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              11
+            ],
+            "printed_page": 10,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [
@@ -2630,6 +3507,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 120 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 120 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              12
+            ],
+            "printed_page": 11,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2659,6 +3549,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en las salvaciones de Inteligencia, Sabiduría y Carisma contra conjuros.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en las salvaciones de Inteligencia, Sabiduría y Carisma contra conjuros.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              12
+            ],
+            "printed_page": 11,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2699,7 +3602,16 @@
             "printed_race_page": 11,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Desde nivel 3 puedes lanzar Disguise Self (Disfrazarse) con este rasgo. Desde nivel 5 también puedes lanzar Nondetection (Indetectabilidad) con él, sin requerir componente material. Cada conjuro puede lanzarse gratuitamente una vez por descanso largo, por separado, y también mediante espacios de conjuro del nivel apropiado. Al escoger la raza eliges Inteligencia, Sabiduría o Carisma como característica de lanzamiento para estos conjuros.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Desde nivel 3 puedes lanzar disfrazarse; desde nivel 5, indetectabilidad (sin componente material). Cada conjuro tiene un uso gratuito por descanso largo, y también puedes utilizar espacios de conjuro apropiados. Escoge INT, SAB o CAR como característica de lanzamiento.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 11",
+            "pdf_page": "MMotM PDF p. 12"
+          }
         },
         {
           "id": "svirfneblin-camouflage",
@@ -2726,6 +3638,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Cuando haces una prueba de Destreza (Sigilo), puedes obtener ventaja en esa tirada. Usos iguales a tu bonificador de competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando haces una prueba de Destreza (Sigilo), puedes obtener ventaja en esa tirada. Usos iguales a tu bonificador de competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              12
+            ],
+            "printed_page": 11,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -2798,6 +3723,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 120 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 120 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              13
+            ],
+            "printed_page": 12,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2841,7 +3779,20 @@
             "printed_race_page": 12,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Desde nivel 3 puedes lanzar agrandar/reducir solo sobre ti; desde nivel 5 puedes lanzar invisibilidad solo sobre ti. No requieren componentes materiales al lanzarlos con este rasgo. Cada conjuro tiene un uso gratuito por descanso largo y también puedes gastar espacios adecuados. Escoge INT, SAB o CAR.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Desde nivel 3 puedes lanzar agrandar/reducir solo sobre ti; desde nivel 5 puedes lanzar invisibilidad solo sobre ti. No requieren componentes materiales al lanzarlos con este rasgo. Cada conjuro tiene un uso gratuito por descanso largo y también puedes gastar espacios adecuados. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              13
+            ],
+            "printed_page": 12,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "dwarven-resilience",
@@ -2874,6 +3825,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o finalizar la condición envenenado, y resistencia al daño de veneno.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o finalizar la condición envenenado, y resistencia al daño de veneno.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              13
+            ],
+            "printed_page": 12,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -2902,6 +3866,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar las condiciones hechizado y aturdido sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar las condiciones hechizado y aturdido sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              13
+            ],
+            "printed_page": 12,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -2977,6 +3954,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              14
+            ],
+            "printed_page": 13,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3004,6 +3994,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              14
+            ],
+            "printed_page": 13,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3041,6 +4044,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Como acción adicional te teletransportas hasta 30 pies a un espacio desocupado que veas. Usos iguales a competencia por descanso largo. Desde nivel 3, según estación: Otoño: tras el salto hasta 2 criaturas visibles a 10 pies hacen salvación de SAB o quedan hechizadas 1 minuto, hasta que tú o tus aliados las dañen. Invierno: una criatura visible a 5 pies antes de saltar salva SAB o queda asustada hasta el final de tu siguiente turno. Primavera: puedes tocar a una criatura voluntaria a 5 pies, que se teletransporta en tu lugar. Verano: después del salto, criaturas elegidas visibles a 5 pies reciben fuego igual a competencia. CD 8 + competencia + INT, SAB o CAR, escogida al crear el personaje.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción adicional te teletransportas hasta 30 pies a un espacio desocupado que veas. Usos iguales a competencia por descanso largo. Desde nivel 3, según estación: Otoño: tras el salto hasta 2 criaturas visibles a 10 pies hacen salvación de SAB o quedan hechizadas 1 minuto, hasta que tú o tus aliados las dañen. Invierno: una criatura visible a 5 pies antes de saltar salva SAB o queda asustada hasta el final de tu siguiente turno. Primavera: puedes tocar a una criatura voluntaria a 5 pies, que se teletransporta en tu lugar. Verano: después del salto, criaturas elegidas visibles a 5 pies reciben fuego igual a competencia. CD 8 + competencia + INT, SAB o CAR, escogida al crear el personaje.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              14
+            ],
+            "printed_page": 13,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3067,6 +4083,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Obtienes competencia en Percepción.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Percepción.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              14
+            ],
+            "printed_page": 13,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3110,7 +4139,20 @@
             "printed_race_page": 13,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación).",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación).",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              14
+            ],
+            "printed_page": 13,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [
@@ -3246,6 +4288,19 @@
             "printed_page": 14,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Conoces arte druídico. Desde nivel 3 puedes lanzar fuego feérico y desde nivel 5 agrandar/reducir. Cada uno de esos conjuros tiene un uso gratuito por descanso largo; también puedes usar espacios de conjuro adecuados. Escoge INT, SAB o CAR para lanzarlos.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces arte druídico. Desde nivel 3 puedes lanzar fuego feérico y desde nivel 5 agrandar/reducir. Cada uno de esos conjuros tiene un uso gratuito por descanso largo; también puedes usar espacios de conjuro adecuados. Escoge INT, SAB o CAR para lanzarlos.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              15
+            ],
+            "printed_page": 14,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3274,6 +4329,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes velocidad de vuelo igual a tu velocidad al caminar gracias a tus alas. No funciona llevando armadura media o pesada.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes velocidad de vuelo igual a tu velocidad al caminar gracias a tus alas. No funciona llevando armadura media o pesada.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              15
+            ],
+            "printed_page": 14,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -3363,7 +4431,20 @@
             "printed_race_page": 15,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Puedes lanzar detectar magia y disfrazarse una vez cada uno por descanso largo, o gastar espacios de conjuro. Con disfrazarse puedes parecer hasta 3 pies más alto o bajo. Escoge INT, SAB o CAR como característica de lanzamiento.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes lanzar detectar magia y disfrazarse una vez cada uno por descanso largo, o gastar espacios de conjuro. Con disfrazarse puedes parecer hasta 3 pies más alto o bajo. Escoge INT, SAB o CAR como característica de lanzamiento.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              16
+            ],
+            "printed_page": 15,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "hidden-step",
@@ -3405,6 +4486,19 @@
             "printed_page": 15,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Como acción adicional te vuelves invisible hasta el comienzo de tu siguiente turno, o hasta que ataques, tires daño u obligues a alguien a salvar. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción adicional te vuelves invisible hasta el comienzo de tu siguiente turno, o hasta que ataques, tires daño u obligues a alguien a salvar. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              16
+            ],
+            "printed_page": 15,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3423,7 +4517,20 @@
             "printed_race_page": 15,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              16
+            ],
+            "printed_page": 15,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "speech-of-beast-and-leaf",
@@ -3450,7 +4557,20 @@
             "printed_race_page": 15,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Puedes comunicar ideas básicas a bestias, plantas y vegetación, que entienden tus palabras pero no necesariamente pueden responderte. Tienes ventaja en pruebas de Carisma para influir sobre ellas.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes comunicar ideas básicas a bestias, plantas y vegetación, que entienden tus palabras pero no necesariamente pueden responderte. Tienes ventaja en pruebas de Carisma para influir sobre ellas.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              16
+            ],
+            "printed_page": 15,
+            "reference_type": "capitulo_y_rasgo"
+          }
         }
       ],
       "choices": [],
@@ -3522,6 +4642,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              17
+            ],
+            "printed_page": 16,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3541,7 +4674,20 @@
             "printed_race_page": 16,
             "year": 2022
           },
-          "verified_from": "MPMM-2022"
+          "verified_from": "MPMM-2022",
+          "description": "Puedes contener la respiración indefinidamente mientras no estés incapacitado.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes contener la respiración indefinidamente mientras no estés incapacitado.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              17
+            ],
+            "printed_page": 16,
+            "reference_type": "capitulo_y_rasgo"
+          }
         },
         {
           "id": "lightning-resistance",
@@ -3566,6 +4712,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Resistencia al daño de relámpago.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Resistencia al daño de relámpago.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              17
+            ],
+            "printed_page": 16,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3640,6 +4799,19 @@
             "printed_page": 16,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Conoces agarre electrizante. Desde nivel 3 lanzas caída de pluma y desde nivel 5 levitar, sin materiales. Cada uno de esos conjuros tiene un uso gratuito por descanso largo y puedes además usar espacios adecuados. Escoge INT, SAB o CAR.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces agarre electrizante. Desde nivel 3 lanzas caída de pluma y desde nivel 5 levitar, sin materiales. Cada uno de esos conjuros tiene un uso gratuito por descanso largo y puedes además usar espacios adecuados. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              17
+            ],
+            "printed_page": 16,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -3716,6 +4888,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3739,6 +4924,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes ignorar el movimiento adicional del terreno difícil cuando caminas sobre el suelo o un piso.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes ignorar el movimiento adicional del terreno difícil cuando caminas sobre el suelo o un piso.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3783,6 +4981,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Conoces protección contra armas; puedes lanzarla normalmente y como acción adicional tantas veces como tu competencia por descanso largo. Desde nivel 5 lanzas pasar sin dejar rastro sin componente material una vez por descanso largo o con un espacio de conjuro de nivel 2 o superior. Escoge INT, SAB o CAR.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces protección contra armas; puedes lanzarla normalmente y como acción adicional tantas veces como tu competencia por descanso largo. Desde nivel 5 lanzas pasar sin dejar rastro sin componente material una vez por descanso largo o con un espacio de conjuro de nivel 2 o superior. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -3856,6 +5067,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3881,6 +5105,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Resistencia al daño de fuego.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Resistencia al daño de fuego.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -3954,6 +5191,19 @@
             "printed_page": 17,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Conoces producir llama. Desde nivel 3 lanzas manos ardientes y desde nivel 5 hoja de fuego, esta última sin material. Cada conjuro tiene un uso gratuito por descanso largo y admite espacios de conjuro apropiados. Escoge INT, SAB o CAR.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces producir llama. Desde nivel 3 lanzas manos ardientes y desde nivel 5 hoja de fuego, esta última sin material. Cada conjuro tiene un uso gratuito por descanso largo y admite espacios de conjuro apropiados. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -4030,6 +5280,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4055,6 +5318,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Resistencia al daño de ácido.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Resistencia al daño de ácido.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4081,6 +5357,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Puedes respirar aire y agua.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes respirar aire y agua.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4105,6 +5394,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              18
+            ],
+            "printed_page": 17,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4178,6 +5480,15 @@
             "printed_page": 17,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Conoces el truco Acid Splash (Salpicadura ácida). Desde nivel 3 puedes lanzar Create or Destroy Water (Crear o destruir agua) con este rasgo. Desde nivel 5 puedes lanzar Water Walk (Caminar sobre el agua) con este rasgo, sin componente material. Cada uno de los dos conjuros de nivel se puede lanzar gratuitamente una vez por descanso largo y también con espacios de conjuro del nivel apropiado. Al escoger esta raza eliges Inteligencia, Sabiduría o Carisma como característica de lanzamiento.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Conoces salpicadura ácida. Desde nivel 3 lanzas crear o destruir agua, desde nivel 5 caminar sobre el agua (sin material). Cada conjuro tiene un uso gratuito por descanso largo o puede lanzarse con espacios adecuados. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 17",
+            "pdf_page": "MMotM PDF p. 18"
           }
         }
       ],
@@ -4256,6 +5567,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Al terminar un descanso largo, escoge competencia con una habilidad y además un arma o una herramienta del PHB; ambas duran hasta terminar tu próximo descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Al terminar un descanso largo, escoge competencia con una habilidad y además un arma o una herramienta del PHB; ambas duran hasta terminar tu próximo descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              19
+            ],
+            "printed_page": 18,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4336,6 +5660,19 @@
             "printed_page": 18,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Conoces mano de mago, invisible cuando la lanzas con este rasgo. Desde nivel 3 lanzas salto; desde nivel 5 paso brumoso. Cada conjuro tiene un uso gratuito por descanso largo y puedes usar espacios adecuados. No se necesitan componentes al lanzarlos con el rasgo. Escoge INT, SAB o CAR.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces mano de mago, invisible cuando la lanzas con este rasgo. Desde nivel 3 lanzas salto; desde nivel 5 paso brumoso. Cada conjuro tiene un uso gratuito por descanso largo y puedes usar espacios adecuados. No se necesitan componentes al lanzarlos con el rasgo. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              19
+            ],
+            "printed_page": 18,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4361,6 +5698,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Resistencia al daño psíquico.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Resistencia al daño psíquico.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              19
+            ],
+            "printed_page": 18,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -4491,6 +5841,19 @@
             "printed_page": 19,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Conoces mano de mago, invisible cuando la lanzas con este rasgo. Desde nivel 3 lanzas escudo; desde nivel 5 detectar pensamientos. Cada conjuro tiene un uso gratuito por descanso largo y puedes usar espacios adecuados. No necesitas componentes al lanzarlos mediante el rasgo. Escoge INT, SAB o CAR.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces mano de mago, invisible cuando la lanzas con este rasgo. Desde nivel 3 lanzas escudo; desde nivel 5 detectar pensamientos. Cada conjuro tiene un uso gratuito por descanso largo y puedes usar espacios adecuados. No necesitas componentes al lanzarlos mediante el rasgo. Escoge INT, SAB o CAR.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              20
+            ],
+            "printed_page": 19,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4519,6 +5882,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Ventaja en salvaciones para evitar o terminar las condiciones hechizado y asustado.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Ventaja en salvaciones para evitar o terminar las condiciones hechizado y asustado.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              20
+            ],
+            "printed_page": 19,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4544,6 +5920,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Resistencia al daño psíquico.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Resistencia al daño psíquico.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              20
+            ],
+            "printed_page": 19,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -4618,6 +6007,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4645,6 +6047,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4681,6 +6096,15 @@
             "printed_page": 20,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Cuando infliges daño a una criatura mediante un ataque o un conjuro y la criatura es de tamaño mayor que tú, puedes añadir daño igual a tu bonificador de competencia. No requiere una acción distinta; solo puedes aplicarlo una vez por turno. Puedes usarlo tantas veces como tu bonificador de competencia, recuperando todos los usos tras un descanso largo.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Cuando dañes con un ataque o conjuro a una criatura de tamaño mayor que tú, puedes añadir daño igual a competencia; no más de una vez por turno. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 20",
+            "pdf_page": "MMotM PDF p. 21"
           }
         },
         {
@@ -4708,6 +6132,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "En cada uno de tus turnos puedes realizar Esconderse o Destrabarse como acción adicional.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "En cada uno de tus turnos puedes realizar Esconderse o Destrabarse como acción adicional.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              21
+            ],
+            "printed_page": 20,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -4782,6 +6219,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Obtienes competencia en Atletismo. Cuentas como una talla mayor al calcular carga y peso que puedes empujar, arrastrar o levantar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Atletismo. Cuentas como una talla mayor al calcular carga y peso que puedes empujar, arrastrar o levantar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              22
+            ],
+            "printed_page": 21,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4807,6 +6257,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes resistencia al daño de frío y estás aclimatado naturalmente a altitudes elevadas, incluso por encima de 20.000 pies.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes resistencia al daño de frío y estás aclimatado naturalmente a altitudes elevadas, incluso por encima de 20.000 pies.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              22
+            ],
+            "printed_page": 21,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4834,6 +6297,18 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Como reacción al recibir daño, tiras 1d12, sumas Constitución y reduces ese daño en el resultado. Usos por descanso largo: bonificador de competencia.",
+          "description_status": "redaccion_editorial_desde_modelo",
+          "supplementary_rules": "Uso limitado. Activación: reaction; usos: proficiency bonus; recuperación: descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              22
+            ],
+            "check_level": "nombre_localizado_en_manual_pendiente_lectura_clausulas"
           }
         }
       ],
@@ -4911,6 +6386,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Añades tu bonificador de competencia a las tiradas de iniciativa.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Añades tu bonificador de competencia a las tiradas de iniciativa.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              23
+            ],
+            "printed_page": 22,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4937,6 +6425,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Obtienes competencia en Percepción.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Percepción.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              23
+            ],
+            "printed_page": 22,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4968,6 +6469,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Cuando fallas una salvación de Destreza, puedes usar tu reacción para tirar 1d4 y sumar el resultado, pudiendo transformar el fallo en éxito. No funciona estando tumbado ni con velocidad 0.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando fallas una salvación de Destreza, puedes usar tu reacción para tirar 1d4 y sumar el resultado, pudiendo transformar el fallo en éxito. No funciona estando tumbado ni con velocidad 0.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              23
+            ],
+            "printed_page": 22,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -4997,6 +6511,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Como acción adicional puedes saltar hasta 5 × tu bonificador de competencia pies sin provocar ataques de oportunidad. Requiere velocidad mayor que 0. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción adicional puedes saltar hasta 5 × tu bonificador de competencia pies sin provocar ataques de oportunidad. Requiere velocidad mayor que 0. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              23
+            ],
+            "printed_page": 22,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -5072,6 +6599,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5099,6 +6639,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5147,6 +6700,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia HP temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto).",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes usar Ayudar como acción adicional un número de veces igual a competencia por descanso largo. Desde nivel 3, cada uso de Ayudar mediante este rasgo permite escoger: Hospitalidad (tú y la criatura ayudada ganan 1d6 + competencia HP temporales cada uno), Pasaje (ambos aumentan 10 pies su velocidad hasta tu siguiente turno), o Rencor (si la criatura ayudada impacta a un objetivo antes de tu siguiente turno, ese objetivo tiene desventaja en su siguiente ataque dentro del próximo minuto).",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5177,6 +6743,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Cuando fallas una tirada de ataque, una prueba de característica o una salvación, puedes añadir un bono igual al número de aliados que veas dentro de 30 pies (máximo +3), pudiendo cambiar el resultado. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuando fallas una tirada de ataque, una prueba de característica o una salvación, puedes añadir un bono igual al número de aliados que veas dentro de 30 pies (máximo +3), pudiendo cambiar el resultado. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              24
+            ],
+            "printed_page": 23,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -5249,6 +6828,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Tienes ventaja en pruebas de característica para producir una copia exacta de un escrito o trabajo artesanal.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en pruebas de característica para producir una copia exacta de un escrito o trabajo artesanal.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5277,6 +6869,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Obtienes competencia con dos habilidades de tu elección. Cuando realizas una prueba de característica que use una habilidad en la cual tengas competencia, puedes tirar con ventaja antes de conocer el resultado. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia con dos habilidades de tu elección. Cuando realizas una prueba de característica que use una habilidad en la cual tengas competencia, puedes tirar con ventaja antes de conocer el resultado. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5304,6 +6909,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes imitar sonidos o voces que hayas escuchado. Quien sospeche de la imitación puede descubrirla superando una prueba de Sabiduría (Perspicacia) contra CD 8 + competencia + tu modificador de Carisma.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes imitar sonidos o voces que hayas escuchado. Quien sospeche de la imitación puede descubrirla superando una prueba de Sabiduría (Perspicacia) contra CD 8 + competencia + tu modificador de Carisma.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              25
+            ],
+            "printed_page": 24,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -5375,6 +6993,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              26
+            ],
+            "printed_page": 25,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5404,6 +7035,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Como acción adicional lanzas un grito dirigido a enemigos a 10 pies que puedan oírte. Hasta el comienzo de tu próximo turno, tú y tus aliados tienen ventaja en ataques contra ellos. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción adicional lanzas un grito dirigido a enemigos a 10 pies que puedan oírte. Hasta el comienzo de tu próximo turno, tú y tus aliados tienen ventaja en ataques contra ellos. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              26
+            ],
+            "printed_page": 25,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5433,6 +7077,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Escoge una opción: Astucia (competencia en Arcanos, Investigación, Medicina, Juego de Manos o Supervivencia); Desafío (ventaja en salvaciones para evitar o terminar asustado); Hechicería dracónica (un truco de la lista de hechicero, eligiendo INT, SAB o CAR).",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge una opción: Astucia (competencia en Arcanos, Investigación, Medicina, Juego de Manos o Supervivencia); Desafío (ventaja en salvaciones para evitar o terminar asustado); Hechicería dracónica (un truco de la lista de hechicero, eligiendo INT, SAB o CAR).",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              26
+            ],
+            "printed_page": 25,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -5517,6 +7174,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              27
+            ],
+            "printed_page": 26,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5543,6 +7213,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu mordida se usa como golpe desarmado; causa 1d6 + modificador de Fuerza de daño cortante al impactar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu mordida se usa como golpe desarmado; causa 1d6 + modificador de Fuerza de daño cortante al impactar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              27
+            ],
+            "printed_page": 26,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5565,6 +7248,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes contener la respiración durante un máximo de 15 minutos.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes contener la respiración durante un máximo de 15 minutos.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              27
+            ],
+            "printed_page": 26,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5594,6 +7290,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Como acción adicional, haces un ataque con mordida. Si impactas, obtienes HP temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción adicional, haces un ataque con mordida. Si impactas, obtienes HP temporales iguales a tu bonificador de competencia. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              27
+            ],
+            "printed_page": 26,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5622,6 +7331,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu piel escamosa te da CA base 13 + modificador de Destreza cuando no llevas armadura; puedes usar esta fórmula si la armadura que lleves daría una CA inferior. Un escudo aplica normalmente.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu piel escamosa te da CA base 13 + modificador de Destreza cuando no llevas armadura; puedes usar esta fórmula si la armadura que lleves daría una CA inferior. Un escudo aplica normalmente.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              27
+            ],
+            "printed_page": 26,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5652,6 +7374,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Escoge competencia en DOS habilidades: Trato con Animales, Medicina, Naturaleza, Percepción, Sigilo o Supervivencia.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge competencia en DOS habilidades: Trato con Animales, Medicina, Naturaleza, Percepción, Sigilo o Supervivencia.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              27
+            ],
+            "printed_page": 26,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -5745,6 +7480,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tus cuernos son ataques desarmados: 1d6 + modificador de Fuerza de daño perforante al impactar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tus cuernos son ataques desarmados: 1d6 + modificador de Fuerza de daño perforante al impactar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              28
+            ],
+            "printed_page": 27,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5770,6 +7518,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Después de realizar Correr y avanzar al menos 20 pies en el turno, puedes realizar un ataque con cuernos como acción adicional.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Después de realizar Correr y avanzar al menos 20 pies en el turno, puedes realizar un ataque con cuernos como acción adicional.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              28
+            ],
+            "printed_page": 27,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5799,6 +7560,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Inmediatamente después de impactar con un ataque cuerpo a cuerpo como parte de tu acción Atacar, puedes usar una acción adicional para intentar empujar 10 pies a una criatura de tamaño no mayor que una categoría superior al tuyo. Salvación de Fuerza CD 8 + competencia + modificador de Fuerza; no funciona con criaturas Enormes o mayores si eres Mediano.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Inmediatamente después de impactar con un ataque cuerpo a cuerpo como parte de tu acción Atacar, puedes usar una acción adicional para intentar empujar 10 pies a una criatura de tamaño no mayor que una categoría superior al tuyo. Salvación de Fuerza CD 8 + competencia + modificador de Fuerza; no funciona con criaturas Enormes o mayores si eres Mediano.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              28
+            ],
+            "printed_page": 27,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5829,6 +7603,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Siempre sabes en qué dirección está el norte y tienes ventaja en pruebas de Sabiduría (Supervivencia) para orientarte o seguir rastros.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Siempre sabes en qué dirección está el norte y tienes ventaja en pruebas de Sabiduría (Supervivencia) para orientarte o seguir rastros.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              28
+            ],
+            "printed_page": 27,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -5906,6 +7693,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes Correr como acción adicional y al hacerlo ganas HP temporales iguales a competencia. Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes Correr como acción adicional y al hacerlo ganas HP temporales iguales a competencia. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5930,6 +7730,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5958,6 +7771,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Cuentas como una categoría de tamaño mayor para calcular la carga y el peso que puedes empujar, arrastrar o levantar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              29
+            ],
+            "printed_page": 28,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -5985,6 +7811,18 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Cuando un daño te reduce a 0 HP sin matarte inmediatamente, puedes quedar con 1 HP en su lugar. Recuperas este uso tras un descanso largo.",
+          "description_status": "redaccion_editorial_desde_modelo",
+          "supplementary_rules": "Uso limitado. Activación: none; usos: 1; recuperación: descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "pendiente_contraste_individual",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              29
+            ],
+            "check_level": "nombre_localizado_en_manual_pendiente_lectura_clausulas"
           }
         }
       ],
@@ -6059,6 +7897,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tus cuernos sirven para golpes desarmados; infligen 1d6 + Fuerza de daño contundente.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tus cuernos sirven para golpes desarmados; infligen 1d6 + Fuerza de daño contundente.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              30
+            ],
+            "printed_page": 29,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6083,6 +7934,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en tiradas de salvación contra conjuros.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en tiradas de salvación contra conjuros.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              30
+            ],
+            "printed_page": 29,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6111,6 +7975,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Siempre que haces salto de longitud o altura, puedes tirar 1d8 y añadir su resultado en pies a la distancia recorrida, incluso con salto desde parado. Este movimiento adicional cuesta movimiento normal.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Siempre que haces salto de longitud o altura, puedes tirar 1d8 y añadir su resultado en pies a la distancia recorrida, incluso con salto desde parado. Este movimiento adicional cuesta movimiento normal.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              30
+            ],
+            "printed_page": 29,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6138,6 +8015,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes competencia en Interpretación y Persuasión y con un instrumento musical de tu elección.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes competencia en Interpretación y Persuasión y con un instrumento musical de tu elección.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              30
+            ],
+            "printed_page": 29,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -6213,6 +8103,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              31
+            ],
+            "printed_page": 30,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6244,6 +8147,15 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes respirar tanto aire como agua y tienes resistencia al daño de frío. Son beneficios pasivos sin activación ni límite de usos. Tu velocidad de nado, igual a tu velocidad al caminar, se concede por la entrada general de Velocidad de la raza, no por este rasgo.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Puedes respirar aire y agua y tienes resistencia al daño de frío.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 30",
+            "pdf_page": "MMotM PDF p. 31"
           }
         },
         {
@@ -6268,6 +8180,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              31
+            ],
+            "printed_page": 30,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6295,6 +8220,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              31
+            ],
+            "printed_page": 30,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6320,6 +8258,15 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes comunicar ideas sencillas a cualquier Bestia (Beast) que tenga velocidad de nado. La bestia comprende lo que expresas, pero el rasgo no te permite entender sus respuestas; tampoco la obliga a obedecer. No requiere acción especial ni tiene límite de usos establecido.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Puedes comunicar ideas simples a bestias que tengan velocidad de nado. No significa que comprendan conceptos complejos ni que obedezcan.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 30",
+            "pdf_page": "MMotM PDF p. 31"
           }
         },
         {
@@ -6346,6 +8293,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Obtienes competencia en Percepción.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Percepción.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              31
+            ],
+            "printed_page": 30,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6378,6 +8338,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación).",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación).",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              31
+            ],
+            "printed_page": 30,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -6462,6 +8435,15 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Como acción adicional, te teletransportas mágicamente hasta 30 pies a un espacio desocupado que puedas ver. Puedes hacerlo tantas veces como tu bonificador de competencia y recuperas todos los usos después de un descanso largo. Desde nivel de personaje 3, al teletransportarte mediante este rasgo ganas resistencia a todo tipo de daño hasta el comienzo de tu siguiente turno; durante ese tiempo te ves fantasmal y translúcido.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Como acción adicional te teletransportas mágicamente hasta 30 pies a un espacio desocupado que puedas ver. Desde nivel 3, tras teletransportarte, obtienes resistencia a todo daño hasta el inicio de tu siguiente turno; durante ese tiempo apareces fantasmal y translúcido. Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 31",
+            "pdf_page": "MMotM PDF p. 32"
           }
         },
         {
@@ -6486,6 +8468,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              32
+            ],
+            "printed_page": 31,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6513,6 +8508,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición hechizado sobre ti.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              32
+            ],
+            "printed_page": 31,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6539,6 +8547,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Obtienes competencia en Percepción.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Obtienes competencia en Percepción.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              32
+            ],
+            "printed_page": 31,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6564,6 +8585,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Resistencia al daño necrótico.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Resistencia al daño necrótico.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              32
+            ],
+            "printed_page": 31,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6596,6 +8630,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación).",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "No necesitas dormir y no puedes ser dormido mediante magia. Puedes terminar un descanso largo en 4 horas de meditación consciente. Al terminar el trance, puedes elegir dos competencias temporales con armas o herramientas del PHB, que duran hasta el siguiente descanso largo. (En eladrin, también puedes cambiar de estación).",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              32
+            ],
+            "printed_page": 31,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -6680,6 +8727,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Escoge competencia en Acrobacias, Atletismo, Intimidación o Supervivencia.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge competencia en Acrobacias, Atletismo, Intimidación o Supervivencia.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              33
+            ],
+            "printed_page": 32,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6704,6 +8764,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              33
+            ],
+            "printed_page": 32,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6760,6 +8833,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas HP temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 HP temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Como acción adicional adoptas tu forma bestial durante 1 minuto, hasta cancelarla con acción adicional o morir; ganas HP temporales iguales al doble de tu competencia. Escoge variante: Beasthide (1d6 HP temporales adicionales y +1 CA mientras transformado); Longtooth (al transformarte y como acción adicional en turnos posteriores, golpe desarmado de colmillos 1d6 + Fuerza, perforante); Swiftstride (velocidad +10 pies y reacción para moverte hasta 10 pies sin provocar ataques de oportunidad cuando una criatura termina su turno a 5 pies de ti); Wildhunt (ventaja en pruebas de Sabiduría y enemigos a 30 pies no pueden tener ventaja al atacarte, salvo que estés incapacitado). Usos iguales a competencia por descanso largo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              33
+            ],
+            "printed_page": 32,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -6858,6 +8944,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu velocidad de trepar es igual a tu velocidad al caminar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu velocidad de trepar es igual a tu velocidad al caminar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              34
+            ],
+            "printed_page": 33,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6884,6 +8983,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tus garras sirven como golpe desarmado e infligen 1d6 + Fuerza de daño cortante.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tus garras sirven como golpe desarmado e infligen 1d6 + Fuerza de daño cortante.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              34
+            ],
+            "printed_page": 33,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6911,6 +9023,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes competencia en Percepción y Sigilo.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes competencia en Percepción y Sigilo.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              34
+            ],
+            "printed_page": 33,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6935,6 +9060,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              34
+            ],
+            "printed_page": 33,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -6960,6 +9098,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Al moverte en tu turno puedes duplicar tu velocidad hasta el final de ese turno. No puedes usarlo de nuevo hasta pasar uno de tus turnos sin desplazarte.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Al moverte en tu turno puedes duplicar tu velocidad hasta el final de ese turno. No puedes usarlo de nuevo hasta pasar uno de tus turnos sin desplazarte.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              34
+            ],
+            "printed_page": 33,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -7040,6 +9191,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tus garras se usan para golpes desarmados: 1d6 + Fuerza de daño cortante.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tus garras se usan para golpes desarmados: 1d6 + Fuerza de daño cortante.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7062,6 +9226,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes contener la respiración durante un máximo de 1 hora.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes contener la respiración durante un máximo de 1 hora.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7092,6 +9269,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu caparazón te da CA base 17 (no sumas Destreza). No puedes llevar armadura ligera, media ni pesada; puedes usar escudo y sumar su bonificador normalmente.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu caparazón te da CA base 17 (no sumas Destreza). No puedes llevar armadura ligera, media ni pesada; puedes usar escudo y sumar su bonificador normalmente.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7122,6 +9312,19 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Escoge competencia en UNA habilidad: Trato con Animales, Medicina, Naturaleza, Percepción, Sigilo o Supervivencia.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Escoge competencia en UNA habilidad: Trato con Animales, Medicina, Naturaleza, Percepción, Sigilo o Supervivencia.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              35
+            ],
+            "printed_page": 34,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7171,6 +9374,15 @@
             "printed_page": 34,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Como acción te repliegas dentro del caparazón. Hasta que salgas obtienes +4 a CA y ventaja en salvaciones de Fuerza y Constitución. Mientras permaneces dentro estás tumbado, tu velocidad es 0 y no puede aumentar, tienes desventaja en salvaciones de Destreza y no puedes realizar reacciones. La única acción que puedes realizar durante ese estado es salir del caparazón mediante una acción adicional. No se establece un límite de usos ni duración máxima.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Como acción te ocultas en tu caparazón. Ganas +4 CA y ventaja en salvaciones de Fuerza y Constitución; quedas tumbado, tu velocidad es 0 y no puede aumentar, tienes desventaja en salvaciones de Destreza, no puedes tomar reacciones y tu única acción posible es salir del caparazón usando una acción adicional.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 34",
+            "pdf_page": "MMotM PDF p. 35"
           }
         }
       ],
@@ -7262,6 +9474,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tu velocidad de nado es igual a tu velocidad al caminar.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              36
+            ],
+            "printed_page": 35,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7288,6 +9513,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Puedes respirar aire y agua.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes respirar aire y agua.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              36
+            ],
+            "printed_page": 35,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7365,6 +9603,19 @@
             "printed_page": 35,
             "result": "clauses_structured",
             "runtime_certified": false
+          },
+          "description": "Puedes lanzar nube de niebla desde nivel 1, ráfaga de viento desde nivel 3 y caminar sobre el agua desde nivel 5. Cada conjuro tiene un uso gratuito por descanso largo y puedes utilizar espacios de conjuro apropiados. Escoge INT, SAB o CAR para lanzarlos.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Puedes lanzar nube de niebla desde nivel 1, ráfaga de viento desde nivel 3 y caminar sobre el agua desde nivel 5. Cada conjuro tiene un uso gratuito por descanso largo y puedes utilizar espacios de conjuro apropiados. Escoge INT, SAB o CAR para lanzarlos.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              36
+            ],
+            "printed_page": 35,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7389,6 +9640,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              36
+            ],
+            "printed_page": 35,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7418,6 +9682,15 @@
             "chapter": "Fantastical Races",
             "method": "source_text_checked",
             "page_printed": null
+          },
+          "description": "Puedes comunicar ideas sencillas a cualquier criatura de tipo Bestia, Elemental o Monstruosidad que posea velocidad de nado. Esa criatura entiende tus palabras, pero el rasgo no te concede la capacidad de comprender su respuesta ni obliga a la criatura a obedecer. Es un beneficio pasivo sin límite de usos.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Puedes comunicar ideas sencillas con bestias, elementales y monstruosidades que tengan velocidad de nado; no les concede comprensión compleja ni obliga a obedecer.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 35",
+            "pdf_page": "MMotM PDF p. 36"
           }
         },
         {
@@ -7443,6 +9716,15 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes resistencia al daño de frío, de forma permanente y sin consumir acciones ni usos. Este rasgo no concede por sí mismo respiración acuática ni velocidad de nado: esos beneficios proceden de otras entradas raciales del Tritón.",
+          "description_status": "cotejo_directo_manuales_2026_10_16",
+          "supplementary_rules": "Tienes resistencia al daño de frío.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book_page": "MMotM 2022, p. 35",
+            "pdf_page": "MMotM PDF p. 36"
           }
         }
       ],
@@ -7520,6 +9802,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Visión en la oscuridad hasta 60 pies: ves la luz tenue como brillante y la oscuridad como luz tenue; en oscuridad distingues únicamente tonos de gris.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              37
+            ],
+            "printed_page": 36,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7544,6 +9839,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en tiradas de salvación contra conjuros.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en tiradas de salvación contra conjuros.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              37
+            ],
+            "printed_page": 36,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7577,6 +9885,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Tienes ventaja en salvaciones para evitar o terminar la condición envenenado y resistencia al daño por veneno.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Tienes ventaja en salvaciones para evitar o terminar la condición envenenado y resistencia al daño por veneno.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              37
+            ],
+            "printed_page": 36,
+            "reference_type": "capitulo_y_rasgo"
           }
         },
         {
@@ -7628,6 +9949,19 @@
             "name_found_in_uploaded_source": true,
             "review_pass": "structural_and_targeted_rules",
             "automated_runtime_verified": false
+          },
+          "description": "Conoces el truco salpicadura venenosa. Puedes lanzar amistad con los animales únicamente sobre serpientes (usos sin límite) y, desde nivel 3, sugerencia una vez por descanso largo; también con espacios adecuados. Escoge INT, SAB o CAR para estos conjuros.",
+          "description_status": "redaccion_reglamentaria_con_referencia_a_manual",
+          "supplementary_rules": "Conoces el truco salpicadura venenosa. Puedes lanzar amistad con los animales únicamente sobre serpientes (usos sin límite) y, desde nivel 3, sugerencia una vez por descanso largo; también con espacios adecuados. Escoge INT, SAB o CAR para estos conjuros.",
+          "requires_source_verification": true,
+          "source_review_status": "descripcion_normalizada_con_referencia; requiere_validacion_visual_de_fuente",
+          "source_reference": {
+            "book": "MPMM-2022",
+            "pdf_pages": [
+              37
+            ],
+            "printed_page": 36,
+            "reference_type": "capitulo_y_rasgo"
           }
         }
       ],
@@ -7677,5 +10011,18 @@
     "completed_prioritized_traits": 10,
     "all_runtime_verified": false,
     "note": "Completion of selected 10 detailed records does not certify entire library."
+  },
+  "validation_rules_from_uploaded_books": {
+    "MPMM-2022": {
+      "ability_scores": "Al crear el personaje, elige +2 a una característica y +1 a otra, o +1 a tres características distintas. Máximo 20 por estos aumentos.",
+      "languages": "Hablas, lees y escribes común y otro idioma acordado con el DM.",
+      "source_pdf_page": 6,
+      "source_print_page": 5
+    },
+    "PHB-2014": {
+      "inheritance": "Una subraza suma sus rasgos a los de la raza base, salvo sustituciones expresas. El humano variante sustituye su aumento general de característica.",
+      "source_pdf_page": 18,
+      "source_print_page": 17
+    }
   }
 }

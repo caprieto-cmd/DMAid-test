@@ -27,7 +27,7 @@ const spellSeen=new Set(),resourceSeen=new Set();
 function spell(sp,source){const lvl=Number(sp.min_character_level??sp.min_level??0);if(level<lvl)return;const name=sp.spell||sp.name||sp.id;if(!name)return;const key=source+':'+name;if(spellSeen.has(key))return;spellSeen.add(key);out.spells.push({...clone(sp),name,source});}
 function resource(e,source){const key=source;if(resourceSeen.has(key))return;resourceSeen.add(key);out.resources.push({...clone(e),source,trackingKey:source});}
 for(const e of path){if(e===selected)out.speeds=clone(e.speed||{});else if(!Object.keys(out.speeds).length)out.speeds=clone(e.speed||{});
-for(const t of e.traits||[]){const source=e.id+'/'+t.id;const visible={id:t.id,name:t.name,source:e.id,status:t.status||null};out.traits.push(visible);
+for(const t of e.traits||[]){const source=e.id+'/'+t.id;const visible={id:t.id,name:t.name,source:e.id,status:t.status||null,description:t.description||"",supplementary_rules:t.supplementary_rules||"",description_status:t.description_status||""};out.traits.push(visible);
 for(const fx of t.effects||[]){const f=clone(fx),type=f.type;
 if(type==='sense'){const name=f.name||f.sense;if(name)out.senses[name]=Math.max(out.senses[name]||0,Number(f.range_ft||0));}
 else if(type==='resistance'){for(const v of f.damage_types||[f.damage_type].filter(Boolean)){if(v==='chosen_draconic_ancestry'){const ancestry=choices['draconic_ancestry']||choices['draconic-ancestry'];if(ancestry)adding('resistances','draconic:'+ancestry,source);else out.pendingChoices.push({source,kind:'draconic_ancestry'});}else adding('resistances',v,source);}}
