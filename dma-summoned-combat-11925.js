@@ -18,7 +18,7 @@ function eligible(i,m){return window.DMAShepherd11924?.level?.(i)>=6&&/beast|bes
 function snapshot(m){const raw=rich(m)||m;return {id:String(raw.id||''),name:String(raw.name||'Criatura'),kind:raw.kind||'Criatura',cr:raw.cr,source:raw.source,ac:raw.ac,hp:raw.hp,stat:JSON.parse(JSON.stringify(raw.stat||{})),traits:raw.traits||'',actions:raw.actions||''}}
 function makeUnit(m,applyMighty=false){const x=snapshot(m),s=stats(x,applyMighty);if(!Number.isFinite(s.max)||s.max<1)return null;return {id:'su'+Date.now().toString(36)+'-'+(++serial),name:x.name,creatureId:x.id,cr:x.cr,ac:Number(x.ac)||10,max:s.max,hp:s.max,temp:0,hd:s.hitDice,mighty:applyMighty,originalHP:s.base,snapshot:x}}
 function createGroup(i,params,units){const d=data(i);if(!d||!units?.length)return false;d.groups.push({id:'sg'+Date.now().toString(36)+'-'+(++serial),source:params.source||'spell',spell:params.spell||'',slot:Number(params.slot)||0,concentration:!!params.concentration,active:true,units,limit:params.limit||units.length,createdAt:Date.now()});save();redraw();return true}
-function redraw(){try{if(typeof renderQuickEnemies==='function')renderQuickEnemies();}catch(e){console.error('[DM.AID Invocaciones] Redibujo',e)}}
+function redraw(){try{if(typeof renderQuickEnemies==='function')renderQuickEnemies();if(typeof renderInitiative==='function')renderInitiative();}catch(e){console.error('[DM.AID Invocaciones] Redibujo',e)}}
 function onCast(i,name,slot){const spell=window.DMADruidRules1199?.getSpell?.(name);const meta=spell?.mechanics?.summon;const normalized=key(name);
  // Sólo se crean tarjetas para invocaciones que generan criaturas nuevas. Giant Insect transforma insectos existentes.
  const known=/^(conjureanimals|conjurewoodlandbeings|conjureminorelementals|conjureelemental|conjurefey|summonbeast|summonfey|summonelemental)$/.test(normalized);
@@ -66,7 +66,7 @@ function registerFaithful(i,ids,mighty){const d=data(i);if(!d||!Array.isArray(id
  const all=monsters();let units=[];
  for(const id of ids){const m=all.find(x=>String(x.id)===String(id));if(!m||!beast(m)||cr(m)==null||cr(m)>2)return false;const u=makeUnit(m,!!mighty);if(!u)return false;units.push(u)}
  return createGroup(i,{source:'faithful',spell:'Faithful Summons',slot:9,concentration:false,limit:4},units)}
-function endFaithful(i){const d=data(i);if(!d)return;for(const g of d.groups)if(g.source==='faithful')g.active=false;save();redraw()}
+function endFaithful(i){const d=data(i);if(!d)return;for(const g of d.groups)if(g.source==='faithful'){g.active=false;window.DMASummonInitiative11926?.onGroupEnded?.(g.id)}save();redraw()}
 function groupOf(i,id){return data(i)?.groups.find(g=>g.id===id)||null}
 function unitOf(i,groupId,unitId){return groupOf(i,groupId)?.units.find(u=>u.id===unitId)||null}
 function damage(i,gid,uid,delta){const u=unitOf(i,gid,uid);if(!u)return false;const amount=Math.min(100000,Math.max(1,Math.floor(num(delta))));let old=u.hp;
@@ -81,7 +81,7 @@ function applyBear(i,gid,uid){const u=unitOf(i,gid,uid),shep=window.DMAShepherd1
 function guardian(i,gid,uid){const u=unitOf(i,gid,uid),shep=window.DMAShepherd11924?.stateFor?.(i),lv=window.DMAShepherd11924?.level?.(i)||0;
  if(!u||u.hp<=0||lv<10||!shep?.active)return false;if(!confirm('¿Esta criatura elegible terminó su turno dentro del aura del tótem? Recuperará '+Math.floor(lv/2)+' HP.'))return false;
  u.hp=Math.min(u.max,u.hp+Math.floor(lv/2));save();redraw();return true}
-function endGroup(i,id){const g=groupOf(i,id);if(!g||!confirm('¿Finalizar esta invocación y retirar sus tarjetas de daño?'))return false;g.active=false;
+function endGroup(i,id){const g=groupOf(i,id);if(!g||!confirm('¿Finalizar esta invocación y retirar sus tarjetas de daño?'))return false;g.active=false;window.DMASummonInitiative11926?.onGroupEnded?.(g.id);
  if(g.source==='spell'){const p=pending(i,g.spell);if(p&&p.groupStarted===g.createdAt)p.closed=true;}if(g.source==='faithful') {const sh=window.DMAShepherd11924?.stateFor?.(i);if(sh)sh.faithfulActive=false}save();redraw();return true}
 function liveGroups(){const rows=[];state.players?.forEach((p,i)=>{const d=data(i);if(!d)return;
  for(const g of d.groups){if(!g.active)continue;

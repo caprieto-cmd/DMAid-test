@@ -27,10 +27,22 @@ function shortRest(i){const d=stateFor(i);if(!d||!d.used)return false;if(!confir
 function hawk(i){const d=stateFor(i);if(!d?.active||d.kind!=='hawk')return false;const sh=profile(i);if(sh.dmaReactionUsed1178){alert('La reacción de este personaje ya se utilizó.');return false}
  if(!confirm('¿Gastar la reacción para conceder ventaja a un ataque contra una criatura dentro del aura del Halcón? El jugador realiza su tirada.'))return false;
  sh.dmaReactionUsed1178=true;save();refresh(i);try{window.renderQuickEnemies?.()}catch(e){}return true}
-function faithfulUse(i,ids,mighty){const d=stateFor(i);if(!d||level(i)<14||d.faithfulUsed)return false;
+function faithfulTrigger(i){
+ const player=state.players?.[i];const hp=Number(player?.hp);
+ const zero=!!player&&Number.isFinite(hp)&&hp<=0;
+ const cond=Array.isArray(state.conditions?.['p'+i])?state.conditions['p'+i]:[];
+ const incapacitating=['incapacitated','unconscious','stunned','paralyzed','petrified'];
+ const incapacitated=cond.some(x=>incapacitating.includes(String(x).toLowerCase()));
+ return {zero,incapacitated,possible:zero||incapacitated};
+}
+function faithfulUse(i,ids,mighty,involuntary=false){const d=stateFor(i);if(!d||level(i)<14||d.faithfulUsed)return false;
+ const trigger=faithfulTrigger(i);
+ if(!trigger.possible){alert('Faithful Summons solo puede activarse cuando este druida está a 0 HP o incapacitado contra su voluntad. Registra primero el HP o la condición correspondiente.');return false}
+ if(!trigger.zero&&!involuntary){alert('Confirma que la incapacitación del druida se produjo contra su voluntad.');return false}
+
  if(!Array.isArray(ids)||ids.length!==4){alert('Selecciona exactamente cuatro bestias válidas.');return false}
  const available=beasts();if(ids.some(id=>!available.some(b=>String(b.id)===String(id)))){alert('Alguna criatura no está disponible como bestia de CR 2 o inferior.');return false}
- if(!confirm('¿Registrar Faithful Summons al caer a 0 HP o quedar incapacitado contra tu voluntad? Se convocan cuatro bestias, sin espacio ni concentración, durante una hora.'))return false;
+ if(!confirm(trigger.zero?'El druida está a 0 HP. ¿Registrar Faithful Summons y convocar cuatro bestias?':'El druida está incapacitado contra su voluntad. ¿Registrar Faithful Summons y convocar cuatro bestias?'))return false;
  const api=window.DMASummonedCombat11925;
  // La vista de daño rápido consulta el estado del rasgo al dibujarse: activarlo
  // primero evita que elimine el grupo recién creado durante el primer render.
@@ -64,9 +76,9 @@ function controls(i,feature){const d=stateFor(i);if(!d)return '';const lv=level(
  if(feature==='summoner')return `<div class="dma-shep-head"><b>Mighty Summoner · Pasivo</b><small>Druida ${lv}</small></div><p class="dma-shep-rule">Las bestias y criaturas feéricas invocadas o creadas por tus conjuros aparecen con <b>+2 HP por cada dado de golpe</b>. El daño de sus armas naturales es mágico para superar resistencias e inmunidades a ataques no mágicos. El visor de criaturas refleja el HP adicional cuando el bestiario proporciona sus dados de golpe; de lo contrario advierte que falta ese dato.</p>`;
  if(feature==='guardian')return `<div class="dma-shep-head"><b>Guardian Spirit · Pasivo</b><small>Druida ${lv}</small></div><p class="dma-shep-rule">Cuando una bestia o criatura feérica creada o invocada por un conjuro tuyo <b>termina su turno</b> dentro del aura de tu Spirit Totem, recupera <b>${Math.floor(lv/2)} HP</b>. No ocurre al iniciar su turno ni cuando el tótem está inactivo. El DM registra manualmente la curación de cada criatura elegible.</p><small>Spirit Totem: ${d.active?'activo ('+kind+')':'inactivo'}.</small>`;
  if(feature==='faithful'){
- const list=beasts();const pick= j=>`<label>Bestia ${j+1}<select data-shepherd-choice="faithful${j}">${list.map(b=>`<option value="${esc(b.id)}">${esc(b.name)} · CR ${esc(b.cr)}</option>`).join('')}</select></label>`;
- const choose=!d.faithfulUsed?`<div class="dma-shep-choices11925">${[0,1,2,3].map(pick).join('')}</div><label class="dma-shep-check11925"><input type="checkbox" data-shepherd-mighty checked/> Aplicar Mighty Summoner (+2 HP por dado) a las cuatro bestias</label><small>Faithful Summons es un efecto equivalente a Conjure Animals de nivel 9. La aplicación de Mighty Summoner a este rasgo tiene interpretaciones distintas: el DM puede desmarcarla. Los HP temporales de Oso no se conceden automáticamente al invocar; pueden registrarse en cada tarjeta si el tótem aparece después y las criaturas están dentro de su aura.</small>`:'';
- return `<div class="dma-shep-head"><b>${d.faithfulActive?'Faithful Summons · 4 bestias registradas':d.faithfulUsed?'Faithful Summons gastado':'Faithful Summons disponible'}</b><small>${d.faithfulUsed?'0/1':'1/1'} · descanso largo</small></div><p class="dma-shep-rule">Cuando el druida cae a 0 HP o queda incapacitado contra su voluntad, aparecen exactamente cuatro bestias CR 2 o inferior, elegidas por el druida, dentro de 20 pies. No gasta espacio ni concentración; dura una hora. El DM lleva sus HP, ataques y efectos.</p>${choose}${!d.faithfulUsed?button('faithful','Activar con estas cuatro bestias',!list.length):d.faithfulActive?button('faithful-end','Finalizar invocación'):button('faithful-undo','Corregir uso accidental')}<small>${!list.length?'Carga Monster Manual desde Bestiario para elegir criaturas.':'Las cuatro tarjetas de daño aparecen en Daño rápido → Invocaciones.'}</small>`;
+ const list=beasts();const trigger=faithfulTrigger(i);const pick= j=>`<label>Bestia ${j+1}<select data-shepherd-choice="faithful${j}">${list.map(b=>`<option value="${esc(b.id)}">${esc(b.name)} · CR ${esc(b.cr)}</option>`).join('')}</select></label>`;
+ const choose=!d.faithfulUsed?`<div class="dma-shep-choices11925">${[0,1,2,3].map(pick).join('')}</div><label class="dma-shep-check11925"><input type="checkbox" data-shepherd-mighty checked/> Aplicar Mighty Summoner (+2 HP por dado) a las cuatro bestias</label>${trigger.incapacitated&&!trigger.zero?'<label class="dma-shep-check11925"><input type="checkbox" data-shepherd-involuntary/> Confirmo que la incapacitación fue contra la voluntad del druida.</label>':''}<small>Faithful Summons es un efecto equivalente a Conjure Animals de nivel 9. La aplicación de Mighty Summoner a este rasgo tiene interpretaciones distintas: el DM puede desmarcarla. Los HP temporales de Oso no se conceden automáticamente al invocar; pueden registrarse en cada tarjeta si el tótem aparece después y las criaturas están dentro de su aura.</small>`:'';
+ return `<div class="dma-shep-head"><b>${d.faithfulActive?'Faithful Summons · 4 bestias registradas':d.faithfulUsed?'Faithful Summons gastado':'Faithful Summons disponible'}</b><small>${d.faithfulUsed?'0/1':'1/1'} · descanso largo</small></div><p class="dma-shep-rule">Cuando el druida cae a 0 HP o queda incapacitado contra su voluntad, aparecen exactamente cuatro bestias CR 2 o inferior, elegidas por el druida, dentro de 20 pies. No gasta espacio ni concentración; dura una hora. El DM lleva sus HP, ataques y efectos.</p>${choose}${!d.faithfulUsed?`<p class="dma-shep-rule">${trigger.zero?'✓ Requisito cumplido: el druida tiene 0 HP.':trigger.incapacitated?'⚠ Condición incapacitante registrada: confirma que fue involuntaria.':'⛔ No disponible: el druida debe estar a 0 HP o incapacitado involuntariamente.'}</p>`:''}${!d.faithfulUsed?button('faithful','Activar con estas cuatro bestias',!list.length||!trigger.possible):d.faithfulActive?button('faithful-end','Finalizar invocación'):button('faithful-undo','Corregir uso accidental')}<small>${!list.length?'Carga Monster Manual desde Bestiario para elegir criaturas.':'Las cuatro tarjetas de daño aparecen en Daño rápido → Invocaciones.'}</small>`;
  }
  return '';
 }
@@ -87,12 +99,12 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-shepherd-a
  switch(b.dataset.shepherdAction){
  case 'summon':summonTotem(i,owner.querySelector('[data-shepherd-choice="totem"]')?.value);break;
  case 'move':moveTotem(i);break;case 'advance':nextRound(i);break;case 'end':finishTotem(i);break;case 'shortrest':shortRest(i);break;case 'hawk':hawk(i);break;
- case 'faithful':faithfulUse(i,[0,1,2,3].map(j=>owner.querySelector('[data-shepherd-choice=faithful'+j+']')?.value),!!owner.querySelector('[data-shepherd-mighty]')?.checked);break;case 'faithful-end':faithfulEnd(i);break;case 'faithful-undo':faithfulUndo(i);break;
+ case 'faithful':faithfulUse(i,[0,1,2,3].map(j=>owner.querySelector('[data-shepherd-choice=faithful'+j+']')?.value),!!owner.querySelector('[data-shepherd-mighty]')?.checked,!!owner.querySelector('[data-shepherd-involuntary]')?.checked);break;case 'faithful-end':faithfulEnd(i);break;case 'faithful-undo':faithfulUndo(i);break;
  case 'add':faithfulAdd(i,owner.querySelector('[data-shepherd-choice="beast"]')?.value);break;
  case 'remove':faithfulRemove(i,Number(b.dataset.shepherdIndex));break;
  case 'preview':preview(b.dataset.shepherdId);break;
  }
 });
 document.addEventListener('change',e=>{if(!e.target.matches('[data-shepherd-hp]'))return;const owner=e.target.closest('[data-shepherd-player]');if(!owner)return;faithfulHP(Number(owner.dataset.shepherdPlayer),Number(e.target.dataset.shepherdHp),e.target.value)});
-window.DMAShepherd11924=Object.freeze({circle,level,stateFor,summonTotem,moveTotem,nextRound,finishTotem,shortRest,hawk,faithfulUse,faithfulEnd,faithfulUndo,faithfulAdd,faithfulRemove,faithfulHP,summonedHP,hitDice,beasts,controls,inject,refresh});
+window.DMAShepherd11924=Object.freeze({circle,level,stateFor,faithfulTrigger,summonTotem,moveTotem,nextRound,finishTotem,shortRest,hawk,faithfulUse,faithfulEnd,faithfulUndo,faithfulAdd,faithfulRemove,faithfulHP,summonedHP,hitDice,beasts,controls,inject,refresh});
 })();
