@@ -49,7 +49,7 @@ function bestiarySheet(target,m,casterIndex,spellName){target.replaceChildren();
  const shepherd=typeof casterIndex==='number'&&window.DMAShepherd11924?.level?.(casterIndex)>=6;
  const qualifies=/^(conjureanimals|conjurewoodlandbeings|conjurefey)$/.test(key(spellName))&&(classify(x,['beast','fey'])||key(spellName)==='conjurefey');
  const boost=shepherd&&qualifies?window.DMAShepherd11924.summonedHP(x,window.DMAShepherd11924.level(casterIndex)):null;
- const hpLabel=boost?.total!=null?boost.total+' (base '+boost.base+' + '+boost.extra+' de Mighty Summoner)':x.hp??'—';
+ const hpLabel=boost?.extra!=null&&boost?.total!=null?boost.total+' (base '+boost.base+' + '+boost.extra+' de Mighty Summoner)':(x.hp??'—');
  statGrid(target,[['CA',x.ac??'—'],['HP',hpLabel],['Iniciativa DES',Number(x.dex)>=0?'+'+(Number(x.dex)||0):x.dex],['Velocidad',speedEntry(stat.speed)||'Consultar ficha']]);
  if(boost){part(target,'p','dma-summon-rule',boost.extra!=null?'Mighty Summoner: +2 HP por dado de golpe ('+boost.hitDice+' dados); las armas naturales infligen daño mágico a efectos de resistencias e inmunidades.':'Mighty Summoner: armas naturales mágicas a efectos de resistencias e inmunidades. Este registro no contiene dados de golpe verificables; el aumento de HP debe revisarse, NO se ha inventado.')}
  if(['str','dex','con','int','wis','cha'].every(k=>Number.isFinite(Number(stat[k]))))abilityGrid(target,['str','dex','con','int','wis','cha'].map(k=>Number(stat[k])));
@@ -108,6 +108,18 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
  if(mode==='polymorph'||mode==='shapechange')targetSelect=addControl(controls,mode==='polymorph'?'Nivel o CR del objetivo':'Nivel total del lanzador',Array.from({length:20},(_,j)=>({value:j+1,label:'Nivel '+(j+1)})));
  if(targetSelect){const c=caster(i);targetSelect.value=String(c.level||Math.max(1,minLevel))}
  const feedback=part(root,'p','dma-summon-hint');const listArea=part(root,'div','dma-summon-listarea');const sheet=part(root,'div','dma-summon-sheet');
+ let registerButton=null,registerHelp=null,amountToAdd=null;
+ if(summon&&key(name)!=='giantinsect'){const register=part(root,'div','dma-summon-register11925');registerHelp=part(register,'p','dma-summon-small');const inputs=part(register,'div','dma-summon-register-row11925');
+  const amountLabel=part(inputs,'label','dma-summon-control');part(amountLabel,'span','','Cantidad a registrar en este paso');amountToAdd=part(amountLabel,'input');amountToAdd.type='number';amountToAdd.min='1';amountToAdd.max='32';amountToAdd.value='1';
+  registerButton=part(inputs,'button','dma-summon-register-btn11925','Registrar criaturas en Daño rápido');registerButton.type='button';}
+ const updateRegister=(opts)=>{if(!registerButton)return;const pending=window.DMASummonedCombat11925?.pending?.(i,name);
+  if(!pending){registerHelp.textContent='Primero registra el lanzamiento mediante «Lanzar»; después elige las criaturas.';registerButton.disabled=true;return}
+  registerHelp.textContent='Espacio gastado: nivel '+pending.slot+'. El DM elige qué criaturas concretas aparecen. No se gasta otro espacio al registrarlas.';
+  if(amountToAdd){const max=Math.min(32,Math.max(1,opts.total||1));amountToAdd.max=String(max);if(Number(amountToAdd.value)>max||Number(amountToAdd.value)<1)amountToAdd.value=String(max);}
+  registerButton.disabled=!!(Number(opts.level)!==pending.slot||!opts.valid);
+  registerButton.onclick=()=>{const api=window.DMASummonedCombat11925;const ok=api?.registerSpell?.(i,{name,slot:opts.level,form:opts.form,count:Math.max(1,Math.floor(Number(amountToAdd.value)||1)),total:opts.total,crMax:opts.cap,monsterId:opts.monsterId,spirit:opts.spirit,attackBonus:caster(i).bonus,dc:caster(i).dc,concentration:!!(s.concentration||s.mechanics?.durationConcentration||/^concentraci[oó]n|^concentration/i.test(String(s.duration||'')))});if(ok)registerHelp.textContent='Criaturas registradas en Daño rápido. Puedes añadir más si el conjuro permite varias.'};
+ };
+
  if(!summon?.forms?.length){
    const row=part(listArea,'div','dma-summon-pick');const qWrap=part(row,'label','dma-summon-control');part(qWrap,'span','', 'Buscar criatura');query=part(qWrap,'input');query.type='search';query.placeholder='Nombre de criatura…';
    crSelect=addControl(row,'Filtrar por CR',[{value:'all',label:'Todos los CR permitidos'}]);
@@ -124,11 +136,11 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
  }
  const calculate=()=>{
    const level=Number(slotSelect?.value)||minLevel;const form=formSelect?.value||summon?.forms?.[0]||'all';const casting=caster(i);
-   if(summon?.forms?.length){feedback.textContent='Espíritu único · '+nice(form)+' · espacio nivel '+level+' · ataque mágico +'+casting.bonus+' · CD '+casting.dc;spiritSheet(sheet,name,form,level,casting);
+   if(summon?.forms?.length){feedback.textContent='Espíritu único · '+nice(form)+' · espacio nivel '+level+' · ataque mágico +'+casting.bonus+' · CD '+casting.dc;spiritSheet(sheet,name,form,level,casting);updateRegister({valid:true,level,total:1,cap:0,form,spirit:true});
      if(window.DMAShepherd11924?.level?.(i)>=6&&['summonbeast','summonfey'].includes(key(name))){part(sheet,'p','dma-summon-warning','Mighty Summoner: esta ficha de espíritu no indica dados de golpe. No es posible calcular de forma verificable HP adicionales con la regla +2 por dado. Los ataques naturales de la criatura cuentan como mágicos cuando el rasgo es aplicable.');}
      return}
    let cap=0,count=1,noteText='';
-   if(optionSelect){const opt=summon.options[Number(optionSelect.value)||0];cap=Number(opt.cr_max);count=Number(opt.count)||1;const extras=summon.count_multiplier_by_slot||{};const mult=Object.entries(extras).filter(([k])=>level>=Number(k)).sort((a,b)=>Number(b[0])-Number(a[0]))[0];if(mult)count*=Number(mult[1]);}
+   if(optionSelect){const opt=summon.options[Number(optionSelect.value)||0];cap=asCR(opt.cr_max);count=Number(opt.count)||1;const extras=summon.count_multiplier_by_slot||{};const mult=Object.entries(extras).filter(([k])=>level>=Number(k)).sort((a,b)=>Number(b[0])-Number(a[0]))[0];if(mult)count*=Number(mult[1]);}
    else if(mode==='conjureelemental')cap=level;
    else if(mode==='conjurefey')cap=6+Math.max(0,level-6);
    else if(mode==='polymorph')cap=Number(targetSelect?.value)||1;
@@ -155,8 +167,8 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
    feedback.textContent=noteText+(summon?'Opciones: '+count+' criatura(s), CR hasta '+showCR(cap):'CR hasta '+showCR(cap))+' · '+matching.length+' criaturas compatibles en bestiario · '+filtered.length+' visibles.';
    if(mode==='conjureanimals'||mode==='conjurewoodlandbeings'||mode==='conjureminorelementals')feedback.textContent+=' El DM determina qué criaturas concretas aparecen; la opción indica solo cantidad y CR.';
    if(mode==='giantinsect')feedback.textContent+=' Giant Insect transforma insectos existentes; no convoca criaturas nuevas.';
-   if(!filtered.length){sheet.replaceChildren();part(sheet,'p','dma-summon-warning',matching.length?'No hay coincidencias con la búsqueda.':'No hay criaturas compatibles cargadas. Abre Bestiario, carga Monster Manual (2014) u otro libro permitido y vuelve aquí; después pulsa «Actualizar bestiario». No se fabricarán estadísticas.');return;}
-   const selected=filtered.find(m=>String(m.id)===monsterSelect.value)||filtered[0];bestiarySheet(sheet,selected,i,name);
+   if(!filtered.length){sheet.replaceChildren();part(sheet,'p','dma-summon-warning',matching.length?'No hay coincidencias con la búsqueda.':'No hay criaturas compatibles cargadas. Abre Bestiario, carga Monster Manual (2014) u otro libro permitido y vuelve aquí; después pulsa «Actualizar bestiario». No se fabricarán estadísticas.');updateRegister({valid:false,level,total:count});return;}
+   const selected=filtered.find(m=>String(m.id)===monsterSelect.value)||filtered[0];bestiarySheet(sheet,selected,i,name);updateRegister({valid:true,level,total:count,cap,monsterId:selected.id,spirit:false});
  };
  for(const control of [slotSelect,formSelect,optionSelect,targetSelect,crSelect,monsterSelect])if(control)control.addEventListener('change',calculate);
  query?.addEventListener('input',calculate);refresh?.addEventListener('click',calculate);

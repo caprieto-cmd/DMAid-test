@@ -27,15 +27,22 @@ function shortRest(i){const d=stateFor(i);if(!d||!d.used)return false;if(!confir
 function hawk(i){const d=stateFor(i);if(!d?.active||d.kind!=='hawk')return false;const sh=profile(i);if(sh.dmaReactionUsed1178){alert('La reacción de este personaje ya se utilizó.');return false}
  if(!confirm('¿Gastar la reacción para conceder ventaja a un ataque contra una criatura dentro del aura del Halcón? El jugador realiza su tirada.'))return false;
  sh.dmaReactionUsed1178=true;save();refresh(i);try{window.renderQuickEnemies?.()}catch(e){}return true}
-function faithfulUse(i){const d=stateFor(i);if(!d||level(i)<14||d.faithfulUsed)return false;
- if(!confirm('¿Confirmas que este druida cayó a 0 HP o quedó incapacitado contra su voluntad? Faithful Summons invoca cuatro bestias CR 2 o inferior sin gastar espacio ni concentración.'))return false;
- persist(i,s=>Object.assign(s,{faithfulUsed:true,faithfulActive:true,faithfulBeasts:[]}));return true}
-function faithfulEnd(i){if(!stateFor(i)?.faithfulActive)return false;persist(i,s=>{s.faithfulActive=false});return true}
+function faithfulUse(i,ids,mighty){const d=stateFor(i);if(!d||level(i)<14||d.faithfulUsed)return false;
+ if(!Array.isArray(ids)||ids.length!==4){alert('Selecciona exactamente cuatro bestias válidas.');return false}
+ const available=beasts();if(ids.some(id=>!available.some(b=>String(b.id)===String(id)))){alert('Alguna criatura no está disponible como bestia de CR 2 o inferior.');return false}
+ if(!confirm('¿Registrar Faithful Summons al caer a 0 HP o quedar incapacitado contra tu voluntad? Se convocan cuatro bestias, sin espacio ni concentración, durante una hora.'))return false;
+ const api=window.DMASummonedCombat11925;
+ // La vista de daño rápido consulta el estado del rasgo al dibujarse: activarlo
+ // primero evita que elimine el grupo recién creado durante el primer render.
+ d.faithfulUsed=true;d.faithfulActive=true;
+ if(!api?.registerFaithful?.(i,ids,!!mighty)){d.faithfulUsed=false;d.faithfulActive=false;alert('El gestor de invocaciones no está disponible; no se consumió Faithful Summons.');return false}
+ persist(i,s=>Object.assign(s,{faithfulUsed:true,faithfulActive:true,faithfulBeasts:ids.slice()}));return true}
+function faithfulEnd(i){if(!stateFor(i)?.faithfulActive)return false;window.DMASummonedCombat11925?.endFaithful?.(i);persist(i,s=>{s.faithfulActive=false});return true}
 function faithfulUndo(i){const d=stateFor(i);if(!d?.faithfulUsed||!confirm('¿Anular el uso de Faithful Summons? Esto solo debe hacerse para corregir un registro accidental.'))return false;
- persist(i,s=>Object.assign(s,{faithfulUsed:false,faithfulActive:false,faithfulBeasts:[]}));return true}
+ window.DMASummonedCombat11925?.endFaithful?.(i);persist(i,s=>Object.assign(s,{faithfulUsed:false,faithfulActive:false,faithfulBeasts:[]}));return true}
 function beasts(){try{return window.DMASummonBrowser11910?.filterMonsters?.('Conjure Animals',2,'all','all')||[]}catch(e){return []}}
 function baseHP(monster){const hp=monster?.hp??monster?.stat?.hp?.average;const n=Number.parseInt(String(hp),10);return Number.isFinite(n)?n:0}
-function hitDice(monster){let x=monster?.stat?.hp?.formula||monster?.stat?.hp?.special||monster?.hpFormula||'';if(!x&&typeof monster?.hp==='string')x=monster.hp;const found=String(x).match(/\b(\d+)d(?:4|6|8|10|12|20)\b/i);return found?Number(found[1]):null}
+function hitDice(monster){let x=monster?.stat?.hpFormula||monster?.stat?.hp?.formula||monster?.stat?.hp?.special||monster?.hpFormula||monster?.hp?.formula||'';if(!x&&typeof monster?.hp==='string')x=monster.hp;const found=String(x).match(/\b(\d+)d(?:4|6|8|10|12|20)\b/i);return found?Number(found[1]):null}
 function summonedHP(monster,lvl){const hp=baseHP(monster),dice=hitDice(monster);return {base:hp,hitDice:dice,extra:lvl>=6&&dice!=null?2*dice:null,total:hp&&lvl>=6&&dice!=null?hp+2*dice:hp||null}}
 function faithfulAdd(i,id){const d=stateFor(i);if(!d?.faithfulActive||d.faithfulBeasts.length>=4)return false;const monster=beasts().find(b=>String(b.id)===String(id));if(!monster)return false;
  const summary=summonedHP(monster,level(i));persist(i,s=>s.faithfulBeasts.push({id:String(monster.id),name:String(monster.name),cr:monster.cr,hp:summary.total,max:summary.total,hitDice:summary.hitDice}));return true}
@@ -57,11 +64,9 @@ function controls(i,feature){const d=stateFor(i);if(!d)return '';const lv=level(
  if(feature==='summoner')return `<div class="dma-shep-head"><b>Mighty Summoner · Pasivo</b><small>Druida ${lv}</small></div><p class="dma-shep-rule">Las bestias y criaturas feéricas invocadas o creadas por tus conjuros aparecen con <b>+2 HP por cada dado de golpe</b>. El daño de sus armas naturales es mágico para superar resistencias e inmunidades a ataques no mágicos. El visor de criaturas refleja el HP adicional cuando el bestiario proporciona sus dados de golpe; de lo contrario advierte que falta ese dato.</p>`;
  if(feature==='guardian')return `<div class="dma-shep-head"><b>Guardian Spirit · Pasivo</b><small>Druida ${lv}</small></div><p class="dma-shep-rule">Cuando una bestia o criatura feérica creada o invocada por un conjuro tuyo <b>termina su turno</b> dentro del aura de tu Spirit Totem, recupera <b>${Math.floor(lv/2)} HP</b>. No ocurre al iniciar su turno ni cuando el tótem está inactivo. El DM registra manualmente la curación de cada criatura elegible.</p><small>Spirit Totem: ${d.active?'activo ('+kind+')':'inactivo'}.</small>`;
  if(feature==='faithful'){
- const list=beasts(),last=d.faithfulBeasts||[];
- let rows=last.map((b,j)=>`<div class="dma-shep-beast"><b>${j+1}. ${esc(b.name)} · CR ${esc(b.cr)}</b><span>${b.max!=null?'HP '+b.hp+'/'+b.max:'HP no verificables'}</span>${b.hitDice==null?'<small>No consta el número de dados de golpe: bonificación de Mighty Summoner pendiente.</small>':''}<div class="dma-shep-actions">${b.max!=null?`<label>HP actuales<input type="number" min="0" max="${b.max}" value="${b.hp}" data-shepherd-hp="${j}"/></label>`:''}${button('preview','Ver statblock',false,`data-shepherd-id="${esc(b.id)}"`)}${button('remove','Quitar',false,`data-shepherd-index="${j}"`)}</div></div>`).join('');
- let picker=last.length<4?`<div class="dma-shep-actions"><label>Bestia disponible en el bestiario<select data-shepherd-choice="beast"><option value="">Seleccionar bestia…</option>${list.map(b=>`<option value="${esc(b.id)}">${esc(b.name)} · CR ${esc(b.cr)}</option>`).join('')}</select></label>${button('add','Registrar bestia',!list.length)}</div>`:'';
- return `<div class="dma-shep-head"><b>${d.faithfulActive?'Invocación activa':d.faithfulUsed?'Uso gastado':'Faithful Summons disponible'}</b><small>${d.faithfulUsed?'0/1':'1/1'} · Descanso largo</small></div><p class="dma-shep-rule">Se activa inmediatamente si caes a 0 HP o quedas incapacitado contra tu voluntad. Aparecen <b>cuatro bestias CR 2 o inferior</b> a 20 pies de ti, como Conjure Animals de nivel 9, <b>sin gastar espacio ni concentración</b>. Duran 1 hora, hasta disiparlas sin acción o hasta que termine su efecto; defienden al druida si no reciben órdenes.</p>
- ${!d.faithfulUsed?button('faithful','Registrar activación'):d.faithfulActive?`<small>${last.length}/4 bestias registradas. ${list.length?'':'Carga el bestiario (MM 2014) para elegir criaturas.'}</small>${picker}${rows}${button('faithful-end','Finalizar invocación')}`:button('faithful-undo','Corregir uso accidental')}<small>No añade enemigos ni lanza dados. Si hay fichas incompletas, la información sin verificar no se inventa.</small>`;
+ const list=beasts();const pick= j=>`<label>Bestia ${j+1}<select data-shepherd-choice="faithful${j}">${list.map(b=>`<option value="${esc(b.id)}">${esc(b.name)} · CR ${esc(b.cr)}</option>`).join('')}</select></label>`;
+ const choose=!d.faithfulUsed?`<div class="dma-shep-choices11925">${[0,1,2,3].map(pick).join('')}</div><label class="dma-shep-check11925"><input type="checkbox" data-shepherd-mighty checked/> Aplicar Mighty Summoner (+2 HP por dado) a las cuatro bestias</label><small>Faithful Summons es un efecto equivalente a Conjure Animals de nivel 9. La aplicación de Mighty Summoner a este rasgo tiene interpretaciones distintas: el DM puede desmarcarla. Los HP temporales de Oso no se conceden automáticamente al invocar; pueden registrarse en cada tarjeta si el tótem aparece después y las criaturas están dentro de su aura.</small>`:'';
+ return `<div class="dma-shep-head"><b>${d.faithfulActive?'Faithful Summons · 4 bestias registradas':d.faithfulUsed?'Faithful Summons gastado':'Faithful Summons disponible'}</b><small>${d.faithfulUsed?'0/1':'1/1'} · descanso largo</small></div><p class="dma-shep-rule">Cuando el druida cae a 0 HP o queda incapacitado contra su voluntad, aparecen exactamente cuatro bestias CR 2 o inferior, elegidas por el druida, dentro de 20 pies. No gasta espacio ni concentración; dura una hora. El DM lleva sus HP, ataques y efectos.</p>${choose}${!d.faithfulUsed?button('faithful','Activar con estas cuatro bestias',!list.length):d.faithfulActive?button('faithful-end','Finalizar invocación'):button('faithful-undo','Corregir uso accidental')}<small>${!list.length?'Carga Monster Manual desde Bestiario para elegir criaturas.':'Las cuatro tarjetas de daño aparecen en Daño rápido → Invocaciones.'}</small>`;
  }
  return '';
 }
@@ -82,7 +87,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-shepherd-a
  switch(b.dataset.shepherdAction){
  case 'summon':summonTotem(i,owner.querySelector('[data-shepherd-choice="totem"]')?.value);break;
  case 'move':moveTotem(i);break;case 'advance':nextRound(i);break;case 'end':finishTotem(i);break;case 'shortrest':shortRest(i);break;case 'hawk':hawk(i);break;
- case 'faithful':faithfulUse(i);break;case 'faithful-end':faithfulEnd(i);break;case 'faithful-undo':faithfulUndo(i);break;
+ case 'faithful':faithfulUse(i,[0,1,2,3].map(j=>owner.querySelector('[data-shepherd-choice=faithful'+j+']')?.value),!!owner.querySelector('[data-shepherd-mighty]')?.checked);break;case 'faithful-end':faithfulEnd(i);break;case 'faithful-undo':faithfulUndo(i);break;
  case 'add':faithfulAdd(i,owner.querySelector('[data-shepherd-choice="beast"]')?.value);break;
  case 'remove':faithfulRemove(i,Number(b.dataset.shepherdIndex));break;
  case 'preview':preview(b.dataset.shepherdId);break;

@@ -74,7 +74,7 @@
         sh.dmaMagic1185.concentrating=name;
       }
       sh.dmaLastCast11920={name,level:option?.level||0,pact:option?.kind==='pact',concentration:concentration(spell),reaction:isReaction(spell)};
-      save();refresh(i);
+      save();window.DMASummonedCombat11925?.onCast?.(i,name,option?.level||0);refresh(i);
       return true;
     }catch(err){
       console.error('[DMAid] No se registró el conjuro',err);
