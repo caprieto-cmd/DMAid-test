@@ -44,9 +44,14 @@ function speedEntry(speed){
   return (labels[k]||k)+': '+text;
  }).join(' · ');
 }
-function bestiarySheet(target,m){target.replaceChildren();if(!m)return;const x=rich(m)||m,stat=x.stat||{};const cr=asCR(x.cr);
+function bestiarySheet(target,m,casterIndex,spellName){target.replaceChildren();if(!m)return;const x=rich(m)||m,stat=x.stat||{};const cr=asCR(x.cr);
  part(target,'h5','dma-summon-name',x.name||'Criatura');part(target,'div','dma-summon-sub',(x.kind||'Criatura')+' · CR '+(cr==null?'sin verificar':showCR(cr))+' · '+(x.source||'Sin fuente'));
- statGrid(target,[['CA',x.ac??'—'],['HP',x.hp??'—'],['Iniciativa DES',Number(x.dex)>=0?'+'+(Number(x.dex)||0):x.dex],['Velocidad',speedEntry(stat.speed)||'Consultar ficha']]);
+ const shepherd=typeof casterIndex==='number'&&window.DMAShepherd11924?.level?.(casterIndex)>=6;
+ const qualifies=/^(conjureanimals|conjurewoodlandbeings|conjurefey)$/.test(key(spellName))&&(classify(x,['beast','fey'])||key(spellName)==='conjurefey');
+ const boost=shepherd&&qualifies?window.DMAShepherd11924.summonedHP(x,window.DMAShepherd11924.level(casterIndex)):null;
+ const hpLabel=boost?.total!=null?boost.total+' (base '+boost.base+' + '+boost.extra+' de Mighty Summoner)':x.hp??'—';
+ statGrid(target,[['CA',x.ac??'—'],['HP',hpLabel],['Iniciativa DES',Number(x.dex)>=0?'+'+(Number(x.dex)||0):x.dex],['Velocidad',speedEntry(stat.speed)||'Consultar ficha']]);
+ if(boost){part(target,'p','dma-summon-rule',boost.extra!=null?'Mighty Summoner: +2 HP por dado de golpe ('+boost.hitDice+' dados); las armas naturales infligen daño mágico a efectos de resistencias e inmunidades.':'Mighty Summoner: armas naturales mágicas a efectos de resistencias e inmunidades. Este registro no contiene dados de golpe verificables; el aumento de HP debe revisarse, NO se ha inventado.')}
  if(['str','dex','con','int','wis','cha'].every(k=>Number.isFinite(Number(stat[k]))))abilityGrid(target,['str','dex','con','int','wis','cha'].map(k=>Number(stat[k])));
  for(const [label,k] of [['Salvaciones','save'],['Habilidades','skill'],['Resistencias','resist'],['Inmunidades al daño','immune'],['Inmunidades a estados','conditionImmune'],['Sentidos','senses'],['Idiomas','languages']])if(stat[k])field(target,label,summaryEntry(stat[k]));
  for(const [label,k,fallback] of [['Rasgos','trait',x.traits],['Acciones','action',x.actions],['Bonus Actions','bonus',null],['Reacciones','reaction',null]]){
@@ -119,7 +124,9 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
  }
  const calculate=()=>{
    const level=Number(slotSelect?.value)||minLevel;const form=formSelect?.value||summon?.forms?.[0]||'all';const casting=caster(i);
-   if(summon?.forms?.length){feedback.textContent='Espíritu único · '+nice(form)+' · espacio nivel '+level+' · ataque mágico +'+casting.bonus+' · CD '+casting.dc;spiritSheet(sheet,name,form,level,casting);return}
+   if(summon?.forms?.length){feedback.textContent='Espíritu único · '+nice(form)+' · espacio nivel '+level+' · ataque mágico +'+casting.bonus+' · CD '+casting.dc;spiritSheet(sheet,name,form,level,casting);
+     if(window.DMAShepherd11924?.level?.(i)>=6&&['summonbeast','summonfey'].includes(key(name))){part(sheet,'p','dma-summon-warning','Mighty Summoner: esta ficha de espíritu no indica dados de golpe. No es posible calcular de forma verificable HP adicionales con la regla +2 por dado. Los ataques naturales de la criatura cuentan como mágicos cuando el rasgo es aplicable.');}
+     return}
    let cap=0,count=1,noteText='';
    if(optionSelect){const opt=summon.options[Number(optionSelect.value)||0];cap=Number(opt.cr_max);count=Number(opt.count)||1;const extras=summon.count_multiplier_by_slot||{};const mult=Object.entries(extras).filter(([k])=>level>=Number(k)).sort((a,b)=>Number(b[0])-Number(a[0]))[0];if(mult)count*=Number(mult[1]);}
    else if(mode==='conjureelemental')cap=level;
@@ -149,7 +156,7 @@ function attach(host,i,name){try{const s=window.DMADruidRules1199?.getSpell?.(na
    if(mode==='conjureanimals'||mode==='conjurewoodlandbeings'||mode==='conjureminorelementals')feedback.textContent+=' El DM determina qué criaturas concretas aparecen; la opción indica solo cantidad y CR.';
    if(mode==='giantinsect')feedback.textContent+=' Giant Insect transforma insectos existentes; no convoca criaturas nuevas.';
    if(!filtered.length){sheet.replaceChildren();part(sheet,'p','dma-summon-warning',matching.length?'No hay coincidencias con la búsqueda.':'No hay criaturas compatibles cargadas. Abre Bestiario, carga Monster Manual (2014) u otro libro permitido y vuelve aquí; después pulsa «Actualizar bestiario». No se fabricarán estadísticas.');return;}
-   const selected=filtered.find(m=>String(m.id)===monsterSelect.value)||filtered[0];bestiarySheet(sheet,selected);
+   const selected=filtered.find(m=>String(m.id)===monsterSelect.value)||filtered[0];bestiarySheet(sheet,selected,i,name);
  };
  for(const control of [slotSelect,formSelect,optionSelect,targetSelect,crSelect,monsterSelect])if(control)control.addEventListener('change',calculate);
  query?.addEventListener('input',calculate);refresh?.addEventListener('click',calculate);

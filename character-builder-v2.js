@@ -117,6 +117,7 @@ function languageEntitlements(){
  if(hasKnowledgeDomain())grants.push({source:'Blessings of Knowledge (Clérigo del Conocimiento)',count:2});
  if(model.race.feat==='Linguist')grants.push({source:'Dote: Linguist',count:3});
  if(model.classes.some(c=>c.name==='Druida'))fixed.push({name:'Druídico',source:'Clase: Druida'});
+ if(model.classes.some(c=>c.name==='Druida'&&Number(c.level)>=2&&/shepherd|pastor/i.test(String(c.sub||''))))fixed.push({name:'Silvano',source:'Círculo del Pastor: Speech of the Woods'});
  if(model.classes.some(c=>c.name==='Pícaro'))fixed.push({name:'Jerga de ladrones',source:'Clase: Pícaro'});
  return {fixed:[...new Map(fixed.map(x=>[x.name,x])).values()],grants,total:grants.reduce((s,g)=>s+g.count,0)};
 }
