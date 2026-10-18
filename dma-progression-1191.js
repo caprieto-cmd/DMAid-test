@@ -18,7 +18,7 @@ if(sh.dmaMagic1185)sh.dmaMagic1185.concentrating=null;
 const lvl=total(i),rec=Math.max(1,Math.floor(lvl/2));if(Number.isFinite(Number(sh.hitDiceSpent1185)))sh.hitDiceSpent1185=Math.max(0,Number(sh.hitDiceSpent1185)-rec);
 sh.dmaRacialUsed1171={};sh.dmaResourceSpent1172={};sh.dmaReactionUsed1178=false;sh.dmaReactionSpent1178={};sh.dmaStoneSpent11617=0;
 if(sh.dmaFighterResources1185)sh.dmaFighterResources1185={};if(sh.dmaClassResources1185)sh.dmaClassResources1185={};
-sh.dmaWildShape1191={spent:0};if(sh.dmaWildShapeForm11913){sh.dmaWildShapeForm11913.active=false;sh.dmaWildShapeForm11913.hp=null;sh.dmaWildShapeForm11913.beast=null;}sh.dmaSymbiotic1194={active:false};sh.dmaLongRestAt1185=Date.now();return true}
+sh.dmaWildShape1191={spent:0};if(sh.dmaLandRecovery11917)sh.dmaLandRecovery11917.spent=false;if(sh.dmaWildShapeForm11913){sh.dmaWildShapeForm11913.active=false;sh.dmaWildShapeForm11913.hp=null;sh.dmaWildShapeForm11913.beast=null;}sh.dmaSymbiotic1194={active:false};sh.dmaLongRestAt1185=Date.now();return true}
 function restAll(){const n=state.players.length;if(!n)return alert('No hay personajes registrados.');if(!confirm(`¿Registrar descanso largo para los ${n} personajes? Restablece HP, espacios, Forma Salvaje y recursos compatibles. Los personajes deben haber completado el descanso de 8 horas y cumplir el límite de una vez cada 24 horas.`))return;
 let affected=0;state.players.forEach((p,i)=>{if(restOne(i,true))affected++});save();render();renderSheets();alert('Descanso largo aplicado a '+affected+' personaje(s). Los contadores heredados no integrados deben comprobarse manualmente.')}
 let wizard=null;

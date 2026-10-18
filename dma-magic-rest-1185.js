@@ -41,12 +41,16 @@ const maxPrepared=cs.reduce((n,c)=>{const l=Number(c.level),s=specs[c.name];if(!
 return {maxCan,maxPrepared}}
 function druidCircle(i){return rows(i).find(c=>c.name==='Druida')||null}
 function spores(i){const d=druidCircle(i);return d&&/spore|espora/i.test(d.sub||'')?Number(d.level)||0:0}
-function bonusCantrips(i){return spores(i)>=2?['Chill Touch']:[]}
+function bonusCantrips(i){return [...(spores(i)>=2?['Chill Touch']:[]),...(window.DMALand11917?.bonus(i)||[])]}
 function domains(i){const result=[];rows(i).forEach(c=>{if(c.name==='Clérigo'&&/knowledge|conocimiento/i.test(c.sub||''))for(const [lvl,name] of domain.Knowledge)if(Number(c.level)>=lvl)result.push(name)});
  const lv=spores(i);
  for(const [need,ns] of [[3,['Blindness/Deafness','Gentle Repose']],[5,['Animate Dead','Gaseous Form']],[7,['Blight','Confusion']],[9,['Cloudkill','Contagion']]])if(lv>=need)result.push(...ns);
+ result.push(...(window.DMALand11917?.granted(i)||[]));
  return [...new Set(result)]}
 function syncGranted(i){const sh=profile(i),d=data(i),auto=[...bonusCantrips(i),...domains(i)];
+ // When an existing known/prepared spell becomes a Land circle grant, it frees its normal slot.
+ const autoKeys=new Set(auto.map(spellKey1189));
+ for(const kind of ['cantrips','prepared','known'])d[kind]=d[kind].filter(n=>!autoKeys.has(spellKey1189(n)));
  const old=Array.isArray(sh.dmaGranted1194)?sh.dmaGranted1194:[];
  const manual=[...d.cantrips,...d.prepared,...d.known];
  const present=Array.isArray(sh.spells)?sh.spells:[];
@@ -122,7 +126,7 @@ const level=rows(i).reduce((n,c)=>n+Number(c.level),0);const recover=Math.max(1,
 sh.dmaRacialUsed1171={};sh.dmaResourceSpent1172={};sh.dmaReactionUsed1178=false;sh.dmaReactionSpent1178={};sh.dmaStoneSpent11617=0;
 if(sh.dmaFighterResources1185)sh.dmaFighterResources1185={};if(sh.dmaClassResources1185)sh.dmaClassResources1185={};
 // Class-specific counters present in this build may be separate; do not overwrite unknown tracking structures.
-sh.dmaLongRestAt1185=Date.now();save();renderSheets();}
+if(sh.dmaLandRecovery11917)sh.dmaLandRecovery11917.spent=false;sh.dmaLongRestAt1185=Date.now();save();renderSheets();}
 function decorate(){const target=document.getElementById('sheetsplayers');if(!target)return;target.querySelectorAll('article.sheet').forEach((card,i)=>{if(!state.players[i]||card.querySelector('.dma-magic-editor'))return;const area=card.querySelector('.dma-sheet-full')||card;const wrap=document.createElement('div');wrap.className='dma-magic-rest-container';wrap.innerHTML=panel(i)+`<div class="dma-long-rest"><button type="button" class="gold" onclick="DMAmagic1185.rest(${i})">🌙 Descanso largo · ${esc(state.players[i].name)}</button><small>Restaura HP máximos, espacios normales y de pacto, recursos raciales y reacción. Recupera hasta la mitad de dados de golpe gastados (mínimo 1). No modifica conjuros preparados.</small></div>`;area.appendChild(wrap)})}
 const prior=renderSheets;renderSheets=function(){prior();decorate()};
 window.dmaMagicSearch1185={};
