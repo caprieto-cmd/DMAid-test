@@ -20,6 +20,7 @@
  const previousQuick=renderQuickEnemies;
  renderQuickEnemies=function(){const ret=previousQuick.apply(this,arguments);const root=document.getElementById('quickenemygrid');if(!root)return ret;
   const group=root.querySelector('.quick-group');if(!group)return ret;const cards=group.querySelectorAll('.quick-enemy');state.players.forEach((_,i)=>{if(cards[i])cards[i].insertAdjacentHTML('beforeend',control(i,true));});return ret;};
- const previousActive=renderActivePlayerBlock;
- renderActivePlayerBlock=function(panel,key){const ret=previousActive.apply(this,arguments);if(/^p\d+$/.test(String(key||''))){const i=Number(key.slice(1));if(state.players[i]&&panel&&!panel.querySelector('.dma-conc-1196'))panel.insertAdjacentHTML('beforeend',control(i,false));}return ret;};
+ // La concentración solo se muestra y edita en Daño rápido.
+ // Ya no se agrega al panel principal del combatiente activo, donde resultaba redundante.
+
 })();
