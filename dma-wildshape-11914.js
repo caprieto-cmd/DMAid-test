@@ -60,16 +60,16 @@ function formMax(m){const a=[m?.hp,m?.stat?.hp?.average,m?.stat?.hp];for(const v
 function formAC(m){const a=m?.ac??m?.stat?.ac;const val=Array.isArray(a)?a[0]:a;const n=Number(typeof val==='object'?val?.ac:val);return Number.isFinite(n)&&n>0?n:null}
 function statblock(parent,original){const m=full(original),st=m.stat||{};
  const card=append(parent,'div','dma-ws-stat11913');
- append(card,'h5','',m.name||'Forma sin nombre');append(card,'div','dma-ws-meta11913',`${m.kind||'Bestia'} · CR ${showCR(crNumber(m.cr)??'?')} · ${m.source||'Fuente no indicada'}`);
+ append(card,'h5','',window.DMABestiaryES11918?.formatName(m.name)||m.name||'Forma sin nombre');append(card,'div','dma-ws-meta11913',`${window.DMABestiaryES11918?.formatName(m.kind)||m.kind||'Bestia'} · CR ${showCR(crNumber(m.cr)??'?')} · ${m.source||'Fuente no indicada'}`);
  const grid=append(card,'div','dma-ws-facts11913');
  for(const [k,v] of [['CA',m.ac??st.ac??'—'],['HP máximos',formMax(m)||'—'],['Velocidad',printableSpeed(m)]]){const el=append(grid,'div');append(el,'small','',k);append(el,'strong','',lines(v))}
  if(['str','dex','con','int','wis','cha'].every(k=>Number.isFinite(Number(st[k])))){
   const abil=append(card,'div','dma-ws-abilities11913');for(const [label,key] of [['FUE','str'],['DES','dex'],['CON','con'],['INT','int'],['SAB','wis'],['CAR','cha']]){const score=Number(st[key]),mod=Math.floor((score-10)/2);const cell=append(abil,'div');append(cell,'b','',label);append(cell,'span','',`${score} (${mod>=0?'+':''}${mod})`)}}
- for(const [title,key] of [['Salvaciones','save'],['Habilidades','skill'],['Resistencias','resist'],['Inmunidades al daño','immune'],['Inmunidades a condiciones','conditionImmune'],['Sentidos','senses'],['Idiomas','languages']])if(st[key]!=null){const p=append(card,'p','dma-ws-attribute11913');append(p,'b','',title+': ');p.append(document.createTextNode(lines(st[key])))}
- let actions=0;for(const [title,key,fallback] of [['Rasgos','trait',m.traits],['Acciones','action',m.actions],['Bonus Actions','bonus',null],['Reacciones','reaction',null],['Acciones legendarias','legendary',null]]){
+ for(const [title,key] of [['Salvaciones','save'],['Habilidades','skill'],['Resistencias','resist'],['Inmunidades al daño','immune'],['Inmunidades a condiciones','conditionImmune'],['Sentidos','senses'],['Idiomas','languages']])if(st[key]!=null){const p=append(card,'p','dma-ws-attribute11913');append(p,'b','',title+': ');p.append(document.createTextNode(key==='skill'&&window.DMABestiaryES11918?window.DMABestiaryES11918.skillText(st[key]):lines(st[key])))}
+ let actions=0;for(const [title,key,fallback] of [['Rasgos','trait',m.traits],['Acciones','action',m.actions],['Acciones adicionales','bonus',null],['Reacciones','reaction',null],['Acciones legendarias','legendary',null]]){
   const arr=Array.isArray(st[key])?st[key]:[];if(!arr.length&&!fallback)continue;
   append(card,'h6','',title);
-  if(arr.length){for(const a of arr){const p=append(card,'p','dma-ws-action11913');append(p,'b','',a.name||title);p.append(document.createTextNode(' · '+lines(a.entries||a.entry||a)));actions++}}
+  if(arr.length){for(const a of arr){const p=append(card,'p','dma-ws-action11913');const translated=window.DMABestiaryES11918?.entry(m,key,a);append(p,'b','',translated?.name||a.name||title);p.append(document.createTextNode(' · '+(translated?.body||lines(a.entries||a.entry||a))));if(translated&&translated.languagePending){const original=append(p,'small','dma-ws-original11918','Texto fuente en inglés · traducción completa pendiente.');original.style.display='block';}actions++}}
   else {append(card,'p','dma-ws-action11913',lines(fallback));actions++}
  }
  if(!actions)append(card,'p','dma-ws-warning11913','Esta ficha del bestiario solo contiene datos resumidos. Importa el statblock completo antes de utilizar sus acciones.');
