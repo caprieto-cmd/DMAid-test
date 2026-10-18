@@ -1,1 +1,0 @@
-Abre desde un servidor local o GitHub Pages, para permitir cargar JSON racial. Sustituye todos los archivos por los del ZIP. El selector de armas ahora proviene del indice PHB 2014 incorporado en index.html, con enlace opcional a Objetos. Si tienes otra version mas reciente, sustituye solo character-builder-v2.js y actualiza su query de cache en index.html.
