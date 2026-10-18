@@ -87,7 +87,7 @@ function liveGroups(){const rows=[];state.players?.forEach((p,i)=>{const d=data(
  for(const g of d.groups){if(!g.active)continue;
  if(g.source==='faithful'&&!window.DMAShepherd11924?.stateFor?.(i)?.faithfulActive){g.active=false;continue}
  // Un conjuro de invocación que requiere concentración termina cuando esta se pierde.
- if(g.concentration&&key(owner(i)?.dmaMagic1185?.concentrating)!==key(g.spell)){g.active=false;const p=pending(i,g.spell);if(p&&p.groupStarted===g.createdAt)p.closed=true;continue}
+ if(g.concentration&&key(owner(i)?.dmaMagic1185?.concentrating)!==key(g.spell)){releaseConcentration11927(g);if(!g.active){const p=pending(i,g.spell);if(p&&p.groupStarted===g.createdAt)p.closed=true;continue}}
  rows.push({i,owner:p,g})}
  });return rows}
 function statHTML(u){
@@ -125,14 +125,88 @@ function quickUI(){const list=liveGroups();if(!list.length)return null;
  const body=document.createElement('div');body.className='quick-enemy-grid';group.append(body);
  for(const {i,owner:p,g} of list){for(const u of g.units){const card=document.createElement('article');card.className='quick-enemy dma-summon-card11925';
  const id=`${i}|${g.id}|${u.id}`;card.dataset.summonRef=id;
- card.innerHTML=`<div class="qtitle">${esc(u.name)} <small>${esc(g.source==='faithful'?'Faithful Summons':g.spell)} · ${esc(p.name)}</small></div><div class="qsub">CA <b>${u.ac}</b> · CR ${esc(u.cr)} · ${u.mighty?'Mighty ✓':''}</div><div class="qhp"><strong>${u.hp}/${u.max}</strong> <span class="qsub">HP${u.hp===0?" · Desaparecida":""}</span>${u.temp?` <small>+${u.temp} temp.</small>`:''}</div><div class="qbar"><span style="width:${Math.max(0,100*u.hp/u.max)}%"></span></div><div class="hpbuttons dma-quick-actions11915"><input type="number" min="1" value="5" data-summon-amount aria-label="Cantidad de HP"><button type="button" class="red" data-summon-op="minus" title="Restar HP">−</button><button type="button" data-summon-op="plus" title="Sumar HP" ${u.hp===0?"disabled":""}>+</button></div><div class="dma-summon-actions11925"><button type="button" data-summon-op="stat">Statblock</button>${(u.hd==null&&u.mighty)?'<small>Dados de golpe pendientes de verificación</small>':''}${window.DMAShepherd11924?.stateFor?.(i)?.active&&window.DMAShepherd11924?.stateFor?.(i)?.kind==='bear'?'<button type="button" data-summon-op="bear" title="Solo si estaba en el aura cuando apareció el tótem">Oso: HP temp.</button>':''}${window.DMAShepherd11924?.level?.(i)>=10&&window.DMAShepherd11924?.stateFor?.(i)?.active?'<button type="button" data-summon-op="guardian">Guardian +'+Math.floor(window.DMAShepherd11924.level(i)/2)+'</button>':''}<label>HP temp. <input data-summon-temp type="number" min="0" value="${u.temp||0}"/></label></div>`;
+ card.innerHTML=`<div class="qtitle">${esc(u.name)} <small>${esc(g.source==='faithful'?'Faithful Summons':g.spell)}${g.uncontrolled?' · Sin control (hostil)':''} · ${esc(p.name)}</small></div><div class="qsub">CA <b>${u.ac}</b> · CR ${esc(u.cr)} · ${u.mighty?'Mighty ✓':''}</div><div class="qhp"><strong>${u.hp}/${u.max}</strong> <span class="qsub">HP${u.hp===0?" · Desaparecida":""}</span>${u.temp?` <small>+${u.temp} temp.</small>`:''}</div><div class="qbar"><span style="width:${Math.max(0,100*u.hp/u.max)}%"></span></div><div class="hpbuttons dma-quick-actions11915"><input type="number" min="1" value="5" data-summon-amount aria-label="Cantidad de HP"><button type="button" class="red" data-summon-op="minus" title="Restar HP">−</button><button type="button" data-summon-op="plus" title="Sumar HP" ${u.hp===0?"disabled":""}>+</button></div><div class="dma-summon-actions11925"><button type="button" data-summon-op="stat">Statblock</button>${(u.hd==null&&u.mighty)?'<small>Dados de golpe pendientes de verificación</small>':''}${window.DMAShepherd11924?.stateFor?.(i)?.active&&window.DMAShepherd11924?.stateFor?.(i)?.kind==='bear'?'<button type="button" data-summon-op="bear" title="Solo si estaba en el aura cuando apareció el tótem">Oso: HP temp.</button>':''}${window.DMAShepherd11924?.level?.(i)>=10&&window.DMAShepherd11924?.stateFor?.(i)?.active?'<button type="button" data-summon-op="guardian">Guardian +'+Math.floor(window.DMAShepherd11924.level(i)/2)+'</button>':''}<label>HP temp. <input data-summon-temp type="number" min="0" value="${u.temp||0}"/></label></div>`;
  body.append(card)}
- const tail=document.createElement('div');tail.className='dma-summon-tail11925';tail.innerHTML=`<span>${esc(p.name)} · ${esc(g.spell)} · ${g.units.length}/${g.limit} registrados</span> <button type="button" data-summon-end="${esc(i+'|'+g.id)}">Finalizar grupo</button>`;body.append(tail)}return group}
+ const tail=document.createElement('div');tail.className='dma-summon-tail11925';tail.innerHTML=`<span>${esc(p.name)} · ${esc(g.spell)}${g.uncontrolled?' · Hostiles, sin control':''} · ${g.units.length}/${g.limit} registrados</span> <button type="button" data-summon-end="${esc(i+'|'+g.id)}">Finalizar grupo</button>`;body.append(tail)}return group}
 const previousQuick=renderQuickEnemies;renderQuickEnemies=function(){const result=previousQuick.apply(this,arguments);const root=document.getElementById('quickenemygrid');if(!root)return result;root.querySelectorAll('.dma-summon-quick11925').forEach(n=>n.remove());const ui=quickUI();if(ui)root.append(ui);return result};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-summon-op],[data-summon-end]');if(!b)return;const r=b.closest('[data-summon-ref]');if(b.hasAttribute('data-summon-end')){const [i,gid]=b.dataset.summonEnd.split('|');endGroup(Number(i),gid);return}
  if(!r)return;const [i,gid,uid]=r.dataset.summonRef.split('|');const idx=Number(i),op=b.dataset.summonOp;
  if(op==='stat')openStat(idx,gid,uid);else if(op==='bear')applyBear(idx,gid,uid);else if(op==='guardian')guardian(idx,gid,uid);else if(op==='minus'||op==='plus')applyHP(idx,gid,uid,r.querySelector('[data-summon-amount]')?.value,op==='minus'?-1:1)
 });
 document.addEventListener('change',e=>{const input=e.target.closest('[data-summon-temp]');if(!input)return;const ref=input.closest('[data-summon-ref]')?.dataset.summonRef;if(!ref)return;const [i,gid,uid]=ref.split('|');setTemp(Number(i),gid,uid,input.value)});
-window.DMASummonedCombat11925=Object.freeze({hitDice,stats,data,monsters,onCast,pending,registerSpell,registerFaithful,endFaithful,groupOf,unitOf,applyHP,applyBear,guardian,endGroup,quickUI,openStat});
+
+/* 1.19.27: planificar ANTES del lanzamiento; una sola operación crea el grupo.
+   No se alteran espacios, concentración o iniciativa hasta que se valida todo. */
+function unboundOnBreak11927(g){return ['conjureelemental','conjurefey'].includes(key(g?.spell))}
+function releaseConcentration11927(g){
+ if(unboundOnBreak11927(g)){g.concentration=false;g.uncontrolled=true;return}
+ g.active=false;window.DMASummonInitiative11926?.onGroupEnded?.(g.id);
+}
+const SUMMONABLE_11927=new Set(['conjureanimals','conjurewoodlandbeings','conjureminorelementals','conjureelemental','conjurefey','summonbeast','summonfey','summonelemental']);
+function summonMetadata(name){const spell=window.DMADruidRules1199?.getSpell?.(name);
+ return spell?.mechanics?.summon||null;}
+function summonOptions(name,slot){const meta=summonMetadata(name);if(!meta)return null;
+ const mode=key(name);if(!SUMMONABLE_11927.has(mode))return null;
+ const level=Number(slot);if(!Number.isInteger(level)||level<1||level>9)return null;
+ const result=[];
+ if(Array.isArray(meta.options)&&meta.options.length){
+  const thresholds=meta.count_multiplier_by_slot||{};
+  const matching=Object.entries(thresholds).filter(([k])=>level>=Number(k)).sort((a,b)=>Number(b[0])-Number(a[0]))[0];
+  const multiplier=matching?Number(matching[1]):1;
+  for(let index=0;index<meta.options.length;index++){
+   const o=meta.options[index];result.push({index,crMax:cr(o.cr_max),count:Number(o.count)*multiplier});
+  }
+ }else if(mode==='conjureelemental')result.push({index:0,crMax:level,count:1});
+ else if(mode==='conjurefey')result.push({index:0,crMax:level,count:1});
+ else result.push({index:0,crMax:null,count:1});
+ return result;
+}
+function spiritCreature(name,form,slot,bonus,dc){const st=window.DMASummonBrowser11910?.spiritStats?.(name,form,slot,bonus,dc);
+ if(!st)throw Error('Falta el statblock del espíritu invocado.');
+ const a=Array.isArray(st.abilities)?st.abilities:[];
+ return {id:'espiritu-'+key(name)+'-'+key(form),name:st.name+' · '+form,kind:st.kind||'Espíritu',source:'TCE 2020',cr:'—',ac:st.ac,hp:st.hp,
+ stat:{hpFormula:null,str:a[0],dex:a[1],con:a[2],int:a[3],wis:a[4],cha:a[5],speed:st.speed,senses:st.senses,languages:st.languages,resist:st.resist,conditionImmune:st.conditions,
+ trait:(st.traits||[]).map(t=>({name:'Rasgo',entries:[t]})),action:[{name:'Ataques',entries:['Realiza '+st.attacks+' ataque(s) por acción. '+st.attack]}],bonus:st.bonusAction?[{name:'Acción adicional',entries:[st.bonusAction]}]:[]},
+ traits:(st.traits||[]).join(' · '),actions:st.attack};
+}
+function planCast11927(i,choice){const mode=key(choice.name),meta=summonMetadata(choice.name);
+ if(!meta||!SUMMONABLE_11927.has(mode))throw Error('Este conjuro no admite crear criaturas nuevas desde este gestor.');
+ const slot=Number(choice.slot),spell=window.DMADruidRules1199.getSpell(choice.name);
+ if(!Number.isInteger(slot)||slot<Number(spell.l)||slot>9)throw Error('Nivel del espacio de conjuro no permitido.');
+ const options=summonOptions(choice.name,slot)||[];
+ const picked=options.find(o=>o.index===Number(choice.optionIndex));if(!picked)throw Error('Debes escoger una opción válida de CR y cantidad.');
+ if(picked.count<1||picked.count>32)throw Error('La cantidad solicitada excede el límite del gestor.');
+ const form=String(choice.form||''),isSpirit=Array.isArray(meta.forms)&&meta.forms.length>0;
+ let m=null;
+ if(isSpirit){if(!meta.forms.includes(form))throw Error('La forma elegida no corresponde a este conjuro.');
+  m=spiritCreature(choice.name,form,slot,Number(choice.attackBonus),Number(choice.dc));
+ }else{
+  const id=String(choice.monsterId||'');if(!id)throw Error('Elige una criatura del bestiario antes de lanzar el conjuro.');
+  m=monsters().find(x=>String(x.id)===id);if(!m)throw Error('La criatura seleccionada no se encuentra cargada en el bestiario.');
+  const typeFilter=mode==='conjurefey'?(form==='beast'?'beast':'fey'):form||'all';
+  const filtered=window.DMASummonBrowser11910?.filterMonsters?.(choice.name,picked.crMax,typeFilter,typeFilter)||[];
+  if(!filtered.some(x=>String(x.id)===id))throw Error('La criatura no cumple el CR, tipo o elemento permitido.');
+  if(cr(m)==null||cr(m)>picked.crMax)throw Error('CR fuera de rango.');
+ }
+ const applyMighty=!isSpirit&&eligible(i,m);
+ const units=Array.from({length:picked.count},()=>makeUnit(m,applyMighty));
+ if(units.some(u=>!u))throw Error('Esta criatura no tiene HP verificables. Carga el statblock completo antes de lanzar.');
+ return {name:choice.name,slot,optionIndex:picked.index,crMax:picked.crMax,count:picked.count,form,spirit:isSpirit,units,
+ concentration:!!(spell?.concentration||spell?.mechanics?.durationConcentration||/^concentraci[oó]n|^concentration/i.test(String(spell?.duration||'')))};
+}
+function commitCast11927(i,plan){const d=data(i);if(!d||!plan?.units?.length)throw Error('Falta el personaje o el grupo validado.');
+ // Una nueva invocación con concentración sustituye cualquier invocación previa
+ // sostenida por ese mismo personaje, incluso si se lanza el mismo conjuro.
+ if(plan.concentration)for(const prior of d.groups){if(prior.active&&prior.concentration)releaseConcentration11927(prior)}
+ const timestamp=Date.now();const g={id:'sg'+timestamp.toString(36)+'-'+(++serial),source:'spell',spell:plan.name,slot:plan.slot,
+ concentration:plan.concentration,active:true,units:plan.units,limit:plan.count,crMax:plan.crMax,form:plan.form,spirit:plan.spirit,
+ optionIndex:plan.optionIndex,createdAt:timestamp};
+ d.groups.push(g);
+ // La iniciativa comparte el mismo grupo y los mismos HP de Daño rápido.
+ state.initiative??={};state.initiative['s_'+g.id]={roll:null,included:true};
+ const sh=owner(i);if(sh)sh.dmaSummonPending11925=null;
+ return g;
+}
+function previewCast11927(i,choice){return planCast11927(i,choice).units[0]}
+window.DMASummonedCombat11925=Object.freeze({hitDice,stats,data,monsters,onCast,pending,registerSpell,registerFaithful,endFaithful,groupOf,unitOf,applyHP,applyBear,guardian,endGroup,quickUI,openStat,summonOptions,planCast11927,commitCast11927,previewCast11927,statHTML,releaseConcentration11927});
 })();

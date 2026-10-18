@@ -17,7 +17,10 @@ function available(){
    if(g.concentration){
     const current=String(sh.dmaMagic1185?.concentrating||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
     const spell=String(g.spell||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
-    if(current!==spell)return;
+    if(current!==spell){
+      window.DMASummonedCombat11925?.releaseConcentration11927?.(g);
+      if(!g.active)return;
+    }
    }
    out.push({key:groupKey(g),i,p,g});
   });
@@ -48,21 +51,36 @@ initiativeRoster=function(){
  }
  return roster;
 };
-function turnInfo(x){const it=state.initiative?.[x.key]||{};
+// Espíritus de Tasha comparten la iniciativa del lanzador y actúan justo después.
+// Conjure Animals y similares sí tiran iniciativa como grupo (PHB 2014).
+const previousOrder11927=initiativeOrder;
+initiativeOrder=function(){
+ const original=previousOrder11927.apply(this,arguments),follow=original.filter(row=>{
+  const x=forKey(row.key);return !!x?.g?.spirit;
+ });
+ if(!follow.length)return original;
+ const placed=original.filter(row=>!follow.includes(row));
+ for(const row of follow){const x=forKey(row.key),ownerKey='p'+x.i;
+  const at=placed.findIndex(r=>r.key===ownerKey);
+  if(at>=0)placed.splice(at+1,0,row);else placed.push(row);
+ }
+ return placed;
+};
+function turnInfo(x){const it=state.initiative?.[x.key]||{},auto=!!x.g.spirit;
  const units=x.g.units.map((u,j)=>{
   const gone=u.hp<=0;
   return `<div class="dma-init-creature11926 ${gone?'dma-gone11926':''}"><div><b>${esc(u.name)} ${x.g.units.filter(v=>v.name===u.name).length>1?'#'+(j+1):''}</b><small>CA ${Number(u.ac)||'—'} · ${Number(u.hp)||0}/${Number(u.max)||0} HP</small></div><button type="button" data-summon-ini-stat="${esc(x.i+'|'+x.g.id+'|'+u.id)}" aria-label="Abrir statblock de ${esc(u.name)}">Ficha</button></div>`;
  }).join('');
- return `<div class="initmarker" title="Iniciativa conjunta">${it.roll??'–'}</div>
- <div class="namerow"><strong>🐾 ${x.g.source==='faithful'?'Bestias protectoras':'Invocaciones'}</strong><div class="sm">${esc(x.p.name)} · ${esc(x.g.spell)} · iniciativa compartida</div></div>
+ return `<div class="initmarker" title="${auto?'Actúa después del conjurador':'Iniciativa conjunta'}">${auto?'↳':it.roll??'–'}</div>
+ <div class="namerow"><strong>🐾 ${x.g.source==='faithful'?'Bestias protectoras':'Invocaciones'}</strong><div class="sm">${esc(x.p.name)} · ${esc(x.g.spell)}${x.g.uncontrolled?' · Hostiles, sin control':''} · ${auto?'actúa después del conjurador':'iniciativa compartida'}</div></div>
  <div class="activehint">${state.turnKey===x.key?'▶ TURNO ACTUAL':it.included===false?'FUERA DEL ORDEN':' '}</div>
  <div class="dma-init-summons11926">${units}</div>
- <div class="initcontrols"><input aria-label="Iniciativa conjunta de ${esc(x.p.name)}" type="number" placeholder="Ini" value="${it.roll??''}" data-summon-ini-value="${esc(x.key)}"><button type="button" title="${it.included===false?'Incluir grupo':'Excluir grupo'}" data-summon-ini-toggle="${esc(x.key)}">${it.included===false?'+':'×'}</button></div>`;
+ <div class="initcontrols">${auto?'<span class="sm">Tras conjurador</span>':`<input aria-label="Iniciativa conjunta de ${esc(x.p.name)}" type="number" placeholder="Ini" value="${it.roll??''}" data-summon-ini-value="${esc(x.key)}">` }<button type="button" title="${it.included===false?'Incluir grupo':'Excluir grupo'}" data-summon-ini-toggle="${esc(x.key)}">${it.included===false?'+':'×'}</button></div>`;
 }
 function summonPanel(){
  const x=forKey(state.turnKey);if(!x)return false;
  const target=document.getElementById('eldaria-active-stat');if(!target)return true;
- target.innerHTML=`<article class="eld-stat dma-summon-turn11926"><h3>🐾 ${esc(x.g.source==='faithful'?'Bestias de Faithful Summons':x.g.spell)}</h3><div class="eld-type">${esc(x.p.name)} · ${x.g.units.length} criatura(s) · turno conjunto</div><p>El DM resuelve la iniciativa del grupo y las acciones de cada criatura. Consulta sus fichas y registra HP en Daño rápido.</p><div class="dma-turn-beasts11926">${x.g.units.map(u=>`<div><strong>${esc(u.name)}</strong><span>CA ${u.ac} · ${u.hp}/${u.max} HP</span><button type="button" data-summon-ini-stat="${esc(x.i+'|'+x.g.id+'|'+u.id)}">Statblock</button></div>`).join('')}</div>${x.g.source==='faithful'?'<small>Sin órdenes, estas criaturas defienden al druida y atacan a sus enemigos.</small>':''}</article>`;
+ target.innerHTML=`<article class="eld-stat dma-summon-turn11926"><h3>🐾 ${esc(x.g.source==='faithful'?'Bestias de Faithful Summons':x.g.spell)}</h3><div class="eld-type">${esc(x.p.name)} · ${x.g.units.length} criatura(s) · turno conjunto ${x.g.uncontrolled?'· Sin control (hostiles)':''}</div><p>El DM resuelve la iniciativa del grupo y las acciones de cada criatura. Consulta sus fichas y registra HP en Daño rápido.</p><div class="dma-turn-beasts11926">${x.g.units.map(u=>`<div><strong>${esc(u.name)}</strong><span>CA ${u.ac} · ${u.hp}/${u.max} HP</span><button type="button" data-summon-ini-stat="${esc(x.i+'|'+x.g.id+'|'+u.id)}">Statblock</button></div>`).join('')}</div>${x.g.source==='faithful'?'<small>Sin órdenes, estas criaturas defienden al druida y atacan a sus enemigos.</small>':''}</article>`;
  return true;
 }
 const previousStat=renderEldariaStatBlock;

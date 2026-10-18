@@ -39,7 +39,8 @@
   }
   function refresh(i){
     // Actualiza los círculos, el explorador y ambas vistas de concentración.
-    if(typeof renderEldariaStatBlock==='function')renderEldariaStatBlock();
+    if(typeof renderInitiative==='function')renderInitiative();
+    else if(typeof renderEldariaStatBlock==='function')renderEldariaStatBlock();
     if(typeof renderQuickEnemies==='function')renderQuickEnemies();
   }
   function lastMessage(i){
@@ -47,7 +48,7 @@
     if(!last)return '';
     return 'Último lanzamiento: '+last.name+(last.level?' · '+(last.pact?'pacto':'espacio')+' nivel '+last.level:' · truco')+(last.concentration?' · concentración ✓':'');
   }
-  function cast(i,name,slotId){
+  function cast(i,name,slotId,summonChoice){
     try{
       const p=state.players?.[i];if(!p)throw Error('No se encontró el personaje.');
       const context=spellContext(i,name),spell=context.spell;
@@ -59,6 +60,12 @@
         if(option.level<context.level)throw Error('No puedes lanzar un conjuro con un espacio inferior a su nivel.');
       }
       if(isReaction(spell)&&sh.dmaReactionUsed1178)throw Error('La reacción de este personaje ya está gastada.');
+      // Las invocaciones requieren todas las elecciones ANTES de gastar espacios.
+      const isSummoning=!!window.DMASummonedCombat11925?.summonOptions?.(name,option?.level||0);
+      if(isSummoning&&!summonChoice)throw Error('Elige CR, cantidad y criatura antes de registrar el lanzamiento. Usa «Lanzar e invocar».');
+      const plan=isSummoning?window.DMASummonedCombat11925.planCast11927(i,{
+        ...summonChoice,name,slot:option?.level,attackBonus:spellAPI()?.castingBonus?.(i)?.bonus||0,dc:spellAPI()?.castingBonus?.(i)?.dc||8
+      }):null;
       // No se modifican recursos hasta pasar todas las comprobaciones.
       if(option){
         if(option.kind==='pact')sh.pactUsed=number(sh.pactUsed)+1;
@@ -69,12 +76,20 @@
       }
       if(isReaction(spell))sh.dmaReactionUsed1178=true;
       if(concentration(spell)){
+        // Un nuevo conjuro de concentración finaliza también cualquier grupo
+        // anterior que dependiera de la concentración del mismo personaje.
+        for(const g of sh.dmaSummons11925?.groups||[]){
+          if(g.active&&g.concentration)window.DMASummonedCombat11925?.releaseConcentration11927?.(g)
+        }
         sh.dmaMagic1185=sh.dmaMagic1185||{cantrips:[],prepared:[],known:[],concentrating:null};
         // Lanzar un nuevo conjuro de concentración termina el anterior (PHB 2014).
         sh.dmaMagic1185.concentrating=name;
       }
       sh.dmaLastCast11920={name,level:option?.level||0,pact:option?.kind==='pact',concentration:concentration(spell),reaction:isReaction(spell)};
-      save();window.DMASummonedCombat11925?.onCast?.(i,name,option?.level||0);refresh(i);
+      if(plan)window.DMASummonedCombat11925.commitCast11927(i,plan);
+      save();
+      if(!plan)window.DMASummonedCombat11925?.onCast?.(i,name,option?.level||0);
+      refresh(i);
       return true;
     }catch(err){
       console.error('[DMAid] No se registró el conjuro',err);
