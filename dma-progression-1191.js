@@ -18,7 +18,7 @@ if(sh.dmaMagic1185)sh.dmaMagic1185.concentrating=null;
 const lvl=total(i),rec=Math.max(1,Math.floor(lvl/2));if(Number.isFinite(Number(sh.hitDiceSpent1185)))sh.hitDiceSpent1185=Math.max(0,Number(sh.hitDiceSpent1185)-rec);
 sh.dmaRacialUsed1171={};sh.dmaResourceSpent1172={};sh.dmaReactionUsed1178=false;sh.dmaReactionSpent1178={};sh.dmaStoneSpent11617=0;
 if(sh.dmaFighterResources1185)sh.dmaFighterResources1185={};if(sh.dmaClassResources1185)sh.dmaClassResources1185={};
-sh.dmaWildShape1191={spent:0};sh.dmaLongRestAt1185=Date.now();return true}
+sh.dmaWildShape1191={spent:0};sh.dmaSymbiotic1194={active:false};sh.dmaLongRestAt1185=Date.now();return true}
 function restAll(){const n=state.players.length;if(!n)return alert('No hay personajes registrados.');if(!confirm(`¿Registrar descanso largo para los ${n} personajes? Restablece PG, espacios, Forma Salvaje y recursos compatibles. Los personajes deben haber completado el descanso de 8 horas y cumplir el límite de una vez cada 24 horas.`))return;
 let affected=0;state.players.forEach((p,i)=>{if(restOne(i,true))affected++});save();render();renderSheets();alert('Descanso largo aplicado a '+affected+' personaje(s). Los contadores heredados no integrados deben comprobarse manualmente.')}
 let wizard=null;
@@ -52,7 +52,7 @@ if(prev){const c=cs.find(c=>c.name===w.name);c.level=nl;if(subNeed)c.sub=w.sub}e
 if(asiNeed){if(w.asi==='one')a[w.a1]+=2;if(w.asi==='two'){a[w.a1]++;a[w.a2]++}if(w.asi==='feat'){sh.featsV190=sh.featsV190||[];sh.featsV190.push({name:w.feat.trim(),source:`ASI ${w.name} ${nl} · DM`,unresolvedMechanics:true})}}
 const extraCon=Math.floor((Number(a.CON||10)-10)/2)-conMod;
 sh.abilities=a;if(extraCon){const newTotal=w.old+1;p.max+=extraCon*newTotal;p.hp+=extraCon*newTotal}p.max=Math.max(1,Number(p.max||1)+gain);p.hp=Math.min(p.max,Math.max(0,Number(p.hp||0)+gain));sh.slots=null;sh.levelUpHistory1191=sh.levelUpHistory1191||[];sh.levelUpHistory1191.push({date:new Date().toISOString(),class:w.name,level:nl,HP:gain,choice:asiNeed?w.asi:null});
-const d=document.getElementById('dma-level-dialog-1191');d?.close();wizard=null;save();render();renderSheets();alert('Nivel registrado. Verifica y completa las nuevas elecciones de clase, equipo y magia en la hoja.')}
+const d=document.getElementById('dma-level-dialog-1191');d?.close();wizard=null;if(window.DMAmagic1185?.syncGranted)window.DMAmagic1185.syncGranted(i);save();render();renderSheets();alert('Nivel registrado. Verifica y completa las nuevas elecciones de clase, equipo y magia en la hoja.')}
 function decorateSheets(){const root=document.getElementById('sheetsplayers');if(!root)return;root.querySelectorAll('article.sheet').forEach((card,i)=>{if(!state.players[i]||card.querySelector('.dma-1191-buttons'))return;const area=card.querySelector('.dma-sheet-full')||card;const bar=document.createElement('div');bar.className='dma-1191-buttons';bar.innerHTML=`<button type="button" class="gold" data-level="${i}">⬆ Subir de nivel</button>${level(i,'Druida')>=2?`<button type="button" data-wild="${i}" data-delta="1">🌿 Forma Salvaje: ${wsCount(i)===Infinity?'∞':Math.max(0,wsCount(i)-ws(i).spent)}/${wsCount(i)===Infinity?'∞':wsCount(i)} · Usar</button><button type="button" data-wild="${i}" data-delta="-1">↶ Devolver uso</button>`:''}`;area.appendChild(bar)});
 root.querySelectorAll('.dma-long-rest').forEach(el=>el.remove());}
 function decorateCombat(){

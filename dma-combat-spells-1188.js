@@ -2,7 +2,7 @@
 (function(){'use strict';
 const escapeText=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const spellKey=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
-const entries=()=>{let a=[...(window.DMA_DRUID_SPELLS_1189||[])];try{a=a.concat(Array.isArray(SPELL_LIBRARY)?SPELL_LIBRARY:[])}catch(e){}try{const b=window.DMA_SPELL_CATALOG_BRIDGE?.();if(Array.isArray(b))a=a.concat(b)}catch(e){}return a.filter(s=>s&&typeof s.n==='string'&&!/2024|XPHB|PHB24/i.test(String(s.source||'')))};
+const entries=()=>{let a=[...(window.DMA_DRUID_SPELLS_1189||[]),...(window.DMA_SUBCLASS_SPELLS_1194||[])];try{a=a.concat(Array.isArray(SPELL_LIBRARY)?SPELL_LIBRARY:[])}catch(e){}try{const b=window.DMA_SPELL_CATALOG_BRIDGE?.();if(Array.isArray(b))a=a.concat(b)}catch(e){}return a.filter(s=>s&&typeof s.n==='string'&&!/2024|XPHB|PHB24/i.test(String(s.source||'')))};
 function getSpell(name){const key=spellKey(name),matches=entries().filter(s=>spellKey(s.n)===key);const official=matches.find(s=>s.fromHandbook);if(official)return official;return matches.sort((a,b)=>quality(b)-quality(a))[0]||null;}
 function quality(s){return ['description','desc','text','summary','damage','range','duration','components'].reduce((n,k)=>n+Math.min(10,String(s[k]||'').length),0)}
 const classify=n=>{const s=getSpell(n);return s&&Number(s.l)===0?'cantrip':s&&Number(s.l)>0?'spell':null};
